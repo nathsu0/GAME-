@@ -1,0 +1,33 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+
+.blocks{
+    color: whitesmoke;
+}
+.blocks table{
+    color: whitesmoke;
+}
+.form-check{
+    margin-top: 20px;
+}
+.button{
+    width: 200px;
+}
+/*MEDIA
+*
+*/
+
+@media (min-width: 350px) and (max-width: 575px) {
+    .form-check{
+        margin-top: 10px;
+    } 
+    .button{
+        width: 250px;
+        margin-left: 20px;
+    }
+    }
+    

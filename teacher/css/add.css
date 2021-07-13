@@ -1,0 +1,59 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+.blocks{
+    color: whitesmoke;
+}
+.blocks input{
+    border-color: whitesmoke;
+}
+.form-floating{
+    color: black;
+}
+.form-check{
+    margin-top: 20px;
+}
+#sub{
+    width: 100px;
+}
+.answer{
+    width: 400px;
+    vertical-align: -0.10em;
+}
+.container{
+    font-size: 20px;
+}
+.game{
+    width: 200px;
+} 
+.button{
+    width: 140px;
+    margin: 20px 20px 10px 0;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 975px) {
+    .answer{
+        width: auto;
+    }
+} 
+@media (min-width: 350px) and (max-width: 575px) {
+    .form-check{
+        margin-top: 10px;
+    } 
+    .button{
+        width: 250px;
+    }
+    .formradio{
+        display: none;
+        visibility: hidden;
+    }
+    #sub{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    } 
+    }

@@ -1,0 +1,57 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+h1{
+    color: whitesmoke;
+}
+.blocks img{
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    height: 375px;
+    width: 700px;
+}
+.code_edit input{
+    padding: 10px 0 10px 10px;
+    border: 3px solid #5b82c2;
+}
+input{
+    margin: 10px;
+    font-size: 25px;
+}
+.button{
+    width: 140px;
+    margin-top: 120px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+.butt{
+    display: flex;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 992px) { 
+    .blocks img{
+        display: none;
+    }
+    
+    .button{
+        margin-top: 20px;
+    }
+    }
+@media (min-width: 350px) and (max-width: 575px) {
+    .code_edit input{
+        margin: 20px 20px 20px 5px;
+        padding: 0px;
+        width: auto;
+    }
+    .button{
+        width: 250px;
+        margin-right: 0;
+    }
+}
+    
