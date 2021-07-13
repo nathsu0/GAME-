@@ -1,0 +1,73 @@
+/*COMMON
+*
+*/
+body{
+    padding:0;
+    margin: 0;
+    overflow: hidden;
+}
+.Main{
+    padding: 30px;
+    margin-top: 10px;
+    height: 640px;
+}
+.Box{
+    height: 400px;
+}
+/*CONTENT
+*
+*/
+.score{
+    font-size: 20px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+.game{
+    width: 500px;
+    height: 100px;
+    padding: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    width: 200px;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 575.98px) and (max-width: 767.98px) {
+    .game {
+        width: 400px;
+        height: auto;
+    }
+
+}
+@media (min-width: 470px) and (max-width: 575.98px) {
+    .game {
+        width: 300px;
+        height: auto;
+    }
+    .Box{
+        height: 420px;
+    }
+    .username{
+        margin:15px;
+    }
+}
+@media (min-width: 350px) and (max-width: 470px) {
+    .game{
+        width: 200px;
+        height: auto;
+    }
+    .Box{
+        height:auto;
+    }
+    .username{
+        margin:15px;
+    }
+    }
+    
