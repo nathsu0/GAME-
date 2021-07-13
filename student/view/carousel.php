@@ -16,7 +16,7 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = 'EditCode.php'>
+    <form method='post' action = ''>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
@@ -37,7 +37,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
@@ -47,7 +47,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
@@ -57,7 +57,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
@@ -67,7 +67,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
@@ -77,7 +77,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
@@ -87,7 +87,7 @@
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.html" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>

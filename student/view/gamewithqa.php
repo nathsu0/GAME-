@@ -1,4 +1,11 @@
-
+<?php
+  session_start();
+  $code=$_SESSION['code'];
+  $conn=new mysqli('localhost','root','',$code);
+  $count=1;
+  $res = mysqli_query($conn,"SELECT * FROM quiz ORDER BY RAND()" );
+  $qcount =  mysqli_num_rows($res);
+?>
 <!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
@@ -78,6 +85,7 @@
       </div>
 </div>
 <?php
+
 $count++;
 }?>
 <!-- <div id="evaluationModal" class="modal2" style="display: none;">
@@ -135,7 +143,8 @@ $count++;
   </div>
 </div> 
 
-
+    
+    <script type="text/javascript">var qcount = "<?= $qcount ?>";</script>
     <canvas id="canvas1"></canvas>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
  
