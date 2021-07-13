@@ -5,7 +5,7 @@
   $count=1;
   $res = mysqli_query($conn,"SELECT * FROM quiz ORDER BY RAND()" );
   $qcount =  mysqli_num_rows($res);
-  $boolean = "";
+
 ?>
 <!-- <!DOCTYPE html> -->
 <html lang="en">
@@ -59,7 +59,6 @@
 <?php
    while($row=mysqli_fetch_assoc($res)){
     ?>
-?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
             <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question'];?></textarea>
@@ -81,12 +80,26 @@
           <label for="answer4"><?php echo $row['D'];?></label>
         </div>
           <div class="choice-button">
-          <button id="submitButton<?php echo $count;?>"name= "submit<?php echo $count;?>"class="button btn-bubble1">Submit</button>
+          <button type='submit'id="submitButton<?php echo $count;?>"name= "submit<?php echo $count;?>"class="button btn-bubble1">Submit</button>
         </div>
       </div>
 </div>
 <?php
-
+  if(isset($_POST["submit".$count])){
+    if( $row['Answer']==$_POST["choices".$count]){
+      $boolean = TRUE;
+      
+    echo '<script type="text/javascript">'.'console.log("'.$boolean.'");</script>';
+    }
+    else{
+      $boolean = FALSE;
+      echo '<script type="text/javascript">'.'console.log("'.$boolean.'");</script>';
+    }
+    echo"<script>alert('".$boolean."')</script>";
+    
+  }
+  ?>
+<?php
 $count++;
 }?>
 <!-- <div id="evaluationModal" class="modal2" style="display: none;">
