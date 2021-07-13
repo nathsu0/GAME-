@@ -1283,12 +1283,12 @@ if(startGameStatus == false){
 
     restartButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "gamewithqa.html";
+        location.href = "gamewithqa.php";
     }
 
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "Code.html";
+        location.href = "Code.php";
     }
 
 }
@@ -3989,7 +3989,7 @@ function clickCanvas(xmouse, ymouse){
         //exit button
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "Code.html";
+            location.href = "Code.php";
             console.log(xmouse , ymouse);
         }
         //instruction button
@@ -4016,7 +4016,7 @@ function clickCanvas(xmouse, ymouse){
     }else if (timerStatus == false){
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "Code.html";
+            location.href = "Code.php";
             console.log(xmouse , ymouse);
         }
 
