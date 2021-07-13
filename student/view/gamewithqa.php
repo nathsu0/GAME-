@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
- 
 <!-- Start Modal -->
 <!-- <div id="startModal" class="modal1" style="display: none;">
   <div class="modal-content"><br><br><br><br><br><br>
@@ -29,6 +28,7 @@
       </div>
   </div>
 </div> -->
+<form method='post' action='#'>
 <div id="instructionModal" class="modal3" style="display: none;">
   <div class="modal-content">
     <span class="close" style="font-size:60px; margin-right: -20%; margin-top: 13%;">&times;</span><br><br><br><br>
@@ -58,6 +58,7 @@
         <button id = "skip" > Skip</button>
     </div>
   </div> -->
+
 <?php
    while($row=mysqli_fetch_assoc($res)){
     ?>
@@ -66,42 +67,53 @@
             <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question'];?></textarea>
         </div>
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count;$_SESSION['A'.$count]=$row['A'];?>" value="A" >
-          <label for="answer1"><?php echo $row['A'];?></label>
+          <input type="radio" id="answer1" name="choices<?php echo $count;$_SESSION['A'.$count]=$row['A'];?>" value="A">
+          <label for="answer1">A. <?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count;$_SESSION['B'.$count]=$row['B'];?>" value="B" >
-          <label for="answer2"><?php echo $row['B'];?></label>
+          <input type="radio" id="answer2" name="choices<?php echo $count;$_SESSION['B'.$count]=$row['B'];?>" value="B">
+          <label for="answer2">B. <?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count;$_SESSION['C'.$count]=$row['C'];?>" value="C"  >
-          <label for="answer3"><?php echo $row['C'];?></label>
+          <input type="radio" id="answer3" name="choices<?php echo $count;$_SESSION['C'.$count]=$row['C'];?>" value="C">
+          <label for="answer3">C. <?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count;$_SESSION['D'.$count]=$row['D'];?>" value="D" >
-          <label for="answer4"><?php echo $row['D'];?></label>
+          <input type="radio" id="answer4" name="choices<?php echo $count;$_SESSION['D'.$count]=$row['D'];?>" value="D">
+          <label for="answer4">D. <?php echo $row['D'];?></label>
         </div>
           <div class="choice-button">
-          <button type='submit'name= "submitButton<?php echo $count;?>" id="submitButton<?php echo $count;?>"class="button btn-bubble1">Submit</button>
+          <button type='button' type='submit' id="submitButton<?php echo $count;?>" name="submitButton<?php echo $count;?>"class="button btn-bubble1" >Submit</button>
         </div>
       </div>
 </div>
-<?php
-$_SESSION['correct'.$count]=  $row['Answer'];
-  if(isset($_POST["submitButton".$count])){
-    if( $row['Answer']==$_POST["choices".$count]){
-     $boolean.$count=TRUE;
 
-    }
-    else{
-      $boolean.$count=FALSE;
-    }
-    $_SESSION['answer'.$count]=$_POST["choices".$count];
-  }
-  ?>
 <?php
+
+$_SESSION['correct'.$count]=  $row['Answer'];
+if(isset($_POST["submitButton".$count])){
+  $pick =$_POST["choices".$count];
+  if( $row['Answer']==$pick){
+   $boolean.$count=TRUE;  
+  $_SESSION['answer'.$count]=$pick;
+}
+
+  }
+  else{
+    $boolean.$count=FALSE;
+    $_SESSION['answer'.$count]=$pick;
+}
+?>
+
+
+</form>
+
+<?php
+
 $count++;
-}?>
+}
+
+?>
 <!-- <div id="evaluationModal" class="modal2" style="display: none;">
 
   <div class="modal-content">
@@ -164,7 +176,7 @@ $count++;
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
  
     
-   
+    
 </body>
 </html>
  

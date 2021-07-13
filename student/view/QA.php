@@ -47,7 +47,7 @@
                 <br>
                 <strong>D. </strong> <?php echo $_SESSION['D'.$count];?>
                 <br>
-                <strong>Your response : </strong> <?php echo $_SESSION["answer".$count];?>
+                <strong>Your response : </strong> <?php echo $_SESSION['answer'.$count];?>
                 <br>
                 <strong>Correct Answer : </strong> <?php echo $_SESSION["correct".$count];?>
               </div>
