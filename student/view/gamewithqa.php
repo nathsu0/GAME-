@@ -5,6 +5,7 @@
   $count=1;
   $res = mysqli_query($conn,"SELECT * FROM quiz ORDER BY RAND()" );
   $qcount =  mysqli_num_rows($res);
+  $boolean = "";
 ?>
 <!-- <!DOCTYPE html> -->
 <html lang="en">
@@ -80,7 +81,7 @@
           <label for="answer4"><?php echo $row['D'];?></label>
         </div>
           <div class="choice-button">
-          <button id="submitButton<?php echo $count;?>" class="button btn-bubble1">Submit</button>
+          <button id="submitButton<?php echo $count;?>"name= "submit<?php echo $count;?>"class="button btn-bubble1">Submit</button>
         </div>
       </div>
 </div>
