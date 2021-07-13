@@ -5,6 +5,7 @@
   $count=1;
   $res = mysqli_query($conn,"SELECT * FROM quiz ORDER BY RAND()" );
   $qcount =  mysqli_num_rows($res);
+  $boolean = "BooleanResult"
 
 ?>
 <!-- <!DOCTYPE html> -->
@@ -87,15 +88,12 @@
 <?php
   if(isset($_POST["submit".$count])){
     if( $row['Answer']==$_POST["choices".$count]){
-      $boolean = TRUE;
-      
-    echo '<script type="text/javascript">'.'console.log("'.$boolean.'");</script>';
+     $boolean.$count=TRUE;
+
     }
     else{
-      $boolean = FALSE;
-      echo '<script type="text/javascript">'.'console.log("'.$boolean.'");</script>';
+      $boolean.$count=FALSE;
     }
-    echo"<script>alert('".$boolean."')</script>";
     
   }
   ?>
@@ -158,6 +156,7 @@ $count++;
 </div> 
 
     
+    <script type="text/javascript">var BooleanResult = "<?= $boolean.$count ?>";</script>
     <script type="text/javascript">var qcount = "<?= $qcount ?>";</script>
     <canvas id="canvas1"></canvas>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
