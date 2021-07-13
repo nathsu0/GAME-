@@ -1,0 +1,71 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/html,
+body {
+  overflow: visible;
+}
+h1{
+    margin: 10px;
+}
+.card{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: 3px solid red;
+  text-align: left;
+  margin-top: 5px
+}
+.card1{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: 3px solid green;
+  text-align: left;
+  margin-top: 5px
+}
+.card-body{
+  font-size: 18px;
+}
+.card svg{
+  color: red;
+}
+.card1 svg{
+  color: yellowgreen;
+}
+strong{
+  margin-right: 10px;
+}
+svg{
+    float: right;
+    margin-left: 5px;
+  }
+
+.blocks{
+    z-index: 2;
+    position: absolute;
+    height: auto;
+    background-image: url('../img/score.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    border: 3px solid #5b82c2;
+}
+.button{
+  line-height: 65px;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 575px) {
+    .Box{
+        height: auto;
+    }
+    }
+    

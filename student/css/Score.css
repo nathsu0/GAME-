@@ -1,0 +1,44 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+html,
+body {
+  overflow: visible;
+}
+h1{
+    margin: 10px;
+}
+.score label{
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+label{
+    margin: 10px;
+    font-size: 20px;
+}
+.blocks{
+    z-index: 2;
+    position: absolute;
+    height: auto;
+    background-image: url('../img/score.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    border: 3px solid #5b82c2;
+}
+.button{
+    line-height: 70px;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 575px) {
+    .Box{
+        height: auto;
+    }
+    }
+    
