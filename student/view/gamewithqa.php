@@ -5,6 +5,7 @@
   $count=1;
   $res = mysqli_query($conn,"SELECT * FROM quiz ORDER BY RAND()" );
   $qcount =  mysqli_num_rows($res);
+  $_SESSION['qcount']=$qcount;
   $boolean = "BooleanResult"
 
 ?>
@@ -62,31 +63,32 @@
     ?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question'];?></textarea>
+            <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question'];?></textarea>
         </div>
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count;?>" value="A" >
+          <input type="radio" id="answer1" name="choices<?php echo $count;$_SESSION['A'.$count]=$row['A'];?>" value="A" >
           <label for="answer1"><?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count;?>" value="B" >
+          <input type="radio" id="answer2" name="choices<?php echo $count;$_SESSION['B'.$count]=$row['B'];?>" value="B" >
           <label for="answer2"><?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count;?>" value="C"  >
+          <input type="radio" id="answer3" name="choices<?php echo $count;$_SESSION['C'.$count]=$row['C'];?>" value="C"  >
           <label for="answer3"><?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count;?>" value="D" >
+          <input type="radio" id="answer4" name="choices<?php echo $count;$_SESSION['D'.$count]=$row['D'];?>" value="D" >
           <label for="answer4"><?php echo $row['D'];?></label>
         </div>
           <div class="choice-button">
-          <button type='submit'id="submitButton<?php echo $count;?>"name= "submit<?php echo $count;?>"class="button btn-bubble1">Submit</button>
+          <button type='submit'name= "submitButton<?php echo $count;?>" id="submitButton<?php echo $count;?>"class="button btn-bubble1">Submit</button>
         </div>
       </div>
 </div>
 <?php
-  if(isset($_POST["submit".$count])){
+$_SESSION['correct'.$count]=  $row['Answer'];
+  if(isset($_POST["submitButton".$count])){
     if( $row['Answer']==$_POST["choices".$count]){
      $boolean.$count=TRUE;
 
@@ -94,7 +96,7 @@
     else{
       $boolean.$count=FALSE;
     }
-    
+    $_SESSION['answer'.$count]=$_POST["choices".$count];
   }
   ?>
 <?php
@@ -156,7 +158,7 @@ $count++;
 </div> 
 
     
-    <script type="text/javascript">var BooleanResult = "<?= $boolean.$count ?>";</script>
+<!---<script type="text/javascript">var BooleanResult = "<?//= $boolean.$count ?>";</script>-->
     <script type="text/javascript">var qcount = "<?= $qcount ?>";</script>
     <canvas id="canvas1"></canvas>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
