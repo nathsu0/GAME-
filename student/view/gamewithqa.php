@@ -51,7 +51,7 @@
 <?php
    while($row=mysqli_fetch_assoc($res)){
     ?>
-?>
+
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
             <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question'];?></textarea>
