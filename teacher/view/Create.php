@@ -143,7 +143,7 @@ include '../includes/navbar.php';
             $sql = "CREATE TABLE SCORES (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
               NAMES MEDIUMTEXT, N1 VARCHAR(6), N2 VARCHAR(6), N3 VARCHAR(6), N4 VARCHAR(6), N5 VARCHAR(6),
-              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6),
+              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6), Avatar VARCHAR(255),
               SCORE MEDIUMTEXT 
               )";
             if ($mysqli->query($sql) === TRUE) {

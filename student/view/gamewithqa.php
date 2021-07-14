@@ -67,44 +67,49 @@
             <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question'];?></textarea>
         </div>
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count;$_SESSION['A'.$count]=$row['A'];?>" value="A">
+          <input type="radio" id="answer1" name="choices<?php echo $count;$_SESSION['A'.$count]=$row['A'];?>" value="A" onclick="myFunction<?php echo $count;?>(value)">
           <label for="answer1">A. <?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count;$_SESSION['B'.$count]=$row['B'];?>" value="B">
+          <input type="radio" id="answer2" name="choices<?php echo $count;$_SESSION['B'.$count]=$row['B'];?>" value="B" onclick="myFunction<?php echo $count;?>(value)">
           <label for="answer2">B. <?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count;$_SESSION['C'.$count]=$row['C'];?>" value="C">
+          <input type="radio" id="answer3" name="choices<?php echo $count;$_SESSION['C'.$count]=$row['C'];?>" value="C" onclick="myFunction<?php echo $count;?>(value)">
           <label for="answer3">C. <?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count;$_SESSION['D'.$count]=$row['D'];?>" value="D">
+          <input type="radio" id="answer4" name="choices<?php echo $count;$_SESSION['D'.$count]=$row['D'];?>" value="D" onclick="myFunction<?php echo $count;?>(value)">
           <label for="answer4">D. <?php echo $row['D'];?></label>
         </div>
           <div class="choice-button">
-          <button type='button' type='submit' id="submitButton<?php echo $count;?>" name="submitButton<?php echo $count;?>"class="button btn-bubble1" >Submit</button>
+          <button type='button'  id="submitButton<?php echo $count;?>" name="submitButton<?php echo $count;?>"class="button btn-bubble1" >Submit</button>
+          <input type="text" name="ans<?php echo $count;?>" id="result<?php echo $count;?>">
         </div>
       </div>
 </div>
+<script>
+function myFunction<?php echo $count;?>(browser) {
+  document.getElementById("result<?php echo $count;?>").value = browser;
+}
+</script>
 
 <?php
 
 $_SESSION['correct'.$count]=  $row['Answer'];
-if(isset($_POST["submitButton".$count])){
-  $pick =$_POST["choices".$count];
+
+if(isset($_GET["ans".$count])){
+  
+ $pick =$_GET["ans".$count]; 
   if( $row['Answer']==$pick){
    $boolean.$count=TRUE;  
-  $_SESSION['answer'.$count]=$pick;
+  }else{
+    $boolean.$count=FALSE;
 }
 
-  }
-  else{
-    $boolean.$count=FALSE;
-    $_SESSION['answer'.$count]=$pick;
+$_SESSION['answer'.$count]=$pick;
 }
 ?>
-
 
 </form>
 
