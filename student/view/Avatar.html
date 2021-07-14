@@ -1,14 +1,3 @@
-<?php
-  session_start();
-    $code=$_SESSION['code'];
-    $conn=new mysqli('localhost','root','',$code);
-  if(isset($_POST['submit'])){
-    $player=$_POST['player'];
-  $_SESSION['player']=$player;
-    $res = mysqli_query($conn,"INSERT into scores (NAMES) VALUES('$player')");
-  echo '<script type="text/javascript">'.'window.location= "carousel.php"'.'</script>';
-  }
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,37 +9,55 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/Start.css">
+    <link rel="stylesheet" href="../css/Avatar.css">
     <link rel="stylesheet" href="../includes/common.css">
   </head>
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = ''>
+   
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
-          <div class="blocks container mt-5 p-0">
-            <div class="username form-floating ">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="player">
-                <label for="floatingInput">Username</label>
+          <div class="blocks container mt-3 p-0">
+            <div class="row d-flex justify-content-center">
+            <div class="col-sm-6">
+              <div class="character">
+                <img src="../img/Boy.png">
+                <div class="card-body">
+                  <h5>Sparkle</h5>
+                  <p>Choose your Character </p>
+                  <div class="container d-flex justify-content-center">
+                    <a href="carousel.html" type="button" class="button btn-bubble1">Next</a>
+                  </div>
+                </div>
               </div>
-            <div class="container d-flex justify-content-center">
-              <button type="submit" name='submit' class="button btn-bubble1">Enter</button>
+            </div>
+            <div class="col-sm-6">
+              <div class="character">
+                <img src="../img/Girl.png">
+                <div class="card-body">
+                  <h5>Sparkel</h5>
+                  <p>Choose your Character</p>
+                  <div class="container d-flex justify-content-center">
+                    <a href="carousel.html" type="button" class="button btn-bubble1">Next</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
             </div>
           </div> 
         </div>
     </div>
-  </div>
-  </div>
     <canvas></canvas>
-    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="../../asset/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/Start.js"></script>
+    <script src="../js/Avatar.js"></script>
     <script src="../includes/background.js"></script>
   </body>
 </html>

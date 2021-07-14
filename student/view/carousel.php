@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,78 +15,73 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = ''>
+    <form method='post' action = 'EditCode.php'>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
           <div class="blocks container mt-2 p-0">
             <div id="carouselExampleControlsNoTouching" class="carousel carousel-dark slide" data-bs-touch="false" data-bs-interval="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                  </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="../img/story/Bubbles.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <img src="../img/story/Kingdom.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-md-block">
+                      <p>In the deep of Pacific Ocean there’s a kingdom called “Bubble Landia” where the Bubbly clan peacefully lives.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
                   <div class="carousel-item">
                     <img src="../img/story/Chosen.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <div class="carousel-caption  d-md-block">
+                        <p>The people of the Bubble Landia chose Sparkle to lead the kingdom.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../img/story/Heart.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                        <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
                   <div class="carousel-item">
                     <img src="../img/story/Invasion.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <div class="carousel-caption  d-md-block">
+                        <p>Everything was going well until the Toxicity clan came to invade their kingdom and enslave the people. But Sparkle will not allow that to happen.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../img/story/Kingdom.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                        <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>
                   <div class="carousel-item">
                     <img src="../img/story/Popping.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <div class="carousel-caption  d-md-block">
+                        <p>To help Sparkle save the Bubble Landia you need to pop the toxic bubbles, they are the members of Toxicity clan.</p>
                         <div class="container d-flex justify-content-center">
-                          <a href="gamewithqa.php" type="button" class="button btn-bubble1">Skip</a>
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/story/Heart.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <p>You will be given five lives to fight against them.</p>
+                        <div class="container d-flex justify-content-center">
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/story/Bubbles.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption  d-md-block">
+                        <p>To eliminate them successfully you need to pop the toxic bubbles according to their ranks, which is represented by numbers from one to eight.</p>
+                        <div class="container d-flex justify-content-center">
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/story/board.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption  d-md-block">
+                        <p>After successfully eliminating the toxic bubbles the sacred question will pop up, which is needed to be answered correctly to gain points.</p>
+                        <div class="container d-flex justify-content-center">
+                          <a href="Mechanics.html" type="button" class="button btn-bubble1">Skip</a>
                         </div>
                       </div>
                   </div>

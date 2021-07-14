@@ -2,12 +2,19 @@
   session_start();
   $count=1;
   $qcount = $_SESSION['qcount'];
+  $_SESSION['Question'.$count];
+  $_SESSION['A'.$count];
+  $_SESSION['B'.$count];
+  $_SESSION['C'.$count];
+  $_SESSION['D'.$count];
+  $_SESSION['answer'.$count];
+  $_SESSION["correct".$count];
+  while ($count <= $qcount){
 ?>
 <!doctype html>
-
 <html lang="en">
   <head>
-    <title>Score</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,43 +29,82 @@
      <!----MAIN CONTAINER-->
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-        <div class="Box container mt-5 p-0">
+        <div class="Box container p-0">
           <!----CONTENT START------->
-          <div class="blocks container">
-            <h1>Question And Answer</h1>
-            <?php while ($count <= $qcount){
-                ?>
-            <div class="card">
-              <div class="card-body">
+          <div class="blocks container ">
+            <div class="content">
+            <div class="card-wrong">
+              <div class="card-body ">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                 </svg>
-                
-                <strong>Question : </strong> <?php echo $_SESSION['Question'.$count];?>
-                <br>
-                <strong>Choices : </strong> 
-                <br>
-                <strong>A. </strong> <?php echo $_SESSION['A'.$count];?>
-                <br>
-                <strong>B. </strong> <?php echo $_SESSION['B'.$count];?>
-                <br>
-                <strong>C. </strong> <?php echo $_SESSION['C'.$count];?>
-                <br>
-                <strong>D. </strong> <?php echo $_SESSION['D'.$count];?>
-                <br>
-                <strong>Your response : </strong> <?php echo $_SESSION['answer'.$count];?>
-                <br>
-                <strong>Correct Answer : </strong> <?php echo $_SESSION["correct".$count];?>
+                <strong>Question : </strong> Bla bla bla
+                <br></br>
+                <strong>Your response : </strong> sdasdasd
+                <br></br>
+                <strong>Answer : </strong> sdasdasd
               </div>
             </div>
-            <?php
-            $count++;
-            }
-            ?>
+
+            <div class="card-correct">
+              <div class="card-body">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <strong>Question : </strong> Bla bla bla
+                <br></br>
+                <strong>Your response : </strong> sdasdasd
+                <br></br>
+                <strong>Answer : </strong> sdasdasd
+              </div>
+            </div>
+ 
+            <div class="card-wrong">
+              <div class="card-body">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+                <strong>Question : </strong> Bla bla bla
+                <br></br>
+                <strong>Your response : </strong> sdasdasd
+                <br></br>
+                <strong>Answer : </strong> sdasdasd
+              </div>
+            </div>
+
+            <div class="card-correct">
+              <div class="card-body">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <strong>Question : </strong> Bla bla bla
+                <br></br>
+                <strong>Your response : </strong> sdasdasd
+                <br></br>
+                <strong>Answer : </strong> sdasdasd
+              </div>
+            </div>
+
+            <div class="card-correct">
+              <div class="card-body">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <strong>Question : </strong> Bla bla bla
+                <br></br>
+                <strong>Your response : </strong> sdasdasd
+                <br></br>
+                <strong>Answer : </strong> sdasdasd
+              </div>
+            </div>
             <div class="container d-flex justify-content-end">
               <a href="Score.html" type="button" class="button btn-bubble1">Close</a>
           </div> 
+        </div>
       </div>  
     </div>
     </div>

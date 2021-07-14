@@ -124,7 +124,7 @@ let questionStatus8 = true;
 let questionStatus9 = true;
 let questionStatus10 = true;
 
-var totalCountOfQuestions = qcount;
+var totalCountOfQuestions = 3;
 
 // let resetStatus = false;
 
@@ -1283,12 +1283,12 @@ if(startGameStatus == false){
 
     restartButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "gamewithqa.php";
+        location.href = "gamewithqa.html";
     }
 
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "QA.php";
+        location.href = "Code.html";
     }
 
 }
@@ -3989,7 +3989,7 @@ function clickCanvas(xmouse, ymouse){
         //exit button
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "QA.php";
+            location.href = "Code.html";
             console.log(xmouse , ymouse);
         }
         //instruction button
@@ -4016,7 +4016,7 @@ function clickCanvas(xmouse, ymouse){
     }else if (timerStatus == false){
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "QA.php";
+            location.href = "Code.html";
             console.log(xmouse , ymouse);
         }
 
@@ -4262,3 +4262,20 @@ startGame();
 // multipleChoiceQuestion();
 bgMusic();
 // bubbleRespawn();
+
+// POP UP JS//
+
+$(document).ready(function() {
+    $(function(){
+      
+      $('#popup1').css("visibility", "visible"); 
+       $('#popup1').css("opacity", 1); 
+      
+       });
+  
+  $( ".close" ).click(function() {
+    
+       $('#popup1').css("visibility", "hidden"); 
+       $('#popup1').css("opacity", 0);
+    });
+});

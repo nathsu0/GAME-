@@ -30,17 +30,17 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = ''>
+    <form method='post' action = 'EditCode.php'>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
           <div class="blocks container mt-5 p-0">
-            <h1>Enter the code</h1>
+            <h1>Enter a code</h1>
             <div class="code_edit container"> 
                 <input type="text" name ='code'></input>
             </div> 
             <div class="container d-flex justify-content-end">
-              <button type="submit" name="done" class="button btn-bubble1">Proceed</button>
+              <button type="submit" name="done" class="button btn-bubble1">Submit</button>
             </div>
           </div> 
         </div>
