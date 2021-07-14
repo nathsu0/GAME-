@@ -6,7 +6,7 @@
     $player=$_POST['player'];
   $_SESSION['player']=$player;
     $res = mysqli_query($conn,"INSERT into scores (NAMES) VALUES('$player')");
-  echo '<script type="text/javascript">'.'window.location= "carousel.php"'.'</script>';
+  echo '<script type="text/javascript">'.'window.location= "Avatar.html"'.'</script>';
   }
 ?>
 <!doctype html>
@@ -32,11 +32,11 @@
             <!----CONTENT START------->
           <div class="blocks container mt-5 p-0">
             <div class="username form-floating ">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="player">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
                 <label for="floatingInput">Username</label>
               </div>
             <div class="container d-flex justify-content-center">
-              <button type="submit" name='submit' class="button btn-bubble1">Enter</button>
+              <button type="submit" name="submit" class="button btn-bubble1">Enter</button>
             </div>
           </div> 
         </div>

@@ -30,7 +30,7 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = 'EditCode.php'>
+    <form method='post' action = ''>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->

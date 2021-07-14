@@ -99,7 +99,11 @@ $count++;
 
 ?>
 <script>
-
+        function displayRadioValue() {
+            var ele = document.getElementsByName("choices<?php echo $count;?>");
+              alert(ele);
+            }
+        }
 </script>
 
 <!---<script type="text/javascript">
