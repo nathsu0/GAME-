@@ -5142,4 +5142,3 @@ bgMusic();
 //        $('#popup1').css("visibility", "hidden"); 
 //        $('#popup1').css("opacity", 0);
 //     });
-// });
