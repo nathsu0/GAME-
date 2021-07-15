@@ -1,0 +1,88 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/html,
+body {
+  overflow: visible;
+}
+
+.card-wrong{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 70%;
+  border: 3px solid red;
+  text-align: left;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-correct{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 70%;
+  border: 3px solid green;
+  text-align: left;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-body{
+  font-size: 18px;
+}
+.card-wrong svg{
+  color: red;
+}
+.card-correct svg{
+  color: yellowgreen;
+}
+strong{
+  margin-right: 10px;
+}
+svg{
+    float: right;
+    margin-left: 5px;
+  }
+.content{
+  margin-top: 65vh;
+  margin-bottom: 20vh;
+}
+.blocks{
+  text-align: center;
+    z-index: 2;
+    position: absolute;
+    height: auto;
+    background-image: url('../img/Board\ with\ evaluation.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    height: auto;
+}
+.button{
+  margin: 5vh 5vw 5vh 0;
+  line-height: 65px;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 575px) {
+    .Box{
+        height: auto;
+    }
+    }
+    
+    @media (min-width: 350px) and (max-width: 992px) { 
+      .content{
+        margin-top: 30vh;
+        margin-bottom: 20vh;
+      }
+      .blocks{
+          height: auto;
+          background-image: url('../img/board.png');
+      }
+    }
