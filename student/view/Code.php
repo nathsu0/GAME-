@@ -1,4 +1,18 @@
-
+<?php
+   session_start();
+   include 'conn.php';
+   if(isset($_POST['done'])){
+    $code = $_POST['code'];
+    
+    if($conn->select_db($code)=== false){
+    echo '<script type="text/javascript">'.'alert("Please enter a valid code.");</script>';
+     
+    }else{
+      $_SESSION['code']=$code;
+     echo '<script type="text/javascript">' .'window.location = "Start.php"' . '</script>';
+    }
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,17 +30,17 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = 'EditCode.php'>
+    <form method='post' action = ''>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
           <div class="blocks container mt-5 p-0">
             <h1>Enter a code</h1>
             <div class="code_edit container"> 
-                <input type="text" name ='ccode'></input>
+                <input type="text" name ='code'></input>
             </div> 
             <div class="container d-flex justify-content-end">
-              <a href="Start.html" type="button" class="button btn-bubble1">Submit</a>
+              <button type="submit" name="done" class="button btn-bubble1">Submit</button>
             </div>
           </div> 
         </div>

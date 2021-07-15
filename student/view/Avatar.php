@@ -1,14 +1,13 @@
 <?php
   include 'codeconn.php';
   $player=$_SESSION['player'];
-  $result=mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
   if(isset($_POST['boy'])){
     $pic = "../img/Boy.png";
     $_SESSION['pic'] = $pic;
     $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
     echo '<script type="text/javascript">' .'window.location = "Mechanics.html"' . '</script>';
   }
-  if(isset($_POST['girl'])){
+  elseif(isset($_POST['girl'])){
     $pic = "../img/Girl.png";
     $_SESSION['pic'] = $pic;
     $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
@@ -32,6 +31,7 @@
     <link rel="stylesheet" href="../includes/common.css">
   </head>
   <body>
+    <form method="POST" action="">
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
    
@@ -47,7 +47,7 @@
                   <h5>Sparkle</h5>
                   <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
-                    <button name="boy" type="submit" class="button btn-bubble1">Next</button>
+                    <button  type="submit" name="boy" class="button btn-bubble1">Next</button>
                   </div>
                 </div>
               </div>
@@ -59,13 +59,13 @@
                   <h5>Sparkel</h5>
                   <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">
-                  <button name="girl" type="submit" class="button btn-bubble1">Next</button>
+                  <button type="submit" name="girl"  class="button btn-bubble1">Next</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-            
+</form>
             </div>
           </div> 
         </div>
