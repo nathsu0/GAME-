@@ -130,7 +130,8 @@ let questionStatus9 = true;
 let questionStatus10 = true;
 
 //php variable
-var totalCountOfQuestions = 3;
+var totalCountOfQuestions = qcount;
+
 var feedbackStatus1 = false;
 var feedbackStatus2 = false;
 var feedbackStatus3 = false;
