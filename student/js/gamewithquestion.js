@@ -132,16 +132,16 @@ let questionStatus10 = true;
 //php variable
 var totalCountOfQuestions = qcount;
 
-var feedbackStatus1 = false;
-var feedbackStatus2 = false;
-var feedbackStatus3 = false;
-var feedbackStatus4 = false;
-var feedbackStatus5 = false;
-var feedbackStatus6 = false;
-var feedbackStatus7 = false;
-var feedbackStatus8 = false;
-var feedbackStatus9 = false;
-var feedbackStatus10 = false;
+var feedbackStatus1 = awit;
+var feedbackStatus2 = awit;
+var feedbackStatus3 = awit;
+var feedbackStatus4 = awit;
+var feedbackStatus5 = awit;
+var feedbackStatus6 = awit;
+var feedbackStatus7 = awit;
+var feedbackStatus8 = awit;
+var feedbackStatus9 = awit;
+var feedbackStatus10 = awit;
 
 // let resetStatus = false;
 
