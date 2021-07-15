@@ -142,7 +142,7 @@ $_SESSION['count']=$count;
 
 <div id="gameOverModal" class="modal4" >
   <div class="modal-content">
-        <label id = "name">Total Scores : 50</label>
+        <label id = "name"></label>
         <div class="gameover-button">
         <button id="restartButton" class="button btn-bubble1">Restart Game</button>
         <button id="exitButton" class="button btn-bubble1">Exit Game</button>
@@ -160,6 +160,10 @@ $count++;
     <canvas id="canvas1"></canvas>
     <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
+<?php
+echo $totalscore = "<script>document.write(score)</script>"; 
+$_SESSION['score']= $totalscore;
+?>
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>

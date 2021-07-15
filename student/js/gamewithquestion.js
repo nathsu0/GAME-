@@ -2,7 +2,7 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 // const time =  document.getElementById("time");
-
+var score=0;
 var instructionModal = document.getElementById("instructionModal");
 var span = document.getElementsByClassName("close")[0];
 
@@ -243,6 +243,7 @@ function multipleChoiceQuestion(){
             var radioValue = $("input[name='choices1']:checked").val();
             if(radioValue== rans){
                 var feedbackStatus1 = true;
+                score = score+10;
             }else {
                 var feedbackStatus1 = false;
             }
@@ -375,7 +376,8 @@ function multipleChoiceQuestion(){
             var rans2 = document.getElementById("rans2").value;
             var radioValue2 = $("input[name='choices2']:checked").val();
             if(radioValue2== rans2){
-                var feedbackStatus2 = true;
+                var feedbackStatus2 =true;
+                score = score+10;
             }else {
                 var feedbackStatus2 = false;
             }
@@ -500,6 +502,7 @@ function multipleChoiceQuestion(){
                 var radioValue3 = $("input[name='choices3']:checked").val();
                 if(radioValue3== rans3){
                     var feedbackStatus3 = true;
+                    score = score+10;
                 }else {
                     var feedbackStatus3 = false;
                 }
@@ -622,6 +625,7 @@ function multipleChoiceQuestion(){
                 var radioValue4 = $("input[name='choices4']:checked").val();
                 if(radioValue4== rans4){
                     var feedbackStatus4 = true;
+                    score = score+10;
                 }else {
                     var feedbackStatus4 = false;
                 }
@@ -741,7 +745,8 @@ function multipleChoiceQuestion(){
                 var rans5 = document.getElementById("rans5").value;
             var radioValue5 = $("input[name='choices5']:checked").val();
             if(radioValue5== rans5){
-                var feedbackStatus5 = true;
+                var feedbackStatus5= true;
+                score = score+10;
             }else {
                 var feedbackStatus5 = false;
             }
@@ -864,6 +869,7 @@ function multipleChoiceQuestion(){
                 var radioValue6 = $("input[name='choices6']:checked").val();
                 if(radioValue6== rans6){
                     var feedbackStatus6 = true;
+                    score = score+10;
                 }else {
                     var feedbackStatus6 = false;
                 }
@@ -984,6 +990,7 @@ function multipleChoiceQuestion(){
                 var radioValue7 = $("input[name='choices7']:checked").val();
                 if(radioValue7== rans7){
                     var feedbackStatus7 = true;
+                    score = score+10;
                 }else {
                     var feedbackStatus7 = false;
                 }
@@ -1103,7 +1110,8 @@ function multipleChoiceQuestion(){
                 var rans8 = document.getElementById("rans8").value;
             var radioValue8 = $("input[name='choices8']:checked").val();
             if(radioValue8== rans8){
-                var feedbackStatus8 = true;
+                var feedbackStatus8 =true;
+                score = score+10;
             }else {
                 var feedbackStatus8 = false;
             }
@@ -1224,6 +1232,7 @@ function multipleChoiceQuestion(){
                 var radioValue9 = $("input[name='choices9']:checked").val();
                 if(radioValue9== rans9){
                     var feedbackStatus9 = true;
+                    score = score+10;
                 }else {
                     var feedbackStatus9 = false;
                 }
@@ -1344,6 +1353,7 @@ function multipleChoiceQuestion(){
             var radioValue0 = $("input[name='choices10']:checked").val();
             if(radioValue0== rans0){
                 var feedbackStatus10 = true;
+                score = score+10;
             }else {
                 var feedbackStatus10 = false;
             }
@@ -1530,8 +1540,10 @@ startGameStatus = false;
 
 if(startGameStatus == false){
     gameOverModal.style.display ="block";
+    document.getElementById("name").innerHTML = "Total Score: " + score;
 
     restartButton.onclick= function() {
+        
         gameOverModal.style.display ="none";
         location.href = "gamewithqa.php";
     }
