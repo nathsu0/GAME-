@@ -1540,7 +1540,8 @@ startGameStatus = false;
 
 if(startGameStatus == false){
     gameOverModal.style.display ="block";
-    document.getElementById("name").innerHTML = "Total Score: " + score;
+    var tscore = score;
+    document.getElementById("name").innerHTML = "Total Score: " + tscore;
 
     restartButton.onclick= function() {
         

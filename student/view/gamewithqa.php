@@ -161,7 +161,7 @@ $count++;
     <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
 <?php
-echo $totalscore = "<script>document.write(score)</script>"; 
+$totalscore = "<script>document.write(tscore)</script>"; 
 $_SESSION['score']= $totalscore;
 ?>
  
