@@ -68,7 +68,23 @@
       </div>
 </div>
 
-
+<div id="instructionModal" class="modal3" style="display: none;">
+  <div class="modal-contentw">
+    <span class="close">
+      <ul >
+        <li>The players will have five (5) life points every game.</li>
+        <li>The players should pop the bubbles orderly to move to the next level.</li>
+        <li>Every wrong pop of bubbles, the life points will decrease by one (1). </li>
+        <li>The players must have at least one (1) life points to finish all levels.</li>
+        <li>The players should answer correctly to gain points.</li>
+        <li>Questions and answers are in multiple choice format. The players need to choose only one (1) answer.</li>
+        <li>The timer is set for only seven(7) seconds in every level to show the numbers inside the bubble.</li>
+        <li>For every level completed, the player will gain 10 points.</li>
+        <li>The total scores will show after the player completes the game or if all life points are consumed.</li>
+      </ul>  
+      </div>
+  </div>
+</div>
  <!------------------------------------------->
 <!-- POP UP -->
 
