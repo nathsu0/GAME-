@@ -124,7 +124,7 @@ let questionStatus8 = true;
 let questionStatus9 = true;
 let questionStatus10 = true;
 
-var totalCountOfQuestions = 2;
+var totalCountOfQuestions = qcount;
 
 // let resetStatus = false;
 
