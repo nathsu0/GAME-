@@ -49,6 +49,20 @@ include '../includes/navbar.php';
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
+                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Social Science">Social Science</option>
+                    <option value="Computer">Computer</option>
+                    <option value="Christian Living">Christian Living</option>
+                    <option value="Technology and Livelihood Education">Technology and Livelihood Education</option>
+                    <option value="Physical Education">Physical Education</option>
+                    <option value="Music">Musics</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Physical Education and Health">Physical Education and Health</option>
+                    <option value="Robotics">Robotics</option>
+                    <option value="MAPEH">MAPEH</option>
+                    <option value="General">General</option>
+
+
                   </select>
                  </div>
               </div>
