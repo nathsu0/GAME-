@@ -14,24 +14,15 @@
     <title>Bubble Popper</title>
     <link rel="stylesheet" href="../css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  function radioget(getValue){
-    var awit = getValue;
-    console.log(awit);
-     $.ajax({
-                    type: "POST",
-                    url: 'upload.php',
-                    data: { awit : awit},
-                    success: function(result)
-                    {
-                        
-                    }
-                });
-    
-  }
 
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>//jQuery Plugin
+<?php 
+if(!empty($_GET['choices'.$count])){ 
+  $selected = $_GET['choices'.$count];
+}else{ 
+  $selected = 'A';
+}
+?>
 
 </head>
 <body>
@@ -43,7 +34,7 @@
           <div class="modal-content" >
             <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
-       
+       <form method="POST" action="">
    
         <div class="choice">
           <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" onchange="radioget($(this).val())">
@@ -61,13 +52,19 @@
           <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D" onchange="radioget($(this).val())">
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
         </div>
-
+    </form>
+    <input type="text" class="r-text"><?php echo $selected;?></input>
           <div class="choice-button">
           <button type="button" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
-
+<script>
+    $('input[type=radio]').click(function(e) {//jQuery works on clicking radio box
+        var value = $(this).val(); //Get the clicked checkbox value
+        $('.r-text').html(value);
+    });
+</script>
 <div id="instructionModal" class="modal3" style="display: none;">
   <div class="modal-contentw">
     <span class="close">
