@@ -42,7 +42,7 @@
         </div>
     </form>
           <div class="choice-button">
-          <button id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
+          <button type ="submit"id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
