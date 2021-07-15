@@ -13,6 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Popper</title>
     <link rel="stylesheet" href="../css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>//jQuery Plugin
+<?php 
+if(!empty($_GET['choices'.$count])){ 
+  $selected = $_GET['choices'.$count];
+}else{ 
+  $selected = 'A';
+}
+?>
+
 </head>
 <body>
  <?php
@@ -23,31 +34,54 @@
           <div class="modal-content" >
             <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
-        <form method="POST">
+       <form method="POST" action="">
+   
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" >
-          <label for="answer1"><?php echo $row['A'];?></label>
+          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" onchange="radioget($(this).val())">
+          <label for="answer1<?php echo $count;?>">A. <?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B">
-          <label for="answer2"><?php echo $row['B'];?></label>
+          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B" onchange="radioget($(this).val())">
+          <label for="answer2<?php echo $count;?>">B. <?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C" >
-          <label for="answer3"><?php echo $row['C'];?></label>
+          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C" onchange="radioget($(this).val())">
+          <label for="answer3<?php echo $count;?>">C. <?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
-          <label for="answer4"><?php echo $row['D'];?></label>
+          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D" onchange="radioget($(this).val())">
+          <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
         </div>
     </form>
+    <input type="text" class="r-text"><?php echo $selected;?></input>
           <div class="choice-button">
-          <button type ="submit"id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
+          <button type="button" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
-
-
+<script>
+    $('input[type=radio]').click(function(e) {//jQuery works on clicking radio box
+        var value = $(this).val(); //Get the clicked checkbox value
+        $('.r-text').html(value);
+    });
+</script>
+<div id="instructionModal" class="modal3" style="display: none;">
+  <div class="modal-contentw">
+    <span class="close">
+      <ul >
+        <li>The players will have five (5) life points every game.</li>
+        <li>The players should pop the bubbles orderly to move to the next level.</li>
+        <li>Every wrong pop of bubbles, the life points will decrease by one (1). </li>
+        <li>The players must have at least one (1) life points to finish all levels.</li>
+        <li>The players should answer correctly to gain points.</li>
+        <li>Questions and answers are in multiple choice format. The players need to choose only one (1) answer.</li>
+        <li>The timer is set for only seven(7) seconds in every level to show the numbers inside the bubble.</li>
+        <li>For every level completed, the player will gain 10 points.</li>
+        <li>The total scores will show after the player completes the game or if all life points are consumed.</li>
+      </ul>  
+      </div>
+  </div>
+</div>
  <!------------------------------------------->
 <!-- POP UP -->
 
@@ -116,10 +150,6 @@
       </div>
   </div>
 </div> -->
-<?php
-$count++;
-    }
-?>
 
 <div id="gameOverModal" class="modal4" >
   <div class="modal-content">
@@ -131,6 +161,10 @@ $count++;
   </div>
 </div> 
 
+<?php
+$count++;
+    }
+?>
 
     <canvas id="canvas1"></canvas>
     <script type="text/javascript">var qcount = "<?= $qcount?>"</script>

@@ -5,13 +5,13 @@
     $pic = "../img/Boy.png";
     $_SESSION['pic'] = $pic;
     $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
-    echo '<script type="text/javascript">' .'window.location = "Mechanics.html"' . '</script>';
+    echo '<script type="text/javascript">' .'window.location = "carousel.html"' . '</script>';
   }
   elseif(isset($_POST['girl'])){
     $pic = "../img/Girl.png";
     $_SESSION['pic'] = $pic;
     $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
-    echo '<script type="text/javascript">' .'window.location = "Mechanics.html"' . '</script>';
+    echo '<script type="text/javascript">' .'window.location = "carousel.html"' . '</script>';
   }
 
 ?>

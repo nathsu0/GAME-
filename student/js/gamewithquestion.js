@@ -56,6 +56,11 @@ var questionModal10 = document.getElementById("questionModal10");
 
 var btnSubmit10 = document.getElementById("submitButton10");
 
+//feedback modals
+// var correctFeedback = document.getElementById("popup-correct");
+
+// var wrongFeedback = document.getElementById("wrong");
+
 // Get the summary of game over modal
 var gameOverModal = document.getElementById("gameOverModal");
 var restartButton = document.getElementById("restartButton");
@@ -124,7 +129,18 @@ let questionStatus8 = true;
 let questionStatus9 = true;
 let questionStatus10 = true;
 
+//php variable
 var totalCountOfQuestions = qcount;
+var feedbackStatus1 = false;
+var feedbackStatus2 = false;
+var feedbackStatus3 = false;
+var feedbackStatus4 = false;
+var feedbackStatus5 = false;
+var feedbackStatus6 = false;
+var feedbackStatus7 = false;
+var feedbackStatus8 = false;
+var feedbackStatus9 = false;
+var feedbackStatus10 = false;
 
 // let resetStatus = false;
 
@@ -230,97 +246,121 @@ function multipleChoiceQuestion(){
         btnSubmit1.onclick= function() {
                 questionStatus1 = true;
                 console.log(questionStatus1);
-                questionModal1.style.display = "none";
+
 
             if(totalCountOfQuestions != 1){
-                //reset Staggering frame
+                if(feedbackStatus1 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal1.style.display = "none";}, 800);
+                           
+                   
+                }else if(feedbackStatus1 == false){
+                    wrongChoice();
+                    //alert("Answer is Incorrect! ");
+		        setTimeout(function() {alert("Answer is Incorrect!");
+                	questionModal1.style.display = "none";}, 800);
+                       
+                }  //reset Staggering frame
                 staggerFrames = 10;
 
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
+
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
 
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+
                 bubbleRespawn();
 
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
+
             }else if(totalCountOfQuestions == 1){
-                gameOver();
+                if(feedbackStatus1 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal1.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus1 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal1.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
                 
-          
+                        
         }
     
    
@@ -330,86 +370,96 @@ function multipleChoiceQuestion(){
         btnSubmit2.onclick= function() {
                 questionStatus2 = true;
                 console.log(questionStatus2);
-                questionModal2.style.display = "none";
                 
             if(totalCountOfQuestions != 2){
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
-                timerStatus = false;
-                timeString = "Time left :"
-                timer = 7;
-                interval = 1000;
+                if(feedbackStatus2 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal2.style.display = "none";}, 800);
+                   
+                }else if(feedbackStatus2 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal2.style.display = "none";}, 800);
+                }
                 
-                // randomNumLevel = Math.floor(Math.random() * 3)+1;
-                randomNumLevel++;
-                
-                bubbleRespawn();
+            //reset Staggering frame
+            staggerFrames = 10;
+
+            //reset bubble 1 variables
+            bubble1.frameX =0;
+            bubble1.frameY = 0;
+            bubble1.gameFrame = 0;
+            bubble1.bubbleStatus = false;
+            bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+            bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+
+            //reset bubble 2 variables
+            bubble2.frameX =0;
+            bubble2.frameY = 0;
+            bubble2.gameFrame = 0;
+            bubble2.bubbleStatus = false;
+            bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+            bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+            //reset bubble 3 variables
+            bubble3.frameX =0;
+            bubble3.frameY = 0;
+            bubble3.gameFrame = 0;
+            bubble3.bubbleStatus = false;
+            bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+            bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
+            //reset bubble 4 variables
+            bubble4.frameX =0;
+            bubble4.frameY = 0;
+            bubble4.gameFrame = 0;
+            bubble4.bubbleStatus = false;
+            bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+            bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+            //reset bubble 4 variables
+            bubble5.frameX =0;
+            bubble5.frameY = 0;
+            bubble5.gameFrame = 0;
+            bubble5.bubbleStatus = false;
+            bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+            bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
+            //reset bubble 6 variables
+            bubble6.frameX =0;
+            bubble6.frameY = 0;
+            bubble6.gameFrame = 0;
+            bubble6.bubbleStatus = false;
+            bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+            bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+            //reset bubble 7 variables
+            bubble7.frameX =0;
+            bubble7.frameY = 0;
+            bubble7.gameFrame = 0;
+            bubble7.bubbleStatus = false;
+            bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+            bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+
+            //reset bubble 8 variables
+            bubble8.frameX =0;
+            bubble8.frameY = 0;
+            bubble8.gameFrame = 0;
+            bubble8.bubbleStatus = false;
+            bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+            bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+
+
+            timerStatus = false;
+            timeString = "Time left :"
+            timer = 8;
+            interval = 1000;
+
+            // randomNumLevel = Math.floor(Math.random() * 3)+1;
+            randomNumLevel++;
+
+            bubbleRespawn();
 
                 if(lifes.lives < 5){
                     reduceLifePoints();
@@ -417,11 +467,18 @@ function multipleChoiceQuestion(){
                     lifePoints();
                 }
             }else if(totalCountOfQuestions == 2){
-                gameOver();
+                if(feedbackStatus2 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal2.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus2 == false){
+                   wrongChoice();
+                   setTimeout(function() {alert("Answer is Incorrect!");
+                       questionModal2.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
-
-                
-          
         }
 
         if(questionStatus3 == false){
@@ -430,95 +487,112 @@ function multipleChoiceQuestion(){
         btnSubmit3.onclick= function() {
                 questionStatus3 = true;
                 console.log(questionStatus3);
-                questionModal3.style.display = "none";
             
-            if(totalCountOfQuestions != 3){    
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+            if(totalCountOfQuestions != 3){  
+                if(feedbackStatus3 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal3.style.display = "none";}, 800);
+                }else if(feedbackStatus3 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal3.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 3){
-                gameOver();
+                if(feedbackStatus3 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal3.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus3 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal3.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
           
         }
@@ -529,97 +603,113 @@ function multipleChoiceQuestion(){
         btnSubmit4.onclick= function() {
                 questionStatus4 = true;
                 console.log(questionStatus4);
-                questionModal4.style.display = "none";
 
             if(totalCountOfQuestions != 4){
-                
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+                if(feedbackStatus4 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal4.style.display = "none";}, 800);
+                }else if(feedbackStatus4 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal4.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 4){
-                gameOver();
+                if(feedbackStatus4 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal4.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus4 == false){
+                   wrongChoice();
+                   setTimeout(function() {alert("Answer is Incorrect!");
+                       questionModal4.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
-          
         }
 
         if(questionStatus5 == false){
@@ -627,95 +717,112 @@ function multipleChoiceQuestion(){
         }
         btnSubmit5.onclick= function() {
                 questionStatus5 = true;
-                questionModal5.style.display = "none";
 
             if(totalCountOfQuestions != 5){
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+                if(feedbackStatus5 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal5.style.display = "none";}, 800);
+                }else if(feedbackStatus5 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal5.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 5){
-                gameOver();
+                if(feedbackStatus5 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal5.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus5 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal5.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
 
         }
@@ -725,95 +832,112 @@ function multipleChoiceQuestion(){
         }
         btnSubmit6.onclick= function() {
                 questionStatus6 = true;
-                questionModal6.style.display = "none";
 
             if(totalCountOfQuestions != 6){
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+                if(feedbackStatus6 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal6.style.display = "none";}, 800);
+                }else if(feedbackStatus6 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal6.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 6){
-                gameOver();
+                if(feedbackStatus6 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal6.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus6 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal6.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
         }
 
@@ -822,95 +946,112 @@ function multipleChoiceQuestion(){
         }
         btnSubmit7.onclick= function() {
                 questionStatus7 = true;
-                questionModal7.style.display = "none";
 
             if(totalCountOfQuestions != 7){
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+                if(feedbackStatus7 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal7.style.display = "none";}, 800);
+                }else if(feedbackStatus7 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Imcorrect!");
+                        questionModal7.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 7){
-                gameOver();
+                if(feedbackStatus7 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal7.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus7 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Imcorrect!");
+                        questionModal7.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
         }
 
@@ -919,95 +1060,112 @@ function multipleChoiceQuestion(){
         }
         btnSubmit8.onclick= function() {
                 questionStatus8 = true;
-                questionModal8.style.display = "none";
 
             if(totalCountOfQuestions != 8){
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-        
-
+                if(feedbackStatus8 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal8.style.display = "none";}, 800);
+                }else if(feedbackStatus8 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal8.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
+    
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+    
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+    
+    
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+    
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+    
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+    
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 8){
-                gameOver();
+                if(feedbackStatus8 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal8.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus8 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal8.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
         }
 
@@ -1016,95 +1174,112 @@ function multipleChoiceQuestion(){
         }
         btnSubmit9.onclick= function() {
                 questionStatus9 = true;
-                questionModal9.style.display = "none";
 
             if(totalCountOfQuestions != 9){
-
-                 //reset Staggering frame
-                 staggerFrames = 10;
-
-                 //reset bubble 1 variables
-                 bubble1.frameX =0;
-                 bubble1.frameY = 0;
-                 bubble1.gameFrame = 0;
-                 bubble1.bubbleStatus = false;
-                 bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
-                 bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
-                 
-                 //reset bubble 2 variables
-                 bubble2.frameX =0;
-                 bubble2.frameY = 0;
-                 bubble2.gameFrame = 0;
-                 bubble2.bubbleStatus = false;
-                 bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 3 variables
-                 bubble3.frameX =0;
-                 bubble3.frameY = 0;
-                 bubble3.gameFrame = 0;
-                 bubble3.bubbleStatus = false;
-                 bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
-                 bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 4 variables
-                 bubble4.frameX =0;
-                 bubble4.frameY = 0;
-                 bubble4.gameFrame = 0;
-                 bubble4.bubbleStatus = false;
-                 bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 4 variables
-                 bubble5.frameX =0;
-                 bubble5.frameY = 0;
-                 bubble5.gameFrame = 0;
-                 bubble5.bubbleStatus = false;
-                 bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
-                 bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
-         
-                 //reset bubble 6 variables
-                 bubble6.frameX =0;
-                 bubble6.frameY = 0;
-                 bubble6.gameFrame = 0;
-                 bubble6.bubbleStatus = false;
-                 bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
-                 bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 7 variables
-                 bubble7.frameX =0;
-                 bubble7.frameY = 0;
-                 bubble7.gameFrame = 0;
-                 bubble7.bubbleStatus = false;
-                 bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
-                 bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
-         
-                 //reset bubble 8 variables
-                 bubble8.frameX =0;
-                 bubble8.frameY = 0;
-                 bubble8.gameFrame = 0;
-                 bubble8.bubbleStatus = false;
-                 bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
-                 bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+                if(feedbackStatus9 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal9.style.display = "none";}, 800);
+                }else if(feedbackStatus9 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal9.style.display = "none";}, 800);
+                }
+                //reset Staggering frame
+                staggerFrames = 10;
         
-
+                //reset bubble 1 variables
+                bubble1.frameX =0;
+                bubble1.frameY = 0;
+                bubble1.gameFrame = 0;
+                bubble1.bubbleStatus = false;
+                bubble1.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1));
+                bubble1.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.65))+(CANVAS_HEIGHT * 0.15);
+        
+                //reset bubble 2 variables
+                bubble2.frameX =0;
+                bubble2.frameY = 0;
+                bubble2.gameFrame = 0;
+                bubble2.bubbleStatus = false;
+                bubble2.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble2.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+        
+                //reset bubble 3 variables
+                bubble3.frameX =0;
+                bubble3.frameY = 0;
+                bubble3.gameFrame = 0;
+                bubble3.bubbleStatus = false;
+                bubble3.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.2));
+                bubble3.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+        
+                //reset bubble 4 variables
+                bubble4.frameX =0;
+                bubble4.frameY = 0;
+                bubble4.gameFrame = 0;
+                bubble4.bubbleStatus = false;
+                bubble4.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble4.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+        
+                //reset bubble 4 variables
+                bubble5.frameX =0;
+                bubble5.frameY = 0;
+                bubble5.gameFrame = 0;
+                bubble5.bubbleStatus = false;
+                bubble5.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.15)+(CANVAS_WIDTH * 0.38));
+                bubble5.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+        
+                //reset bubble 6 variables
+                bubble6.frameX =0;
+                bubble6.frameY = 0;
+                bubble6.gameFrame = 0;
+                bubble6.bubbleStatus = false;
+                bubble6.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.6));
+                bubble6.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+        
+                //reset bubble 7 variables
+                bubble7.frameX =0;
+                bubble7.frameY = 0;
+                bubble7.gameFrame = 0;
+                bubble7.bubbleStatus = false;
+                bubble7.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.1)+(CANVAS_WIDTH * 0.78));
+                bubble7.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.3))+(CANVAS_HEIGHT * 0.15);
+        
+                //reset bubble 8 variables
+                bubble8.frameX =0;
+                bubble8.frameY = 0;
+                bubble8.gameFrame = 0;
+                bubble8.bubbleStatus = false;
+                bubble8.randomPositionX = Math.floor(Math.random() * (CANVAS_WIDTH * 0.25)+(CANVAS_WIDTH * 0.6));
+                bubble8.randomPositionY = Math.floor(Math.random() * (CANVAS_HEIGHT * 0.1))+(CANVAS_HEIGHT * 0.6);
+        
+        
                 timerStatus = false;
                 timeString = "Time left :"
-                timer = 7;
+                timer = 8;
                 interval = 1000;
-                
+        
                 // randomNumLevel = Math.floor(Math.random() * 3)+1;
                 randomNumLevel++;
-                
+        
                 bubbleRespawn();
-
-                if(lifes.lives < 5){
-                    reduceLifePoints();
-                }else if(lifes.lives == 5){
-                    lifePoints();
-                }
+        
+                    if(lifes.lives < 5){
+                        reduceLifePoints();
+                    }else if(lifes.lives == 5){
+                        lifePoints();
+                    }
             }else if(totalCountOfQuestions == 9){
-                gameOver();
+                if(feedbackStatus9 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal9.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus9 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal9.style.display = "none";}, 800);
+                    gameOver();
+                }
             }
         }
 
@@ -1113,9 +1288,18 @@ function multipleChoiceQuestion(){
         }
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
-                questionModal10.style.display = "none";
                 
-                gameOver();
+                if(feedbackStatus10 == true){
+                    rightChoice();
+                    setTimeout(function() {alert("Answer is Correct!");
+                        questionModal10.style.display = "none";}, 800);
+                    gameOver();
+                }else if(feedbackStatus10 == false){
+                    wrongChoice();
+                    setTimeout(function() {alert("Answer is Incorrect!");
+                        questionModal10.style.display = "none";}, 800);
+                    gameOver();
+                }
         }
 }
 
@@ -1162,6 +1346,14 @@ function wrongPopMusic(){
 function allBubblesPopMusic(){
     var backgroundMusic = new Audio("../audio/Success.mp3"); 
 	backgroundMusic.currentTime = 1;
+    backgroundMusic.play();
+}
+function rightChoice(){
+    var backgroundMusic = new Audio("../audio/RightAnswer.mp3"); 
+    backgroundMusic.play();
+}
+function wrongChoice(){
+    var backgroundMusic = new Audio("../audio/WrongAnswer.mp3"); 
     backgroundMusic.play();
 }
 
@@ -1283,12 +1475,12 @@ if(startGameStatus == false){
 
     restartButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "gamewithqa.html";
+        location.href = "gamewithqa.php";
     }
 
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "Code.html";
+        location.href = "Code.php";
     }
 
 }
@@ -1391,7 +1583,7 @@ let bubble8 = {
 //Bubble 1st idle Animation
 function bubbleIdle1(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
     //Clearing canvas
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
     ctx.font = "4vw Verdana";
@@ -1400,6 +1592,7 @@ function bubbleIdle1(){
         spriteWidth,spriteHeight,bubble1.randomPositionX,bubble1.randomPositionY,imageWidth,imageHeight);
         //Bubble number
     ctx.fillText(bubble1.bubbleNum,bubble1.randomPositionX+textCenterPositionX, bubble1.randomPositionY+textCenterPositionY);
+    console.log("asd  "+textCenterPositionY)
 
          if(bubble1.gameFrame % staggerFrames == 0){
             if(bubble1.frameX < 1) {
@@ -1437,7 +1630,7 @@ function bubbleIdle1(){
 function bubbleIdle2(){ 
     
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1483,7 +1676,7 @@ function bubbleIdle2(){
 //Bubble 3rd idle Animation
 function bubbleIdle3(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1528,7 +1721,7 @@ function bubbleIdle3(){
 //Bubble 4th idle Animation
 function bubbleIdle4(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1573,7 +1766,7 @@ function bubbleIdle4(){
 //Bubble 5th idle Animation
 function bubbleIdle5(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1618,7 +1811,7 @@ function bubbleIdle5(){
 //Bubble 6th idle Animation
 function bubbleIdle6(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1663,7 +1856,7 @@ function bubbleIdle6(){
 //Bubble 7th idle Animation
 function bubbleIdle7(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -1708,7 +1901,7 @@ function bubbleIdle7(){
 //Bubble 8th idle Animation
 function bubbleIdle8(){
     var textCenterPositionX = CANVAS_WIDTH * 0.045;
-    var textCenterPositionY = CANVAS_HEIGHT * 0.15;
+    var textCenterPositionY = imageHeight * 0.65;
 
     //Font Size and Style
     ctx.font = "4vw Verdana";
@@ -3989,7 +4182,7 @@ function clickCanvas(xmouse, ymouse){
         //exit button
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "Code.html";
+            location.href = "Code.php";
             console.log(xmouse , ymouse);
         }
         //instruction button
@@ -4016,7 +4209,7 @@ function clickCanvas(xmouse, ymouse){
     }else if (timerStatus == false){
         if(exit <= buttonDiameter){
             // window.open("main.html");
-            location.href = "Code.html";
+            location.href = "Code.php";
             console.log(xmouse , ymouse);
         }
 
@@ -4263,19 +4456,18 @@ startGame();
 bgMusic();
 // bubbleRespawn();
 
-// POP UP JS//
+// // POP UP JS//
 
-$(document).ready(function() {
-    $(function(){
+// $(document).ready(function() {
+//     $(function(){
       
-      $('#popup1').css("visibility", "visible"); 
-       $('#popup1').css("opacity", 1); 
+//       $('#popup1').css("visibility", "visible"); 
+//        $('#popup1').css("opacity", 1); 
       
-       });
+//        });
   
-  $( ".close" ).click(function() {
+//   $( ".close" ).click(function() {
     
-       $('#popup1').css("visibility", "hidden"); 
-       $('#popup1').css("opacity", 0);
-    });
-});
+//        $('#popup1').css("visibility", "hidden"); 
+//        $('#popup1').css("opacity", 0);
+//     });
