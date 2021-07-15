@@ -66,7 +66,7 @@ var gameOverModal = document.getElementById("gameOverModal");
 var restartButton = document.getElementById("restartButton");
 var exitButton = document.getElementById("exitButton");
 
-
+var N = 0;
 
 //setting canvas size
 const CANVAS_WIDTH = canvas.width = document.documentElement.clientWidth * 0.8;
@@ -132,7 +132,26 @@ let questionStatus10 = true;
 //php variable
 var totalCountOfQuestions = qcount;
 
-
+var N1 ="";
+var N2 ="";
+var N3 ="";
+var N4 ="";
+var N5 ="";
+var N6 ="";
+var N7 ="";
+var N8 ="";
+var N9 ="";
+var N10 ="";
+var a1 ="";
+var a2 ="";
+var a3 ="";
+var a4 ="";
+var a5 ="";
+var a6 ="";
+var a7 ="";
+var a8 ="";
+var a9 ="";
+var a10 ="";
 
 // let resetStatus = false;
 
@@ -244,12 +263,18 @@ function multipleChoiceQuestion(){
             if(radioValue== rans){
                 var feedbackStatus1 = true;
                 score = score+10;
+                N1 = 1;
+                sessionStorage.setItem("N1", "1");
+                a1=radioValue;
+                sessionStorage.setItem("a1", a1);
             }else {
+               N1=0;
+               sessionStorage.setItem("N1", "0");
+               a1=radioValue;
+               sessionStorage.setItem("a1", a1);
                 var feedbackStatus1 = false;
             }
       
-                
-
             if(totalCountOfQuestions != 1){
                 if(feedbackStatus1 == true){
                     rightChoice();
@@ -365,7 +390,6 @@ function multipleChoiceQuestion(){
                         
         }
     
-   
         if(questionStatus2 == false){
             questionModal2.style.display = "block";
         }
@@ -378,7 +402,15 @@ function multipleChoiceQuestion(){
             if(radioValue2== rans2){
                 var feedbackStatus2 =true;
                 score = score+10;
+                N2 = 1;
+                sessionStorage.setItem("N2", '1');
+                a2=radioValue2;
+                sessionStorage.setItem("a2", a2);
             }else {
+                N2 = 0;
+                sessionStorage.setItem("N2", '0');
+                a2=radioValue2;
+                sessionStorage.setItem("a2", a2);
                 var feedbackStatus2 = false;
             }
                 
@@ -503,7 +535,16 @@ function multipleChoiceQuestion(){
                 if(radioValue3== rans3){
                     var feedbackStatus3 = true;
                     score = score+10;
-                }else {
+                    a3=radioValue3;
+                    N3 = 1;
+                sessionStorage.setItem("N3", '1');
+                a3=radioValue3;
+                sessionStorage.setItem("a3", a3);
+                }else { 
+                    N3 = 0;
+                    sessionStorage.setItem("N3", '0');
+                    a3=radioValue3;
+                    sessionStorage.setItem("a3", a3);
                     var feedbackStatus3 = false;
                 }
             if(totalCountOfQuestions != 3){  
@@ -626,7 +667,15 @@ function multipleChoiceQuestion(){
                 if(radioValue4== rans4){
                     var feedbackStatus4 = true;
                     score = score+10;
+                N4 = 1;
+                sessionStorage.setItem("N4", '1');
+                a4=radioValue4;
+                sessionStorage.setItem("a4", a4);
                 }else {
+                N4 = 0;
+                sessionStorage.setItem("N4", '0');
+                a4=radioValue4;
+                sessionStorage.setItem("a4", a4);
                     var feedbackStatus4 = false;
                 }
             if(totalCountOfQuestions != 4){
@@ -747,9 +796,15 @@ function multipleChoiceQuestion(){
             if(radioValue5== rans5){
                 var feedbackStatus5= true;
                 score = score+10;
+                N5 = 1;
+                a5=radioValue5;
             }else {
+               N5=0;
+               a5=radioValue5;
                 var feedbackStatus5 = false;
             }
+                sessionStorage.setItem("N5", N5);
+                sessionStorage.setItem("a5", a5);
 
             if(totalCountOfQuestions != 5){
                 if(feedbackStatus5 == true){
@@ -870,9 +925,15 @@ function multipleChoiceQuestion(){
                 if(radioValue6== rans6){
                     var feedbackStatus6 = true;
                     score = score+10;
+                N6 = 1;
+                a6=radioValue6;
                 }else {
+                    N6=0;
+                    a6=radioValue6;
                     var feedbackStatus6 = false;
                 }
+                sessionStorage.setItem("N6", N6);
+                sessionStorage.setItem("a6", a6);
             if(totalCountOfQuestions != 6){
                 if(feedbackStatus6 == true){
                     rightChoice();
@@ -991,9 +1052,15 @@ function multipleChoiceQuestion(){
                 if(radioValue7== rans7){
                     var feedbackStatus7 = true;
                     score = score+10;
+                N7 = 1;
+                a7=radioValue7;
                 }else {
+                    a7=radioValue7;
+                    N7=0;
                     var feedbackStatus7 = false;
                 }
+                sessionStorage.setItem("N7", N7);
+                sessionStorage.setItem("a7", a7);
             if(totalCountOfQuestions != 7){
                 if(feedbackStatus7 == true){
                     rightChoice();
@@ -1112,9 +1179,15 @@ function multipleChoiceQuestion(){
             if(radioValue8== rans8){
                 var feedbackStatus8 =true;
                 score = score+10;
+                N8 = 1;
+                a8=radioValue8;
             }else {
+                a8=radioValue8;
+               N8=0;
                 var feedbackStatus8 = false;
             }
+            sessionStorage.setItem("N8", N8);
+            sessionStorage.setItem("a8", a8);
             if(totalCountOfQuestions != 8){
                 if(feedbackStatus8 == true){
                     rightChoice();
@@ -1233,9 +1306,15 @@ function multipleChoiceQuestion(){
                 if(radioValue9== rans9){
                     var feedbackStatus9 = true;
                     score = score+10;
+                    a9=radioValue9;
+                N9 = 1;
                 }else {
+                    N9=0;
+                    a9=radioValue9;
                     var feedbackStatus9 = false;
                 }
+                sessionStorage.setItem("N9", N9);
+                sessionStorage.setItem("a9", a9);
             if(totalCountOfQuestions != 9){
                 if(feedbackStatus9 == true){
                     rightChoice();
@@ -1354,9 +1433,15 @@ function multipleChoiceQuestion(){
             if(radioValue0== rans0){
                 var feedbackStatus10 = true;
                 score = score+10;
+                N10= 1;
+                a10=radioValue10;
             }else {
+                a10=radioValue10;
+               N10=0;
                 var feedbackStatus10 = false;
             }
+            sessionStorage.setItem("N10", N10);
+            sessionStorage.setItem("a10", a10);
                 if(feedbackStatus10 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
@@ -1551,7 +1636,7 @@ if(startGameStatus == false){
 
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "Code.php";
+        location.href = "QA.php";
     }
 
 }

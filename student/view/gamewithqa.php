@@ -4,7 +4,9 @@
   $qcount=  mysqli_num_rows($result);
   $count =1;
   
+$player=$_SESSION['player'];
 $_SESSION['count']=$count;
+$_SESSION['qcount']=$qcount;
 ?>
 
 <!-- <!DOCTYPE html> -->
@@ -153,16 +155,38 @@ $_SESSION['count']=$count;
 <?php
 $rans = $row['Answer'];
 $_SESSION['answer'.$count]=$rans;
+$totalscore = "<script>document.write(tscore)</script>"; 
+//$_SESSION['score']= $totalscore;
+//$_SESSION['N1'] = "<script>document.write(N1)</script>"; 
+//$_SESSION['N2'] = "<script>document.write(N2)</script>"; 
+//$_SESSION['N3'] = "<script>document.write(N3)</script>"; 
+//$_SESSION['N4'] = "<script>document.write(N4)</script>"; 
+//$_SESSION['N5'] = "<script>document.write(N5)</script>"; 
+//$_SESSION['N6'] = "<script>document.write(N6)</script>"; 
+//$_SESSION['N7'] = "<script>document.write(N7)</script>"; 
+//$_SESSION['N8'] = "<script>document.write(N8)</script>"; 
+//$_SESSION['N9'] = "<script>document.write(N9)</script>"; 
+//$_SESSION['N10'] = "<script>document.write(N10)</script>"; 
+//$_SESSION['a1'] = "<script>document.write(a1)</script>"; 
+//$_SESSION['a2'] = "<script>document.write(a2)</script>"; 
+//$_SESSION['a3'] = "<script>document.write(a3)</script>"; 
+//$_SESSION['a4'] = "<script>document.write(a4)</script>"; 
+//$_SESSION['a5'] = "<script>document.write(a5)</script>"; 
+//$_SESSION['a6'] = "<script>document.write(a6)</script>"; 
+//$_SESSION['a7'] = "<script>document.write(a7)</script>"; 
+//$_SESSION['a8'] = "<script>document.write(a8)</script>"; 
+//$_SESSION['a9'] = "<script>document.write(a9)</script>"; 
+//$_SESSION['a10'] = "<script>document.write(a10)</script>"; 
 $count++;
     }
+
 ?>
 
     <canvas id="canvas1"></canvas>
     <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
 <?php
-$totalscore = "<script>document.write(tscore)</script>"; 
-$_SESSION['score']= $totalscore;
+
 ?>
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
