@@ -3,6 +3,8 @@
   $result = mysqli_query($con1,"SELECT * from quiz ORDER BY RAND()");
   $qcount=  mysqli_num_rows($result);
   $count =1;
+  
+$_SESSION['count']=$count;
 ?>
 
 <!-- <!DOCTYPE html> -->
@@ -20,6 +22,7 @@
 <body>
  <?php
     while ($row = mysqli_fetch_assoc($result)){
+      $_SESSION['answer'.$count]=$row['Answer'];
  ?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
@@ -41,33 +44,14 @@
           <div class="choice">
           <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
+          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php echo $row['Answer'];?>"></input>
         </div>
-    
           <div class="choice-button">
-          <button type="button" onclick="displayRadioValue()" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
+          <button id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
- <!---   <script>
-		function displayRadioValue() {
-			var ele = document.getElementsByName("choices<?php// echo $count;?>");
-			var awit ="";
-			for(i = 0; i < ele.length; i++) {
-				if(ele[i].checked)
-				  awit = ele[i].value;
-			}
-      $.ajax({
-			    type: "POST",
-			    url: "upload.php",
-			    data: { awit:awit},		    
-			    dataType: "json",
-			    success: function(result){
-			        
-			    }
-			});
-            
-		}
-	</script>-->
+
 
 <div id="instructionModal" class="modal3" style="display: none;">
   <div class="modal-contentw">
@@ -167,13 +151,14 @@
 </div> 
 
 <?php
-$_SESSION['count']=$count;
+$rans = $row['Answer'];
+$_SESSION['answer'.$count]=$rans;
 $count++;
     }
 ?>
 
     <canvas id="canvas1"></canvas>
-    <script type="text/javascript">var qcount = "<?= $qcount?>" </script>
+    <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
