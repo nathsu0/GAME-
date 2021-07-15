@@ -140,7 +140,7 @@ var feedbackStatus6 = false;
 var feedbackStatus7 = false;
 var feedbackStatus8 = false;
 var feedbackStatus9 = false;
-var feedbackStatus10 = false;
+var feedbackStatus10 =false;
 
 // let resetStatus = false;
 
