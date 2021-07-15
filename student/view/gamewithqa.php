@@ -18,7 +18,17 @@
 <script>
   function radioget(getValue){
     var awit = getValue;
-    console.log(awit);
+    //console.log(awit);
+     $.ajax({
+                    type: "POST",
+                    url: 'upload.php',
+                    data: { awit : awit},
+                    success: function(result)
+                    {
+                        
+                    }
+                });
+    
   }
 
 </script>
