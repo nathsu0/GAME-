@@ -5,9 +5,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-        overflow: hidden;
+    width: 1600px;
+    height: 900px;
+    overflow: hidden;
 }
 
 body{
@@ -18,6 +18,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    overflow: hidden;
   }
 p{
     display: inline-flex;
@@ -37,7 +38,7 @@ textarea {
   height: 20%;
   font-family:'Segoe UI';
   font-weight: bold;
-  font-size: 4.3vw;
+  font-size: 30px;
   color: rgb(0, 0, 0);
   /* text-indent: 25%; */
   background-color: rgba(0,0,0,0); /* Black w/ opacity */
@@ -46,7 +47,7 @@ textarea {
 }
 
 /* The Modal (background) */
-.modal1 {
+.start-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -60,11 +61,48 @@ textarea {
     background-image: url(../img/Board\ with\ title.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden;
   }
+  /* Username input */
+  .start-modal input {
+    border: 2px solid #5b82c2;
+    position: fixed;
+    display: block;
+    background: transparent;
+    padding: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 300px;
+    margin-left: 150px;
+  }
+  
+/*
+  CAROUSEL
 
-  .modal {
+  */
+  .modal1 {
     display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 20px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    background-image: url(../img/Board\ with\ title.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+/*
+
+---------------------
+
+*/
+  .modal {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 20px; /* Location of the box */
@@ -77,7 +115,6 @@ textarea {
     background-image: url(../img/Board\ with\ questions.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden;
   }
 
   .modal2 {
@@ -94,7 +131,6 @@ textarea {
     background-image: url(../img/Board\ with\ evaluation.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden;
   }
 
   .modal3 {
@@ -111,11 +147,9 @@ textarea {
     background-image: url(../img/Board\ with\ mechanics.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden;
   }
  
   .modal4 {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; 
     padding-top: 20px; 
@@ -128,18 +162,8 @@ textarea {
     background-image: url(../img/Board\ with\ gameover.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden;
   }
- 
-  /* Modal Content */
-  .modal-content {
-    text-align: center;
-    margin: auto;
-    width: 45%;
-  }
-  /***************************************************************/
-  /* Modal Content */
-  /*QUESTION MODAL */
+ /***************************************************************/
   /* Modal Content */
   /*QUESTION MODAL */
   .modal-content {
@@ -153,17 +177,16 @@ textarea {
   .choice{
     display: block;
     position: relative;
-    margin-left: 30vw;
+    margin-left: 400px;
+    margin-right: 300px;
     margin-top: 3px;
     font-size: 17px;
     width: 50%;
   }
   .choice input{
-      height: 20px;
       width: 20px;
   }
   .choice label{
-      font-size: 20px;
       vertical-align: 0.20em;
   }
   .choice-button{
@@ -207,7 +230,7 @@ textarea {
   /* GAME OVER CONTENT */
   .modal-content label{
     display: block;
-    margin-top: 30vh;
+    margin-top: 200px;
     margin-left: 10px;
     margin-bottom: 30px;
   }
@@ -217,6 +240,7 @@ textarea {
   .gameover-button{
     height: 100px;
     width: 100px;
+    border: 3px solid black;
     display: flex;
     text-align: center;
     margin: auto;
@@ -258,7 +282,7 @@ textarea {
   }
   /* The Close Button */
   .close {
-    color: black;
+    color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -275,118 +299,21 @@ textarea {
     margin-left: auto;
     margin-right: auto;
     font-family: arial, sans-serif;
-    /* font-size: 5%; */
-    font-size: 1.2vw;
+    font-size: 25px;
     border-collapse: collapse;
     width: 110%;
-    height: 100%;
   }
   
   td, th {
     border: 3px solid #000000;
     text-align: center;
-    /* padding: 8px; */
+    padding: 8px;
   }
-  /*
-  ul{
-    margin-top: 30vh;
-  }
-  li{
-    font-size: 15px;
-  }
-
-  */
+  
   /* tr:nth-child(even) {
     background-color: #90EE90;
   } */
-/*********************************************************************/
-/* POP UP STYLE */
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup-correct{
-  margin: 70px auto;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
- 
-   width: 60%; 
-  position: relative;
-  transition: all 5s ease-in-out;
-  border: 2px solid green;
-}
-
-.popup-correct h2 {
-  margin-top: 0;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup-correct .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup-correct .close:hover {
-  color: red;
-}
-.popup-correct .content {
-  max-height: 30%;
-  overflow: auto;
-}
-/**********************************************/
-.popup-wrong{
-  margin: 70px auto;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
- 
-   width: 60%; 
-  position: relative;
-  transition: all 5s ease-in-out;
-  border: 2px solid red;
-}
-
-.popup-wrong h2 {
-  margin-top: 0;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup-wrong .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup-wrong .close:hover {
-  color: red;
-}
-.popup-wrong .content {
-  max-height: 30%;
-  overflow: auto;
-}
- 
- 
   /* MEDIA GAME OVER*/
   @media (min-width: 800px) and (max-width: 1199.98px) {
      
@@ -466,7 +393,7 @@ textarea {
       font-size: 28px;
     }
     .choice{
-      margin-left: 28vw;
+      margin-left: 300px;
     }
    }
    @media (min-width: 840px) and (max-width: 939px) {
@@ -474,7 +401,7 @@ textarea {
       font-size: 26px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 270px;
     }
    }
    @media (min-width: 740px) and (max-width: 839px) {
@@ -482,7 +409,7 @@ textarea {
       font-size: 24px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 240px;
     }
    }
    @media (min-width: 640px) and (max-width: 739px) {
@@ -490,7 +417,7 @@ textarea {
       font-size: 22px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 210px;
     }
    }
    @media (min-width: 540px) and (max-width: 639px) {
@@ -498,7 +425,7 @@ textarea {
       font-size: 20px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 180px;
     }
    }
    @media (min-width: 440px) and (max-width: 539px) {
@@ -506,7 +433,7 @@ textarea {
       font-size: 18px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 150px;
     }
    }
    @media (min-width: 360px) and (max-width: 439px) {
@@ -514,6 +441,91 @@ textarea {
       font-size: 18px;
     }
     .choice{
-      margin-left: 27vw;
+      margin-left: 120px;
     }
    }
+
+   /****************************************************************/
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-correct{
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+ 
+   width: 60%; 
+  position: relative;
+  transition: all 5s ease-in-out;
+  border: 2px solid green;
+}
+
+.popup-correct h2 {
+  margin-top: 0;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup-correct .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup-correct .close:hover {
+  color: green;
+}
+.popup-correct .content {
+  max-height: 30%;
+  overflow: auto;
+}
+/**********************************************/
+.popup-wrong{
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+ 
+   width: 60%; 
+  position: relative;
+  transition: all 5s ease-in-out;
+  border: 2px solid red;
+}
+
+.popup-wrong h2 {
+  margin-top: 0;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup-wrong .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup-wrong .close:hover {
+  color: red;
+}
+.popup-wrong .content {
+  max-height: 30%;
+  overflow: auto;
+}

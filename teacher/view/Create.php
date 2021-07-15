@@ -49,6 +49,20 @@ include '../includes/navbar.php';
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
+                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Social Science">Social Science</option>
+                    <option value="Computer">Computer</option>
+                    <option value="Christian Living">Christian Living</option>
+                    <option value="Technology and Livelihood Education">Technology and Livelihood Education</option>
+                    <option value="Physical Education">Physical Education</option>
+                    <option value="Music">Musics</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Physical Education and Health">Physical Education and Health</option>
+                    <option value="Robotics">Robotics</option>
+                    <option value="MAPEH">MAPEH</option>
+                    <option value="General">General</option>
+
+
                   </select>
                  </div>
               </div>
@@ -143,7 +157,7 @@ include '../includes/navbar.php';
             $sql = "CREATE TABLE SCORES (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
               NAMES MEDIUMTEXT, N1 VARCHAR(6), N2 VARCHAR(6), N3 VARCHAR(6), N4 VARCHAR(6), N5 VARCHAR(6),
-              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6),
+              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6), Avatar VARCHAR(255),
               SCORE MEDIUMTEXT 
               )";
             if ($mysqli->query($sql) === TRUE) {

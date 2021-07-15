@@ -54,6 +54,18 @@ include '../includes/navbar.php';
             <option value="Science"<?php if($row6['SUBJ'] == "Science"){echo "selected";}?>>Science</option>
             <option value="English"<?php if($row6['SUBJ'] == "English"){echo "selected";}?>>English</option>
             <option value="Filipino"<?php if($row6['SUBJ'] == "Filipino"){echo "selected";}?>>Filipino</option>
+            <option value="Araling Panlipunan"<?php if($row6['SUBJ'] == "Araling Panlipunan"){echo "selected";}?>>Araling Panlipunan</option>
+            <option value="Social Science"<?php if($row6['SUBJ'] == "Social Science"){echo "selected";}?>>Social Science</option>
+            <option value="Computer"<?php if($row6['SUBJ'] == "Computer"){echo "selected";}?>>Computer</option>
+            <option value="Christian Living"<?php if($row6['SUBJ'] == "Christian Living"){echo "selected";}?>>Christian Living</option>
+            <option value="Technology and Livelihood Education"<?php if($row6['SUBJ'] == "Technology and Livelihood Education"){echo "selected";}?>>Technology and Livelihood Education</option>
+            <option value="Physical Education" <?php if($row6['SUBJ'] == "Physical Education"){echo "selected";}?>>Physical Education</option>
+            <option value="Music"<?php if($row6['SUBJ'] == "Music"){echo "selected";}?>>Musics</option>
+            <option value="Arts"<?php if($row6['SUBJ'] == "Arts"){echo "selected";}?>>Arts</option>
+            <option value="Physical Education and Health"<?php if($row6['SUBJ'] == "Physical Education and Health"){echo "selected";}?>>Physical Education and Health</option>
+            <option value="Robotics"<?php if($row6['SUBJ'] == "Robotics"){echo "selected";}?>>Robotics</option>
+            <option value="MAPEH"<?php if($row6['SUBJ'] == "MAPEH"){echo "selected";}?>>MAPEH</option>
+            <option value="General"<?php if($row6['SUBJ'] == "General"){echo "selected";}?>>General</option>
           </select>
                  </div>
               </div>

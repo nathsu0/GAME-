@@ -1,9 +1,17 @@
 <?php
-  session_start();
-  if(isset($_POST['submit'])){
-  $_SESSION['player']=$_POST['player'];
-  echo '<script type="text/javascript">'.'window.location= "carousel.php"'.'</script>';
-  }
+    include 'codeconn.php';
+    $alert="";
+    if(isset($_POST['submit'])){
+      $player=$_POST['player'];
+      if($player == NULL){
+        $alert = 'Enter your name';
+      } else{
+        $_SESSION['player']=$player;
+        $result= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
+        echo '<script type="text/javascript">' .'window.location = "Avatar.php"' . '</script>';
+      }
+    }
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,11 +36,11 @@
             <!----CONTENT START------->
           <div class="blocks container mt-5 p-0">
             <div class="username form-floating ">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="player">
-                <label for="floatingInput">Username</label>
-              </div>
+                <input type="text" name="player" class="form-control" id="floatingInput" placeholder="Username"></input>
+                <label for="floatingInput">Username</label></div>
+                <div class="usn d-flex justify-content-center"><label><?php echo $alert;?></label></div>
             <div class="container d-flex justify-content-center">
-              <button type="submit" name='submit' class="button btn-bubble1">Enter</button>
+              <button type="submit" name="submit" class="button btn-bubble1">Enter</button>
             </div>
           </div> 
         </div>

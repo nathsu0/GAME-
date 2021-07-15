@@ -57,7 +57,7 @@ include '../includes/navbar.php';
             </div>
             <div class="row ">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"><?php if ($row['Answer']=="C"){echo "checked";}?>
+                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['Answer']=="C"){echo "checked";}?>>
                 C.)
                 <input class="answer"type="text"id="ans3" name="C"  value="<?php echo $row['C'];?>">
               </input>

@@ -1,3 +1,9 @@
+<?php
+  include "codeconn.php";
+  $result = mysqli_query($con1,"SELECT * from quiz ORDER BY RAND()");
+  $qcount=  mysqli_num_rows($result);
+  $count =1;
+?>
 
 <!-- <!DOCTYPE html> -->
 <html lang="en">
@@ -7,79 +13,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Popper</title>
     <link rel="stylesheet" href="../css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  function radioget(getValue){
+    var awit = getValue;
+    console.log(awit);
+     $.ajax({
+                    type: "POST",
+                    url: 'upload.php',
+                    data: { awit : awit},
+                    success: function(result)
+                    {
+                        
+                    }
+                });
+    
+  }
+
+</script>
+
 </head>
 <body>
- 
-<!-- Start Modal -->
-<!-- <div id="startModal" class="modal1" style="display: none;">
-  <div class="modal-content"><br><br><br><br><br><br>
-    <div><br><br><br><br><br><br><br><br><br><br><br>
-        <textarea id = "name" >Enter Name</textarea><br><br><br>
-        <button id="playButton" >Start Game</button>
-      </div>
-  </div>
-</div> -->
-<div id="instructionModal" class="modal3" style="display: none;">
-  <div class="modal-content">
-    <span class="close" style="font-size:60px; margin-right: -20%; margin-top: 13%;">&times;</span><br><br><br><br>
-    <div><br><br><br><br><br><br><br><br><br><br>
-      <ul >
-        <li>The players will have five (5) life points every game.</li>
-        <li>The players should pop the bubbles orderly to move to the next level.</li>
-        <li>Every wrong pop of bubbles, the life points will decrease by one (1). </li>
-        <li>The players must have at least one (1) life points to finish all levels.</li>
-        <li>The players should answer correctly to gain points.</li>
-        <li>Questions and answers are in multiple choice format. The players need to choose only one (1) answer.</li>
-        <li>The timer is set for only seven(7) seconds in every level to show the numbers inside the bubble.</li>
-        <li>For every level completed, the player will gain 10 points.</li>
-        <li>The total scores will show after the player completes the game or if all life points are consumed.</li>
-      </ul>  
-      </div>
-  </div>
-</div>
+ <?php
+    while ($row = mysqli_fetch_assoc($result)){
+ ?>
 
-  <!--Game Story Modal -->
-  <!-- <div id="gameStoryModal" class="modal1" style="display: none;"> 
-    <div class="modal-content">
-      <span class="close">&times;</span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h2>Carousel Example</h2>
-        
-        <br><br><br><br>
-        <button id = "skip" > Skip</button>
-    </div>
-  </div> -->
-<?php
-   while($row=mysqli_fetch_assoc($res)){
-    ?>
-?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question1" disabled> <?php echo $count;?>. <?php echo $row['Question'];?></textarea>
+            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
+       
+   
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count;?>" value="A" >
-          <label for="answer1"><?php echo $row['A'];?></label>
+          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" onchange="radioget($(this).val())">
+          <label for="answer1<?php echo $count;?>">A. <?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count;?>" value="B" >
-          <label for="answer2"><?php echo $row['B'];?></label>
+          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B" onchange="radioget($(this).val())">
+          <label for="answer2<?php echo $count;?>">B. <?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count;?>" value="C"  >
-          <label for="answer3"><?php echo $row['C'];?></label>
+          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C" onchange="radioget($(this).val())">
+          <label for="answer3<?php echo $count;?>">C. <?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count;?>" value="D" >
-          <label for="answer4"><?php echo $row['D'];?></label>
+          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D" onchange="radioget($(this).val())">
+          <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
         </div>
+
           <div class="choice-button">
-          <button id="submitButton<?php echo $count;?>" class="button btn-bubble1">Submit</button>
+          <button type="button" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
-<?php
-$count++;
-}?>
+
+
+ <!------------------------------------------->
+<!-- POP UP -->
+
+<div id="popup1" class="overlay">
+  <div class="popup-correct" id="popup-correct">
+      <h2 style='color:green;'>Correct &#10004;</h2>
+      <a class="close" href="#">×</a>
+      <div class="content">
+        <strong>Your response : </strong><labe>Penoy</label><br></br>
+        <strong>Answer : </strong>Penoy
+      </div>
+    </div>
+    <div class="popup-wrong "id="popup-wrong">
+      <h2 style='color:red;'>Wrong &#10006;</h2>
+      <a class="close" href="#">×</a>
+      <div class="content">
+        <strong>Your response : </strong><labe>balot</label><br></br>
+        <strong>Answer : </strong>Penoy
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------------------->
+
+
 <!-- <div id="evaluationModal" class="modal2" style="display: none;">
 
   <div class="modal-content">
@@ -124,7 +138,6 @@ $count++;
   </div>
 </div> -->
 
-
 <div id="gameOverModal" class="modal4" >
   <div class="modal-content">
         <label id = "name">Total Scores : 50</label>
@@ -135,12 +148,19 @@ $count++;
   </div>
 </div> 
 
+<?php
+$count++;
+    }
+?>
 
     <canvas id="canvas1"></canvas>
+    <script type="text/javascript">var qcount = "<?= $qcount?>"</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
  
-    
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+    rel="stylesheet" type="text/css" />
    
 </body>
 </html>
- 
