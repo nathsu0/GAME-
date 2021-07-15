@@ -21,24 +21,26 @@
 
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question'];?></textarea>
+            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
+        <form method="POST">
         <div class="choice">
-          <input type="radio" id="answer1" name="choices<?php echo $count;?>" value="A" >
+          <input type="radio" id="answer1" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" >
           <label for="answer1"><?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2" name="choices<?php echo $count;?>" value="B">
+          <input type="radio" id="answer2" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B">
           <label for="answer2"><?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3" name="choices<?php echo $count;?>" value="C" >
+          <input type="radio" id="answer3" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C" >
           <label for="answer3"><?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4" name="choices<?php echo $count;?>" value="D">
+          <input type="radio" id="answer4" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
           <label for="answer4"><?php echo $row['D'];?></label>
         </div>
+    </form>
           <div class="choice-button">
           <button id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
