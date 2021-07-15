@@ -1626,6 +1626,7 @@ startGameStatus = false;
 if(startGameStatus == false){
     gameOverModal.style.display ="block";
     var tscore = score;
+    sessionStorage.setItem("Totalscore", tscore);
     document.getElementById("name").innerHTML = "Total Score: " + tscore;
 
     restartButton.onclick= function() {
