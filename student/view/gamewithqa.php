@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>//jQuery Plugin
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <?php 
 if(!empty($_GET['choices'.$count])){ 
   $selected = $_GET['choices'.$count];
