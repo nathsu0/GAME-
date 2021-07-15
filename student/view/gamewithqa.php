@@ -53,7 +53,7 @@ if(!empty($_GET['choices'.$count])){
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
         </div>
     </form>
-    <input type="text" class="r-text"><?php echo $selected;?></input>
+    <<span class="r-text"><?php echo $selected;?></span>
           <div class="choice-button">
           <button type="button" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
