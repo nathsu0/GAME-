@@ -1,8 +1,26 @@
+<?php
+  include 'codeconn.php';
+  $player=$_SESSION['player'];
+  $result=mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
+  if(isset($_POST['boy'])){
+    $pic = "../img/Boy.png";
+    $_SESSION['pic'] = $pic;
+    $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
+    echo '<script type="text/javascript">' .'window.location = "Mechanics.html"' . '</script>';
+  }
+  if(isset($_POST['girl'])){
+    $pic = "../img/Girl.png";
+    $_SESSION['pic'] = $pic;
+    $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
+    echo '<script type="text/javascript">' .'window.location = "Mechanics.html"' . '</script>';
+  }
+
+?>
 
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Game Code</title>
+    <title>Pick your Avatar</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,9 +45,9 @@
                 <img src="../img/Boy.png">
                 <div class="card-body">
                   <h5>Sparkle</h5>
-                  <p>Choose your Character </p>
+                  <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
-                    <a href="carousel.html" type="button" class="button btn-bubble1">Next</a>
+                    <button name="boy" type="submit" class="button btn-bubble1">Next</button>
                   </div>
                 </div>
               </div>
@@ -39,9 +57,9 @@
                 <img src="../img/Girl.png">
                 <div class="card-body">
                   <h5>Sparkel</h5>
-                  <p>Choose your Character</p>
+                  <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">
-                    <a href="carousel.html" type="button" class="button btn-bubble1">Next</a>
+                  <button name="girl" type="submit" class="button btn-bubble1">Next</button>
                   </div>
                 </div>
               </div>

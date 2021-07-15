@@ -1,4 +1,17 @@
-
+<?php
+    session_start();
+    $alert="";
+    if(isset($_POST['submit'])){
+      $player=$_POST['player'];
+      if($player == NULL){
+        $alert = 'Enter your name';
+      } else{
+        $_SESSION['player']=$player;
+        echo '<script type="text/javascript">' .'window.location = "Avatar.php"' . '</script>';
+      }
+    }
+    
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,17 +29,17 @@
   <body>
     <div class="Main container">
       <!-----CONTENT IN CONTAINER-->
-    <form method='post' action = 'EditCode.php'>
+    <form method='post' action = ''>
         <!-----CONTENT IN CONTAINER-->
         <div class="Box container">
             <!----CONTENT START------->
           <div class="blocks container mt-5 p-0">
             <div class="username form-floating ">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
-                <label for="floatingInput">Username</label>
-              </div>
+                <input type="text" name="player" class="form-control" id="floatingInput" placeholder="Username"></input>
+                <label for="floatingInput">Username</label></div>
+                <div class="usn d-flex justify-content-center"><label><?php echo $alert;?></label></div>
             <div class="container d-flex justify-content-center">
-              <a href="Avatar.html" type="button" class="button btn-bubble1">Enter</a>
+              <button type="submit" name="submit" class="button btn-bubble1">Enter</button>
             </div>
           </div> 
         </div>
