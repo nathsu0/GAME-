@@ -62,7 +62,7 @@
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
-            <a href="Code.html" type="button" class="button btn-bubble1">Exit</a>
+            <a href="Code.php" type="button" class="button btn-bubble1">Exit</a>
         </div> 
         </div>
       </div>
