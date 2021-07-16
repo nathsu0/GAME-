@@ -32,17 +32,35 @@
           ;?>
            <!----NAVIGATION BAR END-->
           <!----CONTENT START------->
+          
           <div class="blocks container">
           <h1>Leaderboards</h1>
+          <style style="text/css">
+            .hoverTable{
+            width:100%; 
+            border-collapse:collapse; 
+          }
+          .hoverTable td{ 
+            padding:7px;  
+            border-top: 2px solid #999;
+            border-bottom: 2px solid #999;
+          }
+          /* Define the hover highlight color for the table row */
+            .hoverTable tr:hover {
+                  background-color: rgba(0, 255, 0, 0.2);;
+            }
+        </style>
+
           <table class="table">
             <thead>
+              <tr class="no-hover">
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Name</th>
                 <th scope="col">Score</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="hoverTable">
             <?php
             $result = mysqli_query($conn,"SELECT * from scores ORDER BY 'id'");
             while($row=mysqli_fetch_assoc($result)){
