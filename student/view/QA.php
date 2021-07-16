@@ -48,7 +48,7 @@
         <?php 
         $result = mysqli_query($con1,"UPDATE score SET SCORE='$tscore' WHERE NAMES='$player'");
 
-        while($count<=$qcount && $_GET['A'.$count]!= null){
+        while($count<=$qcount && $_GET['A'.$count]!= 'undefined'){
            
             if($_GET['NA'.$count]=='1'){
         ?>
