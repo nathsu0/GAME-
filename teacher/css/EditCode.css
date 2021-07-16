@@ -11,9 +11,8 @@ h1{
     height: 500px;
 }
 .blocks img{
-    position: absolute;
-    left: 30%;
-    top: 15%;
+    position: fixed;
+    left:50vw;
     height: 375px;
     width: 700px;
 }

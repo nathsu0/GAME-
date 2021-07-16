@@ -8,9 +8,9 @@ h1{
     color: whitesmoke;
 }
 .blocks img{
-    position: absolute;
-    left: 30%;
-    top: 15%;
+    position: fixed;
+    left:30vw;
+    top: 20vh;
     height: 375px;
     width: 700px;
 }

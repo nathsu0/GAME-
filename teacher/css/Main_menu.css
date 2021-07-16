@@ -12,9 +12,8 @@
     padding: 20px 30px;
 }
 .blocks img{
-    position: absolute;
-    left: 50%;
-    top: 20%;
+    position: fixed;
+    left:50vw;
     height: 400px;
     width: 500px;
 }
