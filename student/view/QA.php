@@ -13,7 +13,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <script >
+  <script >//vaaaar
+
       var a1 = sessionStorage.getItem("a1");
       var a2 = sessionStorage.getItem("a2");
       var a3 = sessionStorage.getItem("a3");
