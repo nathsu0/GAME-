@@ -1,0 +1,4 @@
+teacher accounts
+teacher1 pw: teacher1
+teacher2 pw: teacher2
+teacher3 pw: teacher3

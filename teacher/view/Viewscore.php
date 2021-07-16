@@ -33,7 +33,6 @@ include '../includes/navbar.php'
           <div class="blocks container">
           <h2>Quiz Codes</h2>
           <form method = 'post' action = ''>
-          <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
@@ -42,7 +41,7 @@ include '../includes/navbar.php'
                 <th scope="col">Subject</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="hoverTable">
             <?php
             $result = mysqli_query($ques,"SELECT * from tanong WHERE USER='$user'");
             while($row=mysqli_fetch_assoc($result)){

@@ -157,7 +157,7 @@ include '../includes/navbar.php';
             $sql = "CREATE TABLE SCORES (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
               NAMES MEDIUMTEXT, Avatar VARCHAR(255),
-              SCORE MEDIUMTEXT 
+              SCORE int(6) 
               )";
             if ($mysqli->query($sql) === TRUE) {
               echo '<script type="text/javascript">' .
