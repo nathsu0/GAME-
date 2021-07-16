@@ -4,8 +4,11 @@
   $player=$_SESSION['player'];
 
   $count=1;
-
-  $tscore = $_GET['total']
+  $tscore = $_GET['total'];
+  $int =(int)$tscore;
+  
+  $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int' WHERE NAMES='$player'");
+  
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,7 +49,6 @@
             <div class="content">
         <h4>SCORE: <?=$tscore?></h4>
         <?php 
-        $result = mysqli_query($con1,"UPDATE score SET SCORE='$tscore' WHERE NAMES='$player'");
 
         while($count<=$qcount && $_GET['A'.$count]!= 'undefined'){
            
@@ -96,7 +98,7 @@
 ?>
 
             <div class="container d-flex justify-content-end">
-              <a href="Score.html" type="button" class="button btn-bubble1">Close</a>
+              <a href="Score.php" type="button" class="button btn-bubble1">Close</a>
           </div> 
         </div>
       </div>  

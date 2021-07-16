@@ -1,7 +1,13 @@
+<?php
+  include 'codeconn.php';
+  $count=1;
+  $result = mysqli_query($con1,'SELECT * from scores ORDER BY SCORE');
+ 
+?>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Leaderboards</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,33 +37,28 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col"></th>
                 <th scope="col">Name</th>
                 <th scope="col">Score</th>
               </tr>
             </thead>
             <tbody>
+              <?php while ( $row=mysqli_fetch_assoc($result)) {
+                
+              ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark
-                  <img src="../img/Girl.png">
+                
+                <th scope="row"><?=$count?></th>
+                <td>  <img src="<?=$row['Avatar'];?>">
+                  <?= $row['NAMES'];?>
                 </td>
-                <td>5</td>
+                <td><?=$row['SCORE']?></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Kevin
-                  <img src="../img/Boy.png">
-                </td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob
-                  <img src="../img/Boy.png">
-                </td>
-                <td>4</td>
-              </tr>
+              <?php
+              $count++;
+              }
+              ?>
+           
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
