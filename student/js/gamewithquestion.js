@@ -1413,31 +1413,55 @@ function multipleChoiceQuestion(){
         }
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
-                var rans10 = document.getElementById("rans10").value;
+
+          
+            var rans10 = document.getElementById("rans10").value;
             var radioValue10 = $("input[name='choices10']:checked").val();
             if(radioValue10== rans10){
+
                 var feedbackStatus10 = true;
                 score = score+10;
-                N10= 1;
-                a10=radioValue10;
+                a10 = radioValue10;
+                N10 = 1;
             }else {
-                a10=radioValue10;
+                a10 = radioValue10;
                 var feedbackStatus10 = false;
             }
             sessionStorage.setItem("N10", N10);
             sessionStorage.setItem("a10", a10);
-                if(feedbackStatus10 == true){
-                    rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal10.style.display = "none";}, 50);
+        if(totalCountOfQuestions != 10){
+            if(feedbackStatus10 == true){
+                rightChoice();
+                setTimeout(function() {alert("Answer is Correct!");
+                    questionModal10.style.display = "none";}, 50);
                     gameOver();
-                }else if(feedbackStatus10 == false){
-                    wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal10.style.display = "none";}, 50);
+            }else if(feedbackStatus10 == false){
+                wrongChoice();
+                setTimeout(function() {alert("Answer is Incorrect!");
+                    questionModal10.style.display = "none";}, 50);
                     gameOver();
+            }
+
+    
+                if(lifes.lives < 5){
+                    reduceLifePoints();
+                }else if(lifes.lives == 5){
+                    lifePoints();
                 }
+        }else if(totalCountOfQuestions == 10){
+            if(feedbackStatus10 == true){
+                rightChoice();
+                setTimeout(function() {alert("Answer is Correct!");
+                    questionModal10.style.display = "none";}, 50);
+                gameOver();
+            }else if(feedbackStatus10 == false){
+                wrongChoice();
+                setTimeout(function() {alert("Answer is Incorrect!");
+                    questionModal10.style.display = "none";}, 50);
+                gameOver();
+            }
         }
+    }
 }
 
 
