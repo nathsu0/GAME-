@@ -142,16 +142,16 @@ var N7 =0;
 var N8 =0;
 var N9 =0;
 var N10 =0;
-var a1 ="";
-var a2 ="";
-var a3 ="";
-var a4 ="";
-var a5 ="";
-var a6 ="";
-var a7 ="";
-var a8 ="";
-var a9 ="";
-var a10 ="";
+var a1 ;
+var a2 ;
+var a3 ;
+var a4 ;
+var a5 ;
+var a6 ;
+var a7 ;
+var a8 ;
+var a9 ;
+var a10 ;
 
 // let resetStatus = false;
 
@@ -1624,7 +1624,8 @@ if(startGameStatus == false){
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
         location.href = "QA.php?NA1="+N1+"&NA2="+N2+"&NA3="+N3+"&NA4="+N4+"&NA5="+N5+"&NA6="+N6+
-        "&NA7="+N7+"&NA8="+N8+"&NA9="+N9+"&NA10="+N10+"&total="+tscore;
+        "&NA7="+N7+"&NA8="+N8+"&NA9="+N9+"&NA10="+N10+"&total="+tscore+"&A1="+a1+"&A2="+a2+"&A3="+a3
+        +"&A4="+a4+"&A5="+a5+"&A6="+a6+"&A7="+a7+"&A8="+a8+"&A9="+a9+"&A10="+a10;
     }
 
 }
