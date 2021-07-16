@@ -477,7 +477,6 @@ overflow: auto;
   margin-left: 10px;
 } */
 
-/* } */
  /* MEDIA QUESTION*/
 
  @media (min-width: 940px) and (max-width: 1199.98px) {
@@ -494,6 +493,7 @@ overflow: auto;
   }
   .choice{
     margin-left: 27vw;
+    font-size: 15px;
   }
  }
  @media (min-width: 740px) and (max-width: 839px) {
@@ -503,6 +503,9 @@ overflow: auto;
   .choice{
     margin-left: 27vw;
   }
+  .choice label{
+    font-size: 14px;
+  }
  }
  @media (min-width: 640px) and (max-width: 739px) {
   .modal-content textarea {
@@ -510,6 +513,10 @@ overflow: auto;
   }
   .choice{
     margin-left: 27vw;
+    
+  }
+  .choice label{
+    font-size: 13px;
   }
  }
  @media (min-width: 540px) and (max-width: 639px) {
@@ -518,6 +525,10 @@ overflow: auto;
   }
   .choice{
     margin-left: 27vw;
+   
+  }
+  .choice label{
+    font-size: 12px;
   }
  }
  @media (min-width: 440px) and (max-width: 539px) {
@@ -526,6 +537,10 @@ overflow: auto;
   }
   .choice{
     margin-left: 27vw;
+    
+  }
+  .choice label{
+    font-size: 11px;
   }
  }
  @media (min-width: 360px) and (max-width: 439px) {
@@ -534,8 +549,11 @@ overflow: auto;
   }
   .choice{
     margin-left: 27vw;
+   
+  }
+  .choice label{
+    font-size: 11px;
   }
  }
-
 
 
