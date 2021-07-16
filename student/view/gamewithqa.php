@@ -49,7 +49,7 @@ $_SESSION['qcount']=$qcount;
           <input type="hidden" id="rans<?php echo $count;?>" value ="<?php echo $row['Answer'];?>"></input>
         </div>
           <div class="choice-button">
-          <button id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
+          <button id="submitButton<?php echo $count;?>" class="button btn-bubble1">Submit</button>
         </div>
       </div>
 </div>
