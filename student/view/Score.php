@@ -1,7 +1,7 @@
 <?php
   include 'codeconn.php';
   $count=1;
-  $result = mysqli_query($con1,'SELECT * from scores ORDER BY SCORE');
+  $result = mysqli_query($con1,'SELECT * from scores ORDER BY SCORE desc');
  
 ?>
 <!doctype html>
