@@ -479,81 +479,81 @@ overflow: auto;
 
  /* MEDIA QUESTION*/
 
- @media (min-width: 940px) and (max-width: 1199.98px) {
-  .modal-content textarea {
-    font-size: 28px;
-  }
-  .choice{
-    margin-left: 28vw;
-  }
- }
- @media (min-width: 840px) and (max-width: 939px) {
-  .modal-content textarea {
-    font-size: 26px;
-  }
-  .choice{
-    margin-left: 27vw;
-    font-size: 15px;
-  }
- }
- @media (min-width: 740px) and (max-width: 839px) {
-  .modal-content textarea {
-    font-size: 24px;
-  }
-  .choice{
-    margin-left: 27vw;
-  }
-  .choice label{
-    font-size: 14px;
-  }
- }
- @media (min-width: 640px) and (max-width: 739px) {
-  .modal-content textarea {
-    font-size: 22px;
-  }
-  .choice{
-    margin-left: 27vw;
-    
-  }
-  .choice label{
-    font-size: 13px;
-  }
- }
- @media (min-width: 540px) and (max-width: 639px) {
-  .modal-content textarea {
-    font-size: 20px;
-  }
-  .choice{
-    margin-left: 27vw;
-   
-  }
-  .choice label{
-    font-size: 12px;
-  }
- }
- @media (min-width: 440px) and (max-width: 539px) {
-  .modal-content textarea {
-    font-size: 18px;
-  }
-  .choice{
-    margin-left: 27vw;
-    
-  }
-  .choice label{
-    font-size: 11px;
-  }
- }
- @media (min-width: 360px) and (max-width: 439px) {
-  .modal-content textarea {
-    font-size: 18px;
-  }
-  .choice{
-    margin-left: 27vw;
-   
-  }
-  .choice label{
-    font-size: 11px;
-  }
- }
+   @media (min-width: 940px) and (max-width: 1199.98px) {
+    .modal-content textarea {
+      font-size: 28px;
+    }
+    .choice{
+      margin-left: 28vw;
+    }
+   }
+   @media (min-width: 840px) and (max-width: 939px) {
+    .modal-content textarea {
+      font-size: 26px;
+    }
+    .choice{
+      margin-left: 27vw;
+      font-size: 15px;
+    }
+   }
+   @media (min-width: 740px) and (max-width: 839px) {
+    .modal-content textarea {
+      font-size: 24px;
+    }
+    .choice{
+      margin-left: 27vw;
+    }
+    .choice label{
+      font-size: 14px;
+    }
+   }
+   @media (min-width: 640px) and (max-width: 739px) {
+    .modal-content textarea {
+      font-size: 22px;
+    }
+    .choice{
+      margin-left: 27vw;
+      
+    }
+    .choice label{
+      font-size: 13px;
+    }
+   }
+   @media (min-width: 540px) and (max-width: 639px) {
+    .modal-content textarea {
+      font-size: 20px;
+    }
+    .choice{
+      margin-left: 27vw;
+     
+    }
+    .choice label{
+      font-size: 12px;
+    }
+   }
+   @media (min-width: 440px) and (max-width: 539px) {
+    .modal-content textarea {
+      font-size: 18px;
+    }
+    .choice{
+      margin-left: 27vw;
+      
+    }
+    .choice label{
+      font-size: 11px;
+    }
+   }
+   @media (min-width: 360px) and (max-width: 439px) {
+    .modal-content textarea {
+      font-size: 18px;
+    }
+    .choice{
+      margin-left: 27vw;
+     
+    }
+    .choice label{
+      font-size: 11px;
+    }
+   }
 
 

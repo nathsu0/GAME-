@@ -1413,9 +1413,11 @@ function multipleChoiceQuestion(){
         }
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
-                var rans10 = document.getElementById("rans10").value;
+          
+            var rans10 = document.getElementById("rans10").value;
             var radioValue10 = $("input[name='choices10']:checked").val();
             if(radioValue10== rans10){
+
                 var feedbackStatus10 = true;
                 score = score+10;
                 a10 = radioValue10;
