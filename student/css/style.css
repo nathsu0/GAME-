@@ -43,6 +43,8 @@ color: rgb(0, 0, 0);
 background-color: rgba(0,0,0,0); /* Black w/ opacity */
 border: none;
 resize: none;
+overflow: hidden;
+
 }
 
 /* The Modal (background) */
