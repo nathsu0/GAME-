@@ -2,7 +2,7 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 // const time =  document.getElementById("time");
-
+var score=0;
 var instructionModal = document.getElementById("instructionModal");
 var span = document.getElementsByClassName("close")[0];
 
@@ -66,7 +66,7 @@ var gameOverModal = document.getElementById("gameOverModal");
 var restartButton = document.getElementById("restartButton");
 var exitButton = document.getElementById("exitButton");
 
-
+var N = 0;
 
 //setting canvas size
 const CANVAS_WIDTH = canvas.width = document.documentElement.clientWidth * 0.8;
@@ -131,16 +131,27 @@ let questionStatus10 = true;
 
 //php variable
 var totalCountOfQuestions = qcount;
-var feedbackStatus1 = false;
-var feedbackStatus2 = false;
-var feedbackStatus3 = false;
-var feedbackStatus4 = false;
-var feedbackStatus5 = false;
-var feedbackStatus6 = false;
-var feedbackStatus7 = false;
-var feedbackStatus8 = false;
-var feedbackStatus9 = false;
-var feedbackStatus10 = false;
+
+var N1=0 ;
+var N2 =0;
+var N3 =0;
+var N4 =0;
+var N5 =0;
+var N6 =0;
+var N7 =0;
+var N8 =0;
+var N9 =0;
+var N10 =0;
+var a1 ;
+var a2 ;
+var a3 ;
+var a4 ;
+var a5 ;
+var a6 ;
+var a7 ;
+var a8 ;
+var a9 ;
+var a10 ;
 
 // let resetStatus = false;
 
@@ -247,7 +258,20 @@ function multipleChoiceQuestion(){
                 questionStatus1 = true;
                 console.log(questionStatus1);
 
-
+            var rans = document.getElementById("rans1").value;
+            var radioValue = $("input[name='choices1']:checked").val();
+            if(radioValue== rans){
+                var feedbackStatus1 = true;
+                score = score+10;
+                N1 = 1;
+                a1=radioValue;
+            }else {
+               a1=radioValue;
+                var feedbackStatus1 = false;
+            }
+            sessionStorage.setItem("N1", N1);
+            sessionStorage.setItem("a1", a1);
+      
             if(totalCountOfQuestions != 1){
                 if(feedbackStatus1 == true){
                     rightChoice();
@@ -363,13 +387,26 @@ function multipleChoiceQuestion(){
                         
         }
     
-   
         if(questionStatus2 == false){
             questionModal2.style.display = "block";
         }
         btnSubmit2.onclick= function() {
                 questionStatus2 = true;
                 console.log(questionStatus2);
+
+            var rans2 = document.getElementById("rans2").value;
+            var radioValue2 = $("input[name='choices2']:checked").val();
+            if(radioValue2== rans2){
+                var feedbackStatus2 =true;
+                score = score+10;
+                N2 = 1;
+                a2=radioValue2;
+            }else {
+                a2=radioValue2;
+                var feedbackStatus2 = false;
+            }
+            sessionStorage.setItem("N2", N2);
+            sessionStorage.setItem("a2", a2);
                 
             if(totalCountOfQuestions != 2){
                 if(feedbackStatus2 == true){
@@ -487,7 +524,21 @@ function multipleChoiceQuestion(){
         btnSubmit3.onclick= function() {
                 questionStatus3 = true;
                 console.log(questionStatus3);
-            
+                var rans3 = document.getElementById("rans3").value;
+                var radioValue3 = $("input[name='choices3']:checked").val();
+                if(radioValue3== rans3){
+                    var feedbackStatus3 = true;
+                    score = score+10;
+                    a3=radioValue3;
+                    N3 = 1;
+                    a3=radioValue3;
+                }else { 
+                    a3=radioValue3;
+                    var feedbackStatus3 = false;
+                }
+                sessionStorage.setItem("N3", N3);
+            sessionStorage.setItem("a3", a3);
+
             if(totalCountOfQuestions != 3){  
                 if(feedbackStatus3 == true){
                     rightChoice();
@@ -603,6 +654,19 @@ function multipleChoiceQuestion(){
         btnSubmit4.onclick= function() {
                 questionStatus4 = true;
                 console.log(questionStatus4);
+                var rans4 = document.getElementById("rans4").value;
+                var radioValue4 = $("input[name='choices4']:checked").val();
+                if(radioValue4== rans4){
+                    var feedbackStatus4 = true;
+                    score = score+10;
+                    N4 = 1;
+                    a4=radioValue4;
+                }else {
+                    a4=radioValue4;
+                    var feedbackStatus4 = false;
+                }
+                sessionStorage.setItem("N4", N4);
+                sessionStorage.setItem("a4", a4);
 
             if(totalCountOfQuestions != 4){
                 if(feedbackStatus4 == true){
@@ -717,6 +781,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit5.onclick= function() {
                 questionStatus5 = true;
+                var rans5 = document.getElementById("rans5").value;
+            var radioValue5 = $("input[name='choices5']:checked").val();
+            if(radioValue5== rans5){
+                var feedbackStatus5= true;
+                score = score+10;
+                N5 = 1;
+                a5=radioValue5;
+            }else {
+               a5=radioValue5;
+                var feedbackStatus5 = false;
+            }
+                sessionStorage.setItem("N5", N5);
+                sessionStorage.setItem("a5", a5);
 
             if(totalCountOfQuestions != 5){
                 if(feedbackStatus5 == true){
@@ -832,7 +909,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit6.onclick= function() {
                 questionStatus6 = true;
-
+                var rans6 = document.getElementById("rans6").value;
+                var radioValue6 = $("input[name='choices6']:checked").val();
+                if(radioValue6== rans6){
+                    var feedbackStatus6 = true;
+                    score = score+10;
+                N6 = 1;
+                a6=radioValue6;
+                }else {
+                    a6=radioValue6;
+                    var feedbackStatus6 = false;
+                }
+                sessionStorage.setItem("N6", N6);
+                sessionStorage.setItem("a6", a6);
             if(totalCountOfQuestions != 6){
                 if(feedbackStatus6 == true){
                     rightChoice();
@@ -946,7 +1035,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit7.onclick= function() {
                 questionStatus7 = true;
-
+                var rans7 = document.getElementById("rans7").value;
+                var radioValue7 = $("input[name='choices7']:checked").val();
+                if(radioValue7== rans7){
+                    var feedbackStatus7 = true;
+                    score = score+10;
+                    N7 = 1;
+                    a7=radioValue7;
+                }else {
+                    a7=radioValue7;
+                    var feedbackStatus7 = false;
+                }
+                sessionStorage.setItem("N7", N7);
+                sessionStorage.setItem("a7", a7);
             if(totalCountOfQuestions != 7){
                 if(feedbackStatus7 == true){
                     rightChoice();
@@ -1060,7 +1161,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit8.onclick= function() {
                 questionStatus8 = true;
-
+                var rans8 = document.getElementById("rans8").value;
+            var radioValue8 = $("input[name='choices8']:checked").val();
+            if(radioValue8== rans8){
+                var feedbackStatus8 =true;
+                score = score+10;
+                N8 = 1;
+                a8=radioValue8;
+            }else {
+                a8=radioValue8;
+                var feedbackStatus8 = false;
+            }
+            sessionStorage.setItem("N8", N8);
+            sessionStorage.setItem("a8", a8);
             if(totalCountOfQuestions != 8){
                 if(feedbackStatus8 == true){
                     rightChoice();
@@ -1174,7 +1287,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit9.onclick= function() {
                 questionStatus9 = true;
-
+                var rans9 = document.getElementById("rans9").value;
+                var radioValue9 = $("input[name='choices9']:checked").val();
+                if(radioValue9== rans9){
+                    var feedbackStatus9 = true;
+                    score = score+10;
+                    a9=radioValue9;
+                N9 = 1;
+                }else {
+                    a9=radioValue9;
+                    var feedbackStatus9 = false;
+                }
+                sessionStorage.setItem("N9", N9);
+                sessionStorage.setItem("a9", a9);
             if(totalCountOfQuestions != 9){
                 if(feedbackStatus9 == true){
                     rightChoice();
@@ -1288,7 +1413,19 @@ function multipleChoiceQuestion(){
         }
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
-                
+                var rans0 = document.getElementById("rans10").value;
+            var radioValue0 = $("input[name='choices10']:checked").val();
+            if(radioValue0== rans0){
+                var feedbackStatus10 = true;
+                score = score+10;
+                N10= 1;
+                a10=radioValue10;
+            }else {
+                a10=radioValue10;
+                var feedbackStatus10 = false;
+            }
+            sessionStorage.setItem("N10", N10);
+            sessionStorage.setItem("a10", a10);
                 if(feedbackStatus10 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
@@ -1472,15 +1609,21 @@ startGameStatus = false;
 
 if(startGameStatus == false){
     gameOverModal.style.display ="block";
+    var tscore = score;
+    sessionStorage.setItem("Totalscore", tscore);
+    document.getElementById("name").innerHTML = "Total Score: " + tscore;
 
     restartButton.onclick= function() {
+        
         gameOverModal.style.display ="none";
         location.href = "gamewithqa.php";
     }
 
     exitButton.onclick= function() {
         gameOverModal.style.display ="none";
-        location.href = "Code.php";
+        location.href = "QA.php?NA1="+N1+"&NA2="+N2+"&NA3="+N3+"&NA4="+N4+"&NA5="+N5+"&NA6="+N6+
+        "&NA7="+N7+"&NA8="+N8+"&NA9="+N9+"&NA10="+N10+"&total="+tscore+"&A1="+a1+"&A2="+a2+"&A3="+a3
+        +"&A4="+a4+"&A5="+a5+"&A6="+a6+"&A7="+a7+"&A8="+a8+"&A9="+a9+"&A10="+a10;
     }
 
 }

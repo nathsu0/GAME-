@@ -3,6 +3,10 @@
   $result = mysqli_query($con1,"SELECT * from quiz ORDER BY RAND()");
   $qcount=  mysqli_num_rows($result);
   $count =1;
+  
+$player=$_SESSION['player'];
+$_SESSION['count']=$count;
+$_SESSION['qcount']=$qcount;
 ?>
 
 <!-- <!DOCTYPE html> -->
@@ -13,58 +17,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Popper</title>
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>//jQuery Plugin
-<?php 
-if(!empty($_GET['choices'.$count])){ 
-  $selected = $_GET['choices'.$count];
-}else{ 
-  $selected = 'A';
-}
-?>
+
 
 </head>
 <body>
  <?php
     while ($row = mysqli_fetch_assoc($result)){
+      $_SESSION['answer'.$count]=$row['Answer'];
  ?>
-
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
+            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>.) <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
-       <form method="POST" action="">
    
         <div class="choice">
-          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A" onchange="radioget($(this).val())">
+          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A">
           <label for="answer1<?php echo $count;?>">A. <?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B" onchange="radioget($(this).val())">
+          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B">
           <label for="answer2<?php echo $count;?>">B. <?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C" onchange="radioget($(this).val())">
+          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C">
           <label for="answer3<?php echo $count;?>">C. <?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D" onchange="radioget($(this).val())">
+          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
+          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php echo $row['Answer'];?>"></input>
         </div>
-    </form>
-    <input type="text" class="r-text"><?php echo $selected;?></input>
           <div class="choice-button">
-          <button type="button" id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
+          <button id="submitButton<?php echo $count;?>" class="button btn-bubble<?php echo $count;?>">Submit</button>
         </div>
       </div>
 </div>
-<script>
-    $('input[type=radio]').click(function(e) {//jQuery works on clicking radio box
-        var value = $(this).val(); //Get the clicked checkbox value
-        $('.r-text').html(value);
-    });
-</script>
+
+
 <div id="instructionModal" class="modal3" style="display: none;">
   <div class="modal-contentw">
     <span class="close">
@@ -82,6 +72,7 @@ if(!empty($_GET['choices'.$count])){
       </div>
   </div>
 </div>
+
  <!------------------------------------------->
 <!-- POP UP -->
 
@@ -153,7 +144,7 @@ if(!empty($_GET['choices'.$count])){
 
 <div id="gameOverModal" class="modal4" >
   <div class="modal-content">
-        <label id = "name">Total Scores : 50</label>
+        <label id = "name"></label>
         <div class="gameover-button">
         <button id="restartButton" class="button btn-bubble1">Restart Game</button>
         <button id="exitButton" class="button btn-bubble1">Exit Game</button>
@@ -162,13 +153,20 @@ if(!empty($_GET['choices'.$count])){
 </div> 
 
 <?php
+$rans = $row['Answer'];
+$_SESSION['answer'.$count]=$rans;
+$totalscore = "<script>document.write(tscore)</script>"; 
 $count++;
     }
+
 ?>
 
     <canvas id="canvas1"></canvas>
-    <script type="text/javascript">var qcount = "<?= $qcount?>"</script>
+    <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
+<?php
+
+?>
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>

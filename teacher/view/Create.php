@@ -45,7 +45,7 @@ include '../includes/navbar.php';
                   <label for="subjects">Choose a subject:</label>
                   <select name="subjects" id="sub">
                     <option value="None">None</option default>
-                    <option value="Math">Math</option>
+                    <option value="Math">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
@@ -156,8 +156,7 @@ include '../includes/navbar.php';
             }
             $sql = "CREATE TABLE SCORES (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              NAMES MEDIUMTEXT, N1 VARCHAR(6), N2 VARCHAR(6), N3 VARCHAR(6), N4 VARCHAR(6), N5 VARCHAR(6),
-              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6), Avatar VARCHAR(255),
+              NAMES MEDIUMTEXT, Avatar VARCHAR(255),
               SCORE MEDIUMTEXT 
               )";
             if ($mysqli->query($sql) === TRUE) {
