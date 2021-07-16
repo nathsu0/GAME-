@@ -28,7 +28,8 @@ body, html{
     font-size: 20px;
 }
 .navbar-brand{
-    font-size: 25px;
+    height: 30px;
+    width: 30px;
 }
 a, a:hover, a:focus, a:active {
     text-decoration: none;

@@ -4,7 +4,9 @@
 /*CONTENT
 *
 */
-
+ h2{
+     margin-top: 3vh;
+ }
 .blocks{
     color: whitesmoke;
 }
