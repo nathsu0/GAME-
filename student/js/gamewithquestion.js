@@ -276,14 +276,14 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus1 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal1.style.display = "none";}, 800);
+                        questionModal1.style.display = "none";}, 50);
                            
                    
                 }else if(feedbackStatus1 == false){
                     wrongChoice();
                     //alert("Answer is Incorrect! ");
 		        setTimeout(function() {alert("Answer is Incorrect!");
-                	questionModal1.style.display = "none";}, 800);
+                	questionModal1.style.display = "none";}, 50);
                        
                 }  //reset Staggering frame
                 staggerFrames = 10;
@@ -374,12 +374,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus1 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal1.style.display = "none";}, 800);
+                        questionModal1.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus1 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal1.style.display = "none";}, 800);
+                        questionModal1.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -412,12 +412,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus2 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal2.style.display = "none";}, 800);
+                        questionModal2.style.display = "none";}, 50);
                    
                 }else if(feedbackStatus2 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal2.style.display = "none";}, 800);
+                        questionModal2.style.display = "none";}, 50);
                 }
                 
             //reset Staggering frame
@@ -507,12 +507,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus2 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal2.style.display = "none";}, 800);
+                        questionModal2.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus2 == false){
                    wrongChoice();
                    setTimeout(function() {alert("Answer is Incorrect!");
-                       questionModal2.style.display = "none";}, 800);
+                       questionModal2.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -543,11 +543,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus3 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal3.style.display = "none";}, 800);
+                        questionModal3.style.display = "none";}, 50);
                 }else if(feedbackStatus3 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal3.style.display = "none";}, 800);
+                        questionModal3.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -636,12 +636,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus3 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal3.style.display = "none";}, 800);
+                        questionModal3.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus3 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal3.style.display = "none";}, 800);
+                        questionModal3.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -672,11 +672,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus4 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal4.style.display = "none";}, 800);
+                        questionModal4.style.display = "none";}, 50);
                 }else if(feedbackStatus4 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal4.style.display = "none";}, 800);
+                        questionModal4.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -765,12 +765,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus4 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal4.style.display = "none";}, 800);
+                        questionModal4.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus4 == false){
                    wrongChoice();
                    setTimeout(function() {alert("Answer is Incorrect!");
-                       questionModal4.style.display = "none";}, 800);
+                       questionModal4.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -799,11 +799,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus5 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal5.style.display = "none";}, 800);
+                        questionModal5.style.display = "none";}, 50);
                 }else if(feedbackStatus5 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal5.style.display = "none";}, 800);
+                        questionModal5.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -892,12 +892,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus5 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal5.style.display = "none";}, 800);
+                        questionModal5.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus5 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal5.style.display = "none";}, 800);
+                        questionModal5.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -926,11 +926,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus6 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal6.style.display = "none";}, 800);
+                        questionModal6.style.display = "none";}, 50);
                 }else if(feedbackStatus6 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal6.style.display = "none";}, 800);
+                        questionModal6.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1019,12 +1019,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus6 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal6.style.display = "none";}, 800);
+                        questionModal6.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus6 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal6.style.display = "none";}, 800);
+                        questionModal6.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -1052,11 +1052,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus7 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal7.style.display = "none";}, 800);
+                        questionModal7.style.display = "none";}, 50);
                 }else if(feedbackStatus7 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Imcorrect!");
-                        questionModal7.style.display = "none";}, 800);
+                        questionModal7.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1145,12 +1145,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus7 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal7.style.display = "none";}, 800);
+                        questionModal7.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus7 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Imcorrect!");
-                        questionModal7.style.display = "none";}, 800);
+                        questionModal7.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -1178,11 +1178,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus8 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal8.style.display = "none";}, 800);
+                        questionModal8.style.display = "none";}, 50);
                 }else if(feedbackStatus8 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal8.style.display = "none";}, 800);
+                        questionModal8.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1271,12 +1271,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus8 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal8.style.display = "none";}, 800);
+                        questionModal8.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus8 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal8.style.display = "none";}, 800);
+                        questionModal8.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -1304,11 +1304,11 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus9 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal9.style.display = "none";}, 800);
+                        questionModal9.style.display = "none";}, 50);
                 }else if(feedbackStatus9 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal9.style.display = "none";}, 800);
+                        questionModal9.style.display = "none";}, 50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1397,12 +1397,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus9 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal9.style.display = "none";}, 800);
+                        questionModal9.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus9 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal9.style.display = "none";}, 800);
+                        questionModal9.style.display = "none";}, 50);
                     gameOver();
                 }
             }
@@ -1429,12 +1429,12 @@ function multipleChoiceQuestion(){
                 if(feedbackStatus10 == true){
                     rightChoice();
                     setTimeout(function() {alert("Answer is Correct!");
-                        questionModal10.style.display = "none";}, 800);
+                        questionModal10.style.display = "none";}, 50);
                     gameOver();
                 }else if(feedbackStatus10 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal10.style.display = "none";}, 800);
+                        questionModal10.style.display = "none";}, 50);
                     gameOver();
                 }
         }
@@ -1487,10 +1487,12 @@ function allBubblesPopMusic(){
 }
 function rightChoice(){
     var backgroundMusic = new Audio("../audio/RightAnswer.mp3"); 
+	backgroundMusic.currentTime = 0.8; 
     backgroundMusic.play();
 }
 function wrongChoice(){
-    var backgroundMusic = new Audio("../audio/WrongAnswer.mp3"); 
+    var backgroundMusic = new Audio("../audio/WrongAnswer.mp3");
+	backgroundMusic.currentTime = 1; 
     backgroundMusic.play();
 }
 
