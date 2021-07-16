@@ -33,6 +33,7 @@ include '../includes/navbar.php'
           <div class="blocks container">
           <h2>Quiz Codes</h2>
           <form method = 'post' action = ''>
+          <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
@@ -61,6 +62,7 @@ include '../includes/navbar.php'
             }?>
             </tbody>
           </table>
+          </div>
           </div>
           <div class="container d-flex justify-content-end">
             <a href="Main_menu.php" type="button" class="button me-2">
