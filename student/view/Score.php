@@ -30,9 +30,6 @@
                 <div class="col-md-4">
             <h1>Leaderboards</h1>
         </div>
-        <div class="score col-md-4 ms-auto">
-            <label>Score: 4</label>
-        </div>
              </div>
           <table class="table table-hover">
             <thead>
