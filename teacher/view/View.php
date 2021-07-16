@@ -3,6 +3,7 @@
        $user = $_SESSION['username'];
        $code = $_GET['code'];
        $conn = mysqli_connect('localhost','root','',$code);
+       $count=1;
 
 ?>
 <!doctype html>
@@ -62,17 +63,18 @@
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from scores ORDER BY 'id'");
+            $result = mysqli_query($conn,"SELECT * from scores");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="ID"  class="row-link"><?php  echo $row["id"];?> </a></td>
+                  <td name="ID"  class="row-link"><?php  echo $count;?> </a></td>
                   <td name="name" class="row-link"><?php  echo $row["NAMES"];?></a></td>
                   <td name="score" class="row-link"><?php  echo $row["SCORE"];?> </a></td>
             </a>
               </tr>
               
               <?php 
+              $count++;
             }?>
             </tbody>
           </table>
