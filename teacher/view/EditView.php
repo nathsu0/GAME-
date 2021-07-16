@@ -47,7 +47,7 @@ include '../includes/navbar.php';
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from tanong WHERE USER='$user'");
+            $result = mysqli_query($conn,"SELECT * from tanong WHERE USER='$user' ORDER BY GAMENAME");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
