@@ -28,7 +28,7 @@ $_SESSION['qcount']=$qcount;
  ?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>. <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
+            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>.) <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
         </div>
    
         <div class="choice">

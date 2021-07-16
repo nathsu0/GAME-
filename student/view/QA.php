@@ -55,6 +55,7 @@
             <div class="content">
         <h4>SCORE: <?=$tscore?></h4>
         <?php 
+        $result = mysqli_query($con1,"UPDATE score SET SCORE='$tscore' WHERE NAMES='$player'");
         if(1<=$qcount){
            $q1 = "<script>document.write(a1)</script>";
            $ans1 = $_SESSION['answer'.$count];
