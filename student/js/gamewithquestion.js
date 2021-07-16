@@ -1413,6 +1413,7 @@ function multipleChoiceQuestion(){
         }
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
+
           
             var rans10 = document.getElementById("rans10").value;
             var radioValue10 = $("input[name='choices10']:checked").val();
@@ -1633,10 +1634,11 @@ function gameOver(){
 startGameStatus = false;
 
 if(startGameStatus == false){
+    var item = qcount*10;
     gameOverModal.style.display ="block";
     var tscore = score;
     sessionStorage.setItem("Totalscore", tscore);
-    document.getElementById("name").innerHTML = "Total Score: " + tscore;
+    document.getElementById("name").innerHTML = "Total Score: " + tscore +"/"+ item;
 
     restartButton.onclick= function() {
         
