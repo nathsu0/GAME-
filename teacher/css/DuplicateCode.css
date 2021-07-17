@@ -2,7 +2,7 @@
 *
 */
 /*CONTENT
-*
+
 */
 h1{
     color: whitesmoke;
@@ -10,8 +10,7 @@ h1{
 .blocks img{
     position: fixed;
     left:30vw;
-    top: 20vh;
-    height: 375px;
+    height: 355px;
     width: 700px;
 }
 .code label{
@@ -24,6 +23,7 @@ h1{
     border: 3px solid #5b82c2;
     color: whitesmoke;
     margin-bottom: 60px;
+
 }
 .button{
     width: 140px;
