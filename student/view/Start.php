@@ -3,6 +3,9 @@
     $alert="";
     if(isset($_POST['submit'])){
       $player=$_POST['player'];
+      $code=$_GET['code'];
+      $_SESSION['code']=$code;
+
       $resu=mysqli_query($con1,"SELECT * FROM scores WHERE NAMES='$player'");
       if($player == NULL){
         $alert = 'Enter your name';

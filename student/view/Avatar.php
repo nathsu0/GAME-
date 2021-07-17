@@ -40,7 +40,7 @@
             <div class="row d-flex justify-content-center">
             <div class="col-sm-6">
               <div class="character"><br>
-                <img src="../img/Boy.png">
+                <img src="../img/ABoy.png">
                 <div class="card-body"><br>
                   <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
@@ -51,7 +51,7 @@
             </div>
             <div class="col-sm-6">
               <div class="character"><br>
-                <img src="../img/Girl.png">
+                <img src="../img/AGirl.png">
                 <div class="card-body"><br>
                   <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">
