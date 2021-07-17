@@ -1,4 +1,5 @@
 # GAME
+wamp server
 used conn
 Host: "localhost";
 User: "root";
