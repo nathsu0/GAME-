@@ -3,14 +3,14 @@
   $qcount=$_SESSION['qcount'];
   $player=$_SESSION['player'];
   $pic = $_SESSION['pic'];
-
   $count=1;
   $tscore = $_GET['total'];
   $int =(int)$tscore;
-  
+  $res=mysqli_query($con1,"SELECT * FROM scores WHERE NAMES='$player'");
+  if(mysqli_num_rows($res)==0){
   $resu= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
   $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int', Avatar='$pic' WHERE NAMES='$player'");
-  
+  }
 ?>
 <!doctype html>
 <html lang="en">

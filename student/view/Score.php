@@ -1,6 +1,7 @@
 <?php
   include 'codeconn.php';
   $count=1;
+  $player=$_SESSION['player'];
   $result = mysqli_query($con1,'SELECT * from scores ORDER BY SCORE desc');
  
 ?>
@@ -31,7 +32,7 @@
             <h1>Leaderboards</h1>
         </div>
              </div>
-          <table class="table table-hover">
+          <table class="table table-hover" style="background-color:rgba(255,248,220,.7)">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -41,9 +42,19 @@
             </thead>
             <tbody>
               <?php while ( $row=mysqli_fetch_assoc($result)) {
+
+                if($row['NAMES']=="$player"){
+                  ?>
+                  <tr style="background-color:rgba(100,149,237,0.8)">
+                  <?php
+                }else{
+                  ?>
+                  <tr>
+                  <?php
+                }
                 
               ?>
-              <tr>
+              
                 
                 <th scope="row"><?=$count?></th>
                 <td>  <img src="<?=$row['Avatar'];?>">
