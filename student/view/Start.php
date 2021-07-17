@@ -11,7 +11,6 @@
       }
       else{
         $_SESSION['player']=$player;
-        $result= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
         echo '<script type="text/javascript">' .'window.location = "Avatar.php"' . '</script>';
       }
     }

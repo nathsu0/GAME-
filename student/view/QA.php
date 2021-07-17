@@ -2,12 +2,14 @@
   include "codeconn.php";
   $qcount=$_SESSION['qcount'];
   $player=$_SESSION['player'];
+  $pic = $_SESSION['pic'];
 
   $count=1;
   $tscore = $_GET['total'];
   $int =(int)$tscore;
   
-  $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int' WHERE NAMES='$player'");
+  $resu= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
+  $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int', Avatar='$pic' WHERE NAMES='$player'");
   
 ?>
 <!doctype html>
