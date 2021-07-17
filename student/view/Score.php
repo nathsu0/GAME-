@@ -32,7 +32,7 @@
             <h1>Leaderboards</h1>
         </div>
              </div>
-          <table class="table table-hover" style="background-color:rgba(255,248,220,.7)">
+          <table class="table table-hover" style="background-color:rgba(255,248,220,.85)">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -57,9 +57,8 @@
               
                 
                 <th scope="row"><?=$count?></th>
-                <td>  <img src="<?=$row['Avatar'];?>">
-                  <?= $row['NAMES'];?>
-                </td>
+                <td>  <img src="<?=$row['Avatar'];?>">&nbsp;&nbsp;&nbsp;
+                <?= $row['NAMES'];?></td>
                 <td><?=$row['SCORE']?></td>
               </tr>
               <?php
