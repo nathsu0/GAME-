@@ -45,10 +45,24 @@ include '../includes/navbar.php';
                   <label for="subjects">Choose a subject:</label>
                   <select name="subjects" id="sub">
                     <option value="None">None</option default>
-                    <option value="Math">Math</option>
+                    <option value="Math">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
+                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Social Science">Social Science</option>
+                    <option value="Computer">Computer</option>
+                    <option value="Christian Living">Christian Living</option>
+                    <option value="Technology and Livelihood Education">Technology and Livelihood Education</option>
+                    <option value="Physical Education">Physical Education</option>
+                    <option value="Music">Musics</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Physical Education and Health">Physical Education and Health</option>
+                    <option value="Robotics">Robotics</option>
+                    <option value="MAPEH">MAPEH</option>
+                    <option value="General">General</option>
+
+
                   </select>
                  </div>
               </div>
@@ -142,9 +156,8 @@ include '../includes/navbar.php';
             }
             $sql = "CREATE TABLE SCORES (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              NAMES MEDIUMTEXT, N1 VARCHAR(6), N2 VARCHAR(6), N3 VARCHAR(6), N4 VARCHAR(6), N5 VARCHAR(6),
-              N6 VARCHAR(6), N7 VARCHAR(6), N8 VARCHAR(6),N9 VARCHAR(6), N10 VARCHAR(6),
-              SCORE MEDIUMTEXT 
+              NAMES MEDIUMTEXT, Avatar VARCHAR(255),
+              SCORE int(6) 
               )";
             if ($mysqli->query($sql) === TRUE) {
               echo '<script type="text/javascript">' .
@@ -176,8 +189,6 @@ include '../includes/navbar.php';
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
             VALUES('$mamama','$user','$subject','$name')");
           
-          //$url = "CreateCode.php";
-          //header('location' . $url);
          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
          }
         }

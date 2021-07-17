@@ -13,6 +13,8 @@
         $conn->query( "INSERT INTO $code.$TABLE SELECT * FROM $decode.$TABLE" ) or die( $conn->error );
 
     endwhile;
+    $newconn = new mysqli ('localhost', 'root' , '',$code);
+    $del = mysqli_query($newconn, "DELETE FROM scores");
     include 'questiondb.php';
     $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
     $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
@@ -44,9 +46,8 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php'
-
-;?>
+include '../includes/navbar.php';
+?>
  <!----NAVIGATION BAR END-->
             <!----CONTENT START------->
             <div class="blocks container">
@@ -54,7 +55,7 @@ include '../includes/navbar.php'
             <h1>Copy this code</h1>
             <div class="code container">
                 <label><?php echo $code; ?></label>
-            </div> 
+            </div> <br><br>
             <div class="container">
                 <a href="Main_menu.php" type="button" class="button me-3 mt-5"
                 >Done

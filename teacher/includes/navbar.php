@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../css/common.css">
 <nav class="top navbar navbar-expand-lg navbar-light bg-light bg-transparent text-dark">
   <div class="container-fluid my-1">
-    <label class="navbar-brand">Diwa</label>
+    <label class="navbar-brand"></label>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

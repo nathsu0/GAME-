@@ -2,16 +2,15 @@
 *
 */
 /*CONTENT
-*
+
 */
 h1{
     color: whitesmoke;
 }
 .blocks img{
-    position: absolute;
-    left: 30%;
-    top: 15%;
-    height: 375px;
+    position: fixed;
+    left:30vw;
+    height: 355px;
     width: 700px;
 }
 .code label{
@@ -24,6 +23,7 @@ h1{
     border: 3px solid #5b82c2;
     color: whitesmoke;
     margin-bottom: 60px;
+
 }
 .button{
     width: 140px;
