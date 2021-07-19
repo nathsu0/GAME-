@@ -1,11 +1,13 @@
-*body{
+body, html{
     padding:0;
     margin: 0;
+    background: linear-gradient(to right, #33ccff 0%, #ffffcc 100%);
 }
 .Main{
     padding: 30px;
     margin-top: 10px;
     height: 640px;
+    
 }
 .Box{
     height: auto;
