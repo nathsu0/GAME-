@@ -1,0 +1,184 @@
+body, html{
+    padding:0;
+    margin: 0;
+    background: linear-gradient(to left, #33ccff 0%, #ffff99 100%);
+    background-size: auto; 
+}
+.top img{
+    width: 25px;
+    height: 25px;
+}
+.Main{
+    padding: 5px;
+}
+.Box{
+    height: auto;
+    border: 3px solid #473432;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.blocks{
+    background-image: url('../img/teacher/Board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
+.top{
+    border-bottom:3px solid #473432;
+    font-size: 20px;
+}
+.navbar-brand{
+    height: 30px;
+    width: 30px;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+.button{
+    height: auto;
+    padding: 0;
+    font-size: 20px;
+    line-height:65px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: whitesmoke;
+    border:2px solid #5b82c2;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+.subbutton{
+    height: auto;
+    padding: 0;
+    font-size: 12px;
+    line-height:20px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: whitesmoke;
+    border:1px solid #5b82c2;
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+.button span{
+    position: absolute;
+    background-color: #6ce1ef;
+    padding: 10px;
+    top: 100%;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+.button span:nth-child(1){
+    left: 0;
+}
+.button span:nth-child(2){
+    left: 10%;
+    transition-delay: 0.05s;
+}
+.button span:nth-child(3){
+    left: 25%;
+    transition-delay: 0.1s;
+}
+.button span:nth-child(4){
+    left: 35%;
+    transition-delay: 0.15s;
+}
+.button span:nth-child(5){
+    left: 45%;
+    transition-delay: 0.2s;
+}
+.button span:nth-child(6){
+    left: 55%;
+    transition-delay: 0.25s;
+}
+.button span:nth-child(7){
+    left: 65%;
+    transition-delay: 0.3s;
+}
+.button span:nth-child(8){
+    left: 75%;
+    transition-delay: 0.35s;
+}
+.button span:nth-child(9){
+    left: 85%;
+    transition-delay: 0.4s;
+}
+.button span:nth-child(10){
+    left: 90%;
+    transition-delay: 0.45s;
+}
+
+.button:hover{
+    color: black;
+}
+.button:hover > span{
+    top: 35%;
+    transform: scale(5.1);
+}
+
+
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+
+.blocks{
+    color: whitesmoke;
+}
+.blocks table{
+    color: whitesmoke;
+}
+.form-check{
+    margin-top: 20px;
+}
+.button{
+    margin-bottom: 4vh;
+    width: 200px;
+}
+.hoverTable{
+    width:100%; 
+    border-collapse:collapse; 
+  }
+  .hoverTable td{ 
+    padding:7px;  
+    border-top: 2px solid #999;
+    border-bottom: 2px solid #999;
+  }
+  /* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: rgba(0, 255, 0, 0.2);;
+    }
+/*MEDIA
+*
+*/
+
+@media (min-width: 350px) and (max-width: 575px) {
+    .form-check{
+        margin-top: 10px;
+    } 
+    .button{
+        width: 250px;
+        margin-left: 20px;
+    }
+    }
+    
+
+@media (min-width: 350px) and (max-width: 575px) {
+    .Box{
+        height: auto;
+    }
+    .log a{
+        margin-left: 0px;
+    }
+    }
+    

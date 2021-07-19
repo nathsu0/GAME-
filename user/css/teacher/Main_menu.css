@@ -1,0 +1,40 @@
+/*COMMON
+*
+*/
+
+/*CONTENT
+*
+*/
+.blocks{
+    background-image: url('../../img/teacher/Board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
+.blocks img{
+    position: fixed;
+    left:50vw;
+    height: 400px;
+    width: 500px;
+}
+.button{
+    width: 500px;
+    height: 70px;
+}
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 992px) { 
+    .blocks img{
+        display: none;
+    }
+    }
+@media (min-width: 350px) and (max-width: 575px) { 
+    .button{
+        width: 250px;
+    }
+    .blocks img{
+        display: none;
+    }
+    }
+    

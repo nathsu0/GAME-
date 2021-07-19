@@ -1,0 +1,43 @@
+*body{
+    padding:0;
+    margin: 0;
+}
+.Main{
+    padding: 30px;
+    margin-top: 10px;
+    height: 640px;
+}
+.Box{
+    height: auto;
+}
+/*
+* CONTENT
+*/
+.card{
+    margin: 5px;
+}
+.card-body{
+    text-align: center;
+}
+img{
+    height: 300px;
+}
+
+
+/*
+* MEDIA
+*/
+@media (min-width: 350px) and (max-width: 999px) {
+    .Main{
+       
+        height: auto;
+    }
+    .Box {
+        width: auto;
+        height: auto;
+    }
+
+}
+
+
+    
