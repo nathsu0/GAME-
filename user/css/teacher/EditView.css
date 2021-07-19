@@ -4,6 +4,12 @@
 /*CONTENT
 *
 */
+.blocks{
+    background-image: url('../img/Board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
 h2{
     margin-top: 3vh;
 }
