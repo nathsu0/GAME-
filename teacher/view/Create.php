@@ -189,8 +189,6 @@ include '../includes/navbar.php';
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
             VALUES('$mamama','$user','$subject','$name')");
           
-          //$url = "CreateCode.php";
-          //header('location' . $url);
          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
          }
         }

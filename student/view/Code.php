@@ -9,7 +9,7 @@
      
     }else{
       $_SESSION['code']=$code;
-     echo '<script type="text/javascript">' .'window.location = "Start.php"' . '</script>';
+     echo '<script type="text/javascript">' .'window.location = "Start.php?code='.$code.'"' . '</script>';
     }
   }
 ?>

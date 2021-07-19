@@ -5,7 +5,6 @@
     $id = $_GET['ID'];
     $sql = mysqli_query($conn, "DELETE FROM  quiz WHERE  id='$id'"); 
     
-    echo"<script>alert('Question Deleted!')</script>";
     echo '<script type="text/javascript">' .'history.go(-1); '. '</script>';
 
 ?>
