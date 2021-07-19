@@ -47,6 +47,7 @@
             <h2>Teacher Account</h2>
             <form method = 'post' action = ''>
             <div class="table-responsive">
+              <label>Select username.</label>
                 <table class="table ">
                     <thead>
                       <tr>
@@ -55,7 +56,7 @@
                         <th scope="col">Password</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="hoverTable">
                     <?php
             $result = mysqli_query($conn,"SELECT * from accounts ORDER BY 'ID' ");
             while($row=mysqli_fetch_assoc($result)){
@@ -76,7 +77,7 @@
             </div>
             <div class="container d-flex justify-content-end">
               <a href="register.php" type="button" class="button me-2">
-                Register
+                Add Account
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>
               <a href="option.html" type="button" class="button me-2">
