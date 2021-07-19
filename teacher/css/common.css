@@ -17,12 +17,7 @@ body, html{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-.blocks{
-    background-image: url('../img/Board.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 20px 30px;
-}
+
 .top{
     border-bottom:3px solid #473432;
     font-size: 20px;

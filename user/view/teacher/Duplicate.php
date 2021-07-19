@@ -63,7 +63,7 @@ include '../includes/navbar.php'
             <form method='POST' >
             <!----CONTENT START------->
             <div class="blocks container">
-              <img src="../../img/teacher/Chart.png">
+              
             <h1>Enter the code of the game to be duplicated: </h1>
             <div class="code_edit container">
             <br>
