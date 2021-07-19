@@ -1,16 +1,23 @@
 <?php
-    include '../accounts.php'
+    include 'teacher/accounts.php';
+    $usere="";
+    $pww="";
     if(isset($_POST['submit'])){
     $tea = $_POST['username'];
     $pw = $_POST['password'];
     $Cpw = $_POST['confirm'];
     $resultd =mysqli_query($mysqli,"SELECT * from accounts where username = '$tea'");
-    if(mysqli_num_rows($resultd)>0 && ($Cpw == $pw) ){
+    if(mysqli_num_rows($resultd)>0 ){
+       $usere = "Username already taken.";
+    }
+    if($Cpw != $pw){
+        $pww ="Passwords do not match.";
+    }
+    else{
         $resultdo =mysqli_query($mysqli,"INSERT into accounts(username, passwords)
-        VALUES('teacher3', 'teacher3')");
-            
-    }else{
-        echo '<script type="text/javascript">'.'console.log("error");</script>';
+        VALUES('$tea', '$pw')");
+         echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
+         echo '<script type="text/javascript">' . 'window.location = "table.php"'.'</script>';
     }
 }
 
@@ -38,12 +45,14 @@
                 <h1 class="display-4 text-center">Register</h1>
                 <!------USER INPUT START-->
                     <!----USERNAME-->
+                    <label><?=$usere?></label>
                 <div class="Username input-group">
                     <span class="input-group-text" ><img src="../img/teacher/person-circle.svg"></span>
-                    <label></label>
+                    
                     <input type="text" name='username' class="form-control" placeholder="Username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                     <!-----PASSWORD-->
+                    <label><?=$pww?></label>
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
                     <input type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -52,6 +61,7 @@
                     <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
                     <input type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
+                
                 <!--USER INPUT END-->
                 <!-------BUTTON-------->
                 <div class = "button d-flex justify-content-center mb-2">

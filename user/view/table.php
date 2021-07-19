@@ -72,7 +72,7 @@
                   </table>
             </div>
             <div class="container d-flex justify-content-end">
-              <a href="teacher/Main_menu.php" type="button" class="button me-2">
+              <a href="register.php" type="button" class="button me-2">
                 Register
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>
