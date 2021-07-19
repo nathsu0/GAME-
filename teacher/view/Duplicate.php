@@ -65,8 +65,9 @@ include '../includes/navbar.php'
               <img src="../img/Chart.png">
             <h1>Enter the code of the game to be duplicated: </h1>
             <div class="code_edit container">
+            <br>
                 <input type="text"class="code" name="dcode"></input>
-            </div> 
+            </div> <br>
             <div class="butt container">
                   <a href="Main_menu.php" type="button" class="button">
                     Back

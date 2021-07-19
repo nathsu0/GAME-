@@ -3,6 +3,9 @@
     $alert="";
     if(isset($_POST['submit'])){
       $player=$_POST['player'];
+      $code=$_GET['code'];
+      $_SESSION['code']=$code;
+
       $resu=mysqli_query($con1,"SELECT * FROM scores WHERE NAMES='$player'");
       if($player == NULL){
         $alert = 'Enter your name';
@@ -11,7 +14,6 @@
       }
       else{
         $_SESSION['player']=$player;
-        $result= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
         echo '<script type="text/javascript">' .'window.location = "Avatar.php"' . '</script>';
       }
     }
