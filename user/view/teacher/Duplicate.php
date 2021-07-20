@@ -5,7 +5,7 @@
       include 'random.php';
       $db = mysqli_connect('localhost','root','','question');
 
-      $user = $_SESSION['username'];
+      $user =   $_GET['teacher'];
       $eee ="";
 
       if(isset($_POST['done'])){
@@ -31,7 +31,7 @@
         $_SESSION['decode'] = $mamama;
         $_SESSION['cccode'] = $cooode;
         
-       echo '<script type="text/javascript">' .'window.location = "Dcode.php"' . '</script>';
+       echo '<script type="text/javascript">' .'window.location = "Dcode.php?teacher='.$user.'"' . '</script>';
       }
     }
 ?>

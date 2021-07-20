@@ -3,7 +3,7 @@
           include 'random.php';
           include 'conn.php';
           //$user = $_SESSION['username'];
-          $user = $_SESSION['username'];
+          $user =   $_GET['teacher'];
 
 ?>
 <!doctype html>
@@ -206,7 +206,7 @@
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
             VALUES('$mamama','$user','$subject','$name')");
           
-         echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
+         echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php?teacher='.$user.'"'.'</script>';
          }
         }
    ?> 

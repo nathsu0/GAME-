@@ -1,7 +1,7 @@
 <?php
           session_start();
           $code = $_SESSION['Create'];
-          $user = $_SESSION['username'];
+          $user =   $_GET['teacher'];
           $numrow = $_SESSION['numrow'];
           $conn = new mysqli ('localhost', 'root','',$code);
 ?>

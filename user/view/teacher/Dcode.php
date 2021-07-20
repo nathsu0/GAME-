@@ -1,7 +1,7 @@
 <?php
       
     session_start();
-    $user= $_SESSION['username'];
+    $user =   $_GET['teacher'];
     $decode = $_SESSION['decode'];
     $code = $_SESSION['cccode'];
     include 'conn.php';

@@ -1,7 +1,7 @@
 <?php
     session_start();
     $coode = $_SESSION['CreateCode'];
-    $user = $_SESSION['username'];
+    $user =   $_GET['teacher'];
 ?>
 <!doctype html>
 <html lang="en">

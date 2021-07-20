@@ -1,6 +1,6 @@
 <?php
        session_start();
-       $user = $_SESSION['username'];
+       $user =   $_GET['teacher'];
        $code = $_GET['code'];
        $conn = mysqli_connect('localhost','root','',$code);
        $count=1;
@@ -83,7 +83,7 @@
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="ViewScore.php" type="button" class="button me-2">
+            <a href="ViewScore.php?teacher=<?=$user?>" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

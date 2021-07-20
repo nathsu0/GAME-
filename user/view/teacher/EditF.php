@@ -1,7 +1,6 @@
-
 <?php
           session_start();
-          $user = $_SESSION['username'];
+          $user =   $_GET['teacher'];
           $code = $_GET['code'];
           $conn = new mysqli('localhost','root','',$code);  
           $id = $_GET['ID'];
@@ -93,7 +92,7 @@
                   Save
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </button>
-          <a href="EditTable.php" type="button" class="button">
+          <a href="EditTable.php?teacher=<?=$user?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>

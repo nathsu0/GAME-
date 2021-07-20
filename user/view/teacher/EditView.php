@@ -1,6 +1,6 @@
 <?php
        session_start();
-       $user = $_SESSION['username'];
+       $user =   $_GET['teacher'];
        $conn = mysqli_connect('localhost','root','','question');
 
 ?>
@@ -70,13 +70,13 @@
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
+                  <td name="code"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
                   <?php  echo $row["CODE"];?> </td></a>
-                  <td name="gn"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
+                  <td name="gn"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
-                  <td name="sub"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
+                  <td name="sub"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
-                  <td name="del"><a href="Delete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-success" 
+                  <td name="del"><a href="Delete.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" type="button" class="btn btn-success" 
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
             </a>

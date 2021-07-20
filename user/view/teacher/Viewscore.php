@@ -1,6 +1,6 @@
 <?php
        session_start();
-       $user = $_SESSION['username'];
+       $user =   $_GET['teacher'];
        $ques = mysqli_connect('localhost','root','','question');
 
 ?>
@@ -66,11 +66,11 @@
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="View.php?code=<?php echo $row["CODE"];?>"  class="row-link">
+                  <td name="code"><a href="View.php?teacher=<?=$user?>&code=<?php echo $row["CODE"];?>"  class="row-link">
                   <div style="height:100%;width:100%"><?php  echo $row["CODE"];?>  </td></div></a>
-                  <td name="gn"><a href="View.php?code=<?php echo $row["CODE"];?>" class="row-link">
+                  <td name="gn"><a href="View.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" class="row-link">
                   <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?> </td></div></a>
-                  <td name="sub"><a href="View.php?code=<?php echo $row["CODE"];?>"  class="row-link">
+                  <td name="sub"><a href="View.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>"  class="row-link">
                   <?php  echo $row["SUBJ"];?> </td></div></a>
               
             

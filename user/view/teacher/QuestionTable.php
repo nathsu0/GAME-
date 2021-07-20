@@ -3,7 +3,7 @@
           include 'random.php';
           include 'conn.php';
           //$user = $_SESSION['username'];
-          $user = $_SESSION['username'];
+          $user =   $_GET['teacher'];
           $code = $_SESSION['CreateCode'];
           $mysqli = new mysqli('localhost','root','',$code);  
           $rescon =new mysqli('localhost','root','','question');  
@@ -119,8 +119,8 @@
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
                     <td><?php echo $row['Answer']; ?></td>
-                    <td name="del"><a href="EditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
-            </td>   <td><a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
+                    <td name="del"><a href="EditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>&teacher=<?=$user?>" type="button" class="btn btn-success" >EDIT </a>
+            </td>   <td><a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>&teacher=<?=$user?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   </tr>
                       
@@ -156,7 +156,7 @@
   
           $_SESSION['numrow']=$numrow+1;
           $_SESSION['Create']=$code;
-          echo '<script type="text/javascript">' . 'window.location = "Add.php"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "Add.php?teacher='.$user.'"'.'</script>';
         }
       }
 
@@ -167,7 +167,7 @@
         if($mysqli->query($result1)===TRUE){
           echo '<script type="text/javascript">' .
           'console.log("Q1 updated successfully");</script>';
-          echo '<script type="text/javascript">' . 'window.location = "CreateCode.php"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "CreateCode.php?teacher='.$user.'"'.'</script>';
     
         }else{
           echo '<script type="text/javascript">' .

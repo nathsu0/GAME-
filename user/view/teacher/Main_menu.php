@@ -68,24 +68,24 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="Create.php" type="button" class="btn border border-warning bg-warning text-dark">Create Questions</a>
+                            <a href="Create.php?teacher=<?=$user?>" type="button" class="btn border border-warning bg-warning text-dark">Create Questions</a>
                           </div>
                         </div>
                       </div>
                     </div>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href ="EditView.php" type="button" class="button">Edit Question
+                    <a href ="EditView.php?teacher=<?=$user?>" type="button" class="button">Edit Question
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="ViewScore.php" type="button" class="button">View Score of Students
+                    <a href="ViewScore.php?teacher=<?=$user?>" type="button" class="button">View Score of Students
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="Duplicate.php" type="button" class="button">Duplicate Game
+                    <a href="Duplicate.php?teacher=<?=$user?>" type="button" class="button">Duplicate Game
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
