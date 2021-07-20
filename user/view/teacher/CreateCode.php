@@ -24,6 +24,7 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
+
 include '../../includes/teacher/navbar.php'
 
 ;?>
@@ -41,7 +42,7 @@ include '../../includes/teacher/navbar.php'
             </label>
             </div> 
             <div class="container">
-                <a href="Main_menu.php" type="button" class="button me-3 mt-5"
+                <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

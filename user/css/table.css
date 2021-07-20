@@ -8,6 +8,11 @@ body, html{
     width: 25px;
     height: 25px;
 }
+.hoverTable td{ 
+    padding:7px;  
+    border-top: 2px solid #999;
+    border-bottom: 2px solid #999;
+  }
 .Main{
     padding: 5px;
 }

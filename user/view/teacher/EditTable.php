@@ -32,6 +32,7 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
+
 include '../../includes/teacher/navbar.php'
 
 ?>

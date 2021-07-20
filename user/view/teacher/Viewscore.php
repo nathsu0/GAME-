@@ -26,7 +26,9 @@
          <!---NAVIGATION BAR START-->
          <?php 
 
+
 include '../../includes/teacher/navbar.php'
+
 
 ;?>
  <!----NAVIGATION BAR END-->
@@ -65,7 +67,7 @@ include '../../includes/teacher/navbar.php'
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php" type="button" class="button me-2">
+            <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-2">
               Main menu
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

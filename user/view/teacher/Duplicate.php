@@ -56,7 +56,9 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
+
 include '../../includes/teacher/navbar.php'
+
 
 ;?>
  <!----NAVIGATION BAR END-->
@@ -70,7 +72,7 @@ include '../../includes/teacher/navbar.php'
                 <input type="text"class="code" name="dcode"></input>
             </div> <br>
             <div class="butt container">
-                  <a href="Main_menu.php" type="button" class="button">
+                  <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button">
                     Back
                     <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                   </a>

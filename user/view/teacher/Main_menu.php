@@ -1,6 +1,7 @@
 <?php
        session_start();
-       $user = $_SESSION['username'];
+       $user =   $_GET['teacher'];
+       $_SESSION['username'] = $user;
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,7 +26,9 @@
          <!---NAVIGATION BAR START-->
           <?php 
 
+
           include '../../includes/teacher/navbar.php'
+
          
           ;?>
            <!----NAVIGATION BAR END-->

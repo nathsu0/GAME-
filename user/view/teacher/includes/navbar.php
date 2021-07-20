@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../css/teacher/common.css">
+<link rel="stylesheet" href="../css/common.css">
 <nav class="top navbar navbar-expand-lg navbar-light bg-light bg-transparent text-dark">
   <div class="container-fluid my-1">
     <label class="navbar-brand"></label>
@@ -8,12 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item me-3">
-          <?php echo $user; ?>
-          <img src="../../img/teacher/person-fill.svg">
+          Admin
+          <img src="../img/person-fill.svg">
         </li>
         <li class="nav-item">
-          <a href="../view/Sign_in.php">Log Out
-            <img src="../../img/teacher/box-arrow-right.svg">
+          <a href="../table.php">Home
+            <img src="../img/box-arrow-right.svg">
             </a>
         </li>
       </ul>

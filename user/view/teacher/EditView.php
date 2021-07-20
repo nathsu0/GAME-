@@ -27,7 +27,9 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
+
 include '../../includes/teacher/navbar.php'
+
 ?>
  <!----NAVIGATION BAR END-->
           <!----CONTENT START------->
@@ -55,9 +57,9 @@ include '../../includes/teacher/navbar.php'
                   <td name="code"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
                   <?php  echo $row["CODE"];?> </td></a>
                   <td name="gn"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
-                  <div style="height:150%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
+                  <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
                   <td name="sub"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
-                  <div style="height:150%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
+                  <div style="height:100%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
                   <td name="del"><a href="Delete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-success" 
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
@@ -70,7 +72,7 @@ include '../../includes/teacher/navbar.php'
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php" type="button" class="button me-2">
+            <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

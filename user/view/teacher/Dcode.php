@@ -47,7 +47,10 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
+
 include '../../includes/teacher/navbar.php'
+
+
 ?>
  <!----NAVIGATION BAR END-->
             <!----CONTENT START------->
@@ -58,7 +61,7 @@ include '../../includes/teacher/navbar.php'
                 <label><?php echo $code; ?></label>
             </div> <br><br>
             <div class="container">
-                <a href="Main_menu.php" type="button" class="button me-3 mt-5"
+                <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>
