@@ -41,6 +41,8 @@
             </div> 
             <div class="container d-flex justify-content-end">
               <button type="submit" name="done" class="button btn-bubble1">Submit</button>
+            <div class="container d-flex justify-content-end">
+              <a href="../option.html" type="button" class="button btn-bubble1">Back</a>
             </div>
           </div> 
         </div>
