@@ -20,9 +20,10 @@ h1{
     height: 125vh;
     width: 90vw;
     text-align: center;
-    background-image: url('../../img/student/Board\ with\ mechanics.png');
-    background-size: 100% 100%;
+    background-image: url('../../img/student/mechanics.png');
+    background-size: 120% 110%;
     background-repeat: no-repeat;
+    background-position: center;
     padding: 2vh 3vw;
     
 }
@@ -41,14 +42,14 @@ h1{
 @media (min-width: 350px) and (max-width: 992px) { 
     .blocks{
         height: auto;
-        background-image: url('../../img/student/board.png');
+        background-image: url('../img/clear\ board.png'); 
     }
     .button{
         margin-bottom: 15vh;
        
       }
     .instruction{
-       margin-top: 10vh; 
+       margin-top: 30%; 
     }
     html,
     body {

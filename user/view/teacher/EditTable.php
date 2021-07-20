@@ -32,7 +32,7 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php';
+include '../../includes/teacher/navbar.php'
 
 ?>
 <form method='POST'>

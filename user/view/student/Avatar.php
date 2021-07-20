@@ -25,7 +25,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../../css/student/Avatar.css">
+    <link rel="stylesheet" href="../../css/student/Avatar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../../includes/student/common.css">
   </head>
   <body>
@@ -40,7 +40,7 @@
             <div class="row d-flex justify-content-center">
             <div class="col-sm-6">
               <div class="character"><br>
-                <img src="../../img/student/story/ABoy.png">
+                <img src="../../img/student/ABoy.png">
                 <div class="card-body"><br>
                   <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
@@ -51,7 +51,7 @@
             </div>
             <div class="col-sm-6">
               <div class="character"><br>
-                <img src="../../img/student/story/AGirl.png">
+                <img src="../../img/student/AGirl.png">
                 <div class="card-body"><br>
                   <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">

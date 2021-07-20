@@ -24,14 +24,14 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php'
+include '../../includes/teacher/navbar.php'
 
 ;?>
       <form method='post'>
             <!----NAVIGATION BAR END-->
             <!----CONTENT START------->
             <div class="blocks container">
-              <img src="../../img/teacher/Teacher and Students.png">
+             
             <h1>Copy this code</h1>
             <div class="code container">
                 <label>

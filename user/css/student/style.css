@@ -110,7 +110,7 @@ overflow: hidden;
   height: 110%; /* Full height */
   /* overflow: auto; Enable scroll if needed */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  background-image: url(../../img/student/img/Board\ with\ mechanics.png);
+  background-image: url(../../img/student/Board\ with\ mechanics.png);
   background-repeat: no-repeat;
   background-size: 85% 95%;
   background-position: bottom;
@@ -128,7 +128,7 @@ overflow: hidden;
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  background-image: url(../../img/student/img/Board\ with\ gameover.png);
+  background-image: url(../../img/student/Board\ with\ gameover.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
@@ -257,7 +257,7 @@ background-repeat: no-repeat;
   margin-top: 2%;
   width: 75%;
   height: 85%;
-  background-image: url(../../img/student/img/asset.png);
+  background-image: url(../../img/student/asset.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

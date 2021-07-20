@@ -49,7 +49,7 @@ h1{
     .blocks{
         z-index: 2;
         position: absolute;
-        background-image: url('../../img/student/board.png');
+        background-image: url('../../img/student/clear\ board.png');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         border: none;
@@ -64,10 +64,29 @@ h1{
         border: 2px solid #5b82c2;
     }
     }
+@media (min-width: 700px) and (max-width: 999px) {
+    .username{
+        margin-top: 15%;
+    }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+    .username{
+        margin-top: 20%;
+    }
+}
+@media (min-width: 400px) and (max-width: 499px) {
+    .username{
+        margin-top: 25%;
+    }
+}
+@media (min-width: 350px) and (max-width: 399px) {
+    .username{
+        margin-top: 30%;
+    }
+}
 @media (min-width: 350px) and (max-width: 575px) {
     .username{
-        margin-top: 50px;
-        width: 250px;
+        width: 180px;
         margin-left: auto;
         margin-right: auto;
         border: 2px solid #5b82c2;

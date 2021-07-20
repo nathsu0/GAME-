@@ -29,7 +29,7 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
-          include '../includes/navbar.php'
+include '../../includes/teacher/navbar.php'
          
           ;?>
            <!----NAVIGATION BAR END-->

@@ -25,12 +25,12 @@
          <!---NAVIGATION BAR START-->
           <?php 
 
-          include '../includes/navbar.php'
+          include '../../includes/teacher/navbar.php'
          
           ;?>
            <!----NAVIGATION BAR END-->
                 <div class="blocks container">
-                  <img src="../../img/teacher/teacher.png">
+                
                     <div class="row col-sm-8 ms-1">
                     <!-- Button trigger modal -->
                     <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">

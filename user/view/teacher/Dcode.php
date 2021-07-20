@@ -47,12 +47,12 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php';
+include '../../includes/teacher/navbar.php'
 ?>
  <!----NAVIGATION BAR END-->
             <!----CONTENT START------->
             <div class="blocks container">
-              <img src="../../img/teacher/Writing.png">
+             
             <h1>Copy this code</h1>
             <div class="code container">
                 <label><?php echo $code; ?></label>

@@ -27,8 +27,7 @@
         <div class="Box container  mt-5 p-0">
           <!---NAVIGATION BAR START-->
           <?php 
-
-include '../includes/navbar.php';
+ include '../../includes/teacher/navbar.php'
 
 ?>
           <form method="POST" action="">

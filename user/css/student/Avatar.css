@@ -25,9 +25,10 @@ img{
 }
 .character{
     text-align: center;
-    background-image: url('../../img/student/PlainBoard.png');
-    background-size: 100% 100%;
+    background-image: url('../../img/student/clear.png');
+    background-size: 60% 85%;
     background-repeat: no-repeat;
+    background-position: center;
     height: 90vh;
     width: 40vw;
 }

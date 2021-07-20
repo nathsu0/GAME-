@@ -4,6 +4,12 @@
 /*CONTENT
 *
 */
+.blocks{
+    background-image: url('../../img/teacher/BoardwDup.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
 h1{
     color: whitesmoke;
 }
@@ -34,8 +40,11 @@ input{
 *
 */
 @media (min-width: 350px) and (max-width: 992px) { 
-    .blocks img{
-        display: none;
+    .blocks{
+        background-image: url('../../img/teacher/Board.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 20px 30px;
     }
     
     .button{
