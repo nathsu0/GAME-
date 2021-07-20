@@ -6,7 +6,10 @@ User: "root";
 Password: "";
 Db name: "";
 
-for teacher's view;
+for user's view;
+Open user\view\option.html;
+
+for teacher's view only;
 Open teacher\view\Sign_in.php;
 Database will be automatically created.
 
