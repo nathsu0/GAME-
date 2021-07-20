@@ -4,13 +4,11 @@
   if(isset($_POST['boy'])){
     $pic = "../img/Boy.png";
     $_SESSION['pic'] = $pic;
-    $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
     echo '<script type="text/javascript">' .'window.location = "carousel.html"' . '</script>';
   }
   elseif(isset($_POST['girl'])){
     $pic = "../img/Girl.png";
     $_SESSION['pic'] = $pic;
-    $res = mysqli_query($con1, "UPDATE scores SET Avatar='$pic' WHERE NAMES='$player'");
     echo '<script type="text/javascript">' .'window.location = "carousel.html"' . '</script>';
   }
 
@@ -27,7 +25,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/Avatar.css">
+    <link rel="stylesheet" href="../css/Avatar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../includes/common.css">
   </head>
   <body>
@@ -41,10 +39,9 @@
           <div class="blocks container mt-3 p-0">
             <div class="row d-flex justify-content-center">
             <div class="col-sm-6">
-              <div class="character">
-                <img src="../img/Boy.png">
-                <div class="card-body">
-                  <h5>Sparkle</h5>
+              <div class="character"><br>
+                <img src="../img/ABoy.png">
+                <div class="card-body"><br>
                   <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
                     <button  type="submit" name="boy" class="button btn-bubble1">Next</button>
@@ -53,10 +50,9 @@
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="character">
-                <img src="../img/Girl.png">
-                <div class="card-body">
-                  <h5>Sparkel</h5>
+              <div class="character"><br>
+                <img src="../img/AGirl.png">
+                <div class="card-body"><br>
                   <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">
                   <button type="submit" name="girl"  class="button btn-bubble1">Next</button>

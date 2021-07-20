@@ -8,6 +8,12 @@
 .blocks{
     color: whitesmoke;
 }
+.blocks{
+    background-image: url('../img/Board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
 .blocks table{
     color: whitesmoke;
 }
@@ -18,6 +24,19 @@
     margin-bottom: 4vh;
     width: 200px;
 }
+.hoverTable{
+    width:100%; 
+    border-collapse:collapse; 
+  }
+  .hoverTable td{ 
+    padding:7px;  
+    border-top: 2px solid #999;
+    border-bottom: 2px solid #999;
+  }
+  /* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: rgba(0, 255, 0, 0.2);;
+    }
 /*MEDIA
 *
 */

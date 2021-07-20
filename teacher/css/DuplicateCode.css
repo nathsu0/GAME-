@@ -2,16 +2,21 @@
 *
 */
 /*CONTENT
-*
+
 */
+.blocks{
+    background-image: url('../img/BoardwDup.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
 h1{
     color: whitesmoke;
 }
 .blocks img{
     position: fixed;
     left:30vw;
-    top: 20vh;
-    height: 375px;
+    height: 355px;
     width: 700px;
 }
 .code label{
@@ -24,6 +29,7 @@ h1{
     border: 3px solid #5b82c2;
     color: whitesmoke;
     margin-bottom: 60px;
+
 }
 .button{
     width: 140px;
@@ -33,8 +39,11 @@ h1{
 *
 */
 @media (min-width: 350px) and (max-width: 992px) { 
-    .blocks img{
-        display: none;
+    .blocks{
+        background-image: url('../img/Board.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 20px 30px;
     }
     .button{
         margin-top: 20px;

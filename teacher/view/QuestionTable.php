@@ -86,7 +86,7 @@ include '../includes/navbar.php';
                     <th scope="col">C</th>
                     <th scope="col">D</th>
                     <th scope="col">Answer</th>
-                    <th scope="col"></th>
+                    <th scope="col" >Edit/Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -103,7 +103,7 @@ include '../includes/navbar.php';
                     <td><?php echo $row['D']; ?></td>
                     <td><?php echo $row['Answer']; ?></td>
                     <td name="del"><a href="EditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
-            </td>   <td><a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
+            <a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   </tr>
                       

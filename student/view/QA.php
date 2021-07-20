@@ -2,18 +2,21 @@
   include "codeconn.php";
   $qcount=$_SESSION['qcount'];
   $player=$_SESSION['player'];
-
+  $pic = $_SESSION['pic'];
   $count=1;
   $tscore = $_GET['total'];
   $int =(int)$tscore;
-  
-  $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int' WHERE NAMES='$player'");
-  
+  $res=mysqli_query($con1,"SELECT * FROM scores WHERE NAMES='$player'");
+  if(mysqli_num_rows($res)==0){
+  $resu= mysqli_query($con1,"INSERT INTO scores(NAMES) VALUES('$player')");
+  $result = mysqli_query($con1,"UPDATE scores SET SCORE='$int', Avatar='$pic' WHERE NAMES='$player'");
+  }
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-  <script >
+  <script >//vaaaar
+
       var a1 = sessionStorage.getItem("a1");
       var a2 = sessionStorage.getItem("a2");
       var a3 = sessionStorage.getItem("a3");
@@ -26,7 +29,7 @@
       var a10 = sessionStorage.getItem("a10");
 
   </script>
-    <title>Evaluation</title>
+    <title>Track Question</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +37,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/QA.css">
+    <link rel="stylesheet" href="../css/QA.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../includes/common.css">
   </head>
   <body>
