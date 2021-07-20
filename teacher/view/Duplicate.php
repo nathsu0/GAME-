@@ -55,9 +55,7 @@
             <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php'
-
-;?>
+include '../includes/navbar.php';?>
  <!----NAVIGATION BAR END-->
             <form method='POST' >
             <!----CONTENT START------->
