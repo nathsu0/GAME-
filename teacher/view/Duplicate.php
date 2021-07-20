@@ -6,14 +6,14 @@
       $db = mysqli_connect('localhost','root','','question');
 
       $user = $_SESSION['username'];
-      
+      $eee="";
 
       if(isset($_POST['done'])){
       $mamama = $_POST['dcode'];
       $cooode = $_POST['ccode'];
       
       if($conn->select_db($mamama)=== false){
-      echo '<script type="text/javascript">'.'alert("Please enter a valid code.");</script>';
+        $eee = "Please enter a valid code.";
        
       }else{
        // echo '<script type="text/javascript">'.'console.log("Database exist");</script>';
@@ -63,10 +63,13 @@ include '../includes/navbar.php'
             <!----CONTENT START------->
             <div class="blocks container">
             <h1>Enter the code of the game to be duplicated: </h1>
+            
             <div class="code_edit container">
-            <br>
+            <label style="color:white"><?=$eee?></label><br>
                 <input type="text"class="code" name="dcode"></input>
-            </div> <br>
+            </div>
+             <br>
+            
             <div class="butt container">
                   <a href="Main_menu.php" type="button" class="button">
                     Back

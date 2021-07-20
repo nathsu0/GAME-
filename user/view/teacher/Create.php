@@ -120,7 +120,7 @@
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="Main_menu.php" type="button" class="button">
+          <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>
