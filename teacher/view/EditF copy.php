@@ -76,7 +76,7 @@ include '../includes/navbar.php';
                   Save
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </button>
-          <a href="EditTable.php" type="button" class="button">
+          <a href="EditTable.php?code=<?=$code?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>
@@ -93,7 +93,7 @@ include '../includes/navbar.php';
       $_POST['edoc']=$code;
       echo '<script type="text/javascript">' .
       'console.log("Q1 updated successfully");</script>';
-      echo '<script type="text/javascript">' . 'window.location = "EditTable.php"'.'</script>';
+      echo '<script type="text/javascript">' . 'window.location = "EditTable.php?code='.$code.'"'.'</script>';
 
     }else{
       echo '<script type="text/javascript">' .
