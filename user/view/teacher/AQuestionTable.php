@@ -1,8 +1,10 @@
 <?php
           session_start();
-          //$user = $_SESSION['username'];
-          $user =   $_GET['teacher'];
-          $code = $_GET['code'];
+          include 'Arandom.php';
+          include 'Aconn.php';
+          //$user1 = $_SESSION['username'];
+          $user1 =$_SESSION['teach'];
+          $code = $_SESSION['CreateCode'];
           $mysqli = new mysqli('localhost','root','',$code);  
           $rescon =new mysqli('localhost','root','','question');  
           $result = mysqli_query($mysqli,"SELECT * from quiz");
@@ -13,7 +15,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Edit Quiz <?php echo $code;?></title>
+    <title><?=$row6['GAMENAME'];?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -102,7 +104,6 @@
                     <th scope="col">D</th>
                     <th scope="col">Answer</th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -118,9 +119,8 @@
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
                     <td><?php echo $row['Answer']; ?></td>
-                    <td name="del"><a href="EditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>&teacher=<?=$user?>" 
-                    type="button" class="btn btn-success" >EDIT </a></td><td>
-                    <a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>&teacher=<?=$user?>" type="button" class="btn btn-danger"
+                    <td name="del"><a href="AEditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
+            </td>   <td><a href="ADeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   </tr>
                       
@@ -146,18 +146,17 @@
     </div>
     <?php
       if(isset($_POST['add'])){
+        
         if($numrow >=10){
           echo"<script>alert('You already exceed the number of items!')</script>";
-          $mysqli = new mysqli ('localhost','root','','question');
-          $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
-         
         }
         else{
-          $mysqli = new mysqli ('localhost','root','','question');
-          $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";  
+          $mysqli = new mysqli ('localhost','root','','question'); 
+        $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
+  
           $_SESSION['numrow']=$numrow+1;
           $_SESSION['Create']=$code;
-          echo '<script type="text/javascript">' . 'window.location = "Add.php?teacher='.$user.'"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "AAdd.php"'.'</script>';
         }
       }
 
@@ -168,7 +167,7 @@
         if($mysqli->query($result1)===TRUE){
           echo '<script type="text/javascript">' .
           'console.log("Q1 updated successfully");</script>';
-          echo '<script type="text/javascript">' . 'window.location = "EditView.php?teacher='.$user.'"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "ACreateCode.php"'.'</script>';
     
         }else{
           echo '<script type="text/javascript">' .

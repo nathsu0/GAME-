@@ -102,7 +102,7 @@ include '../includes/navbar.php';
           $result =mysqli_query($conn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
           VALUES('$Question', '$A','$B','$C','$D', '$ans')");
           
-          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
+          echo '<script type="text/javascript">' .'history.go(-2); '. '</script>';
          }
         }
    ?> 

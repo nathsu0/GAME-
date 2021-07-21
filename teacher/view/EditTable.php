@@ -100,9 +100,9 @@ include '../includes/navbar.php';
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
                     <td><?php echo $row['Answer']; ?></td>
-                    <td name="del"><a href="EditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" 
+                    <td name="del"><a href="EditF copy.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" 
                     type="button" class="btn btn-success" >EDIT </a>
-                    <a href="DeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
+                    <a href="DeleteQ copy.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   </tr>
                       
@@ -139,7 +139,7 @@ include '../includes/navbar.php';
           $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";  
           $_SESSION['numrow']=$numrow+1;
           $_SESSION['Create']=$code;
-          echo '<script type="text/javascript">' . 'window.location = "Add.php"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "Add copy.php"'.'</script>';
         }
       }
 

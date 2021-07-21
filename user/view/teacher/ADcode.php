@@ -1,10 +1,10 @@
 <?php
       
     session_start();
-    $user =   $_GET['teacher'];
+    $user1 =$_SESSION['teach'];
     $decode = $_SESSION['decode'];
     $code = $_SESSION['cccode'];
-    include 'conn.php';
+    include 'Aconn.php';
     $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
 
     while( $table = $tables->fetch_array() ): $TABLE = $table[0];
@@ -15,14 +15,14 @@
     endwhile;
     $newconn = new mysqli ('localhost', 'root' , '',$code);
     $del = mysqli_query($newconn, "DELETE FROM scores");
-    include 'questiondb.php';
+    include 'Aquestiondb.php';
     $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
     $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
     $row6 = mysqli_fetch_assoc($result6);
     $subj = $row6['SUBJ'];
     $name = $row6['GAMENAME'] ." copy";
     $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
-    VALUES('$code','$user','$subj','$name')");
+    VALUES('$code','$user1','$subj','$name')");
       
 ?>
 <!doctype html>
@@ -76,7 +76,7 @@
                 <label><?php echo $code; ?></label>
             </div> <br><br>
             <div class="container">
-                <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-3 mt-5"
+                <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

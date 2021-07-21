@@ -1,14 +1,16 @@
 <?php
           session_start();
-          $code = $_SESSION['Create'];
-          $user =   $_GET['teacher'];
-          $numrow = $_SESSION['numrow'];
-          $conn = new mysqli ('localhost', 'root','',$code);
-?>
-<!doctype html>
+          $user1 =$_SESSION['teach'];
+          $code = $_GET['code'];
+          $conn = new mysqli('localhost','root','',$code);  
+          $id = $_GET['ID'];
+          $num = $_GET['num'];
+          $result = mysqli_query($conn,"SELECT * FROM quiz WHERE id='$id'");
+          $row = mysqli_fetch_assoc($result);
+?><!doctype html>
 <html lang="en">
   <head>
-    <title>Add Question</title>
+    <title>Edit Question <?php echo $num?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,83 +49,76 @@
     </div>
   </div>
 </nav>
-          <form method="POST" action="">
-          <!----NAVIGATION BAR END-->
+<form method="post" action="">
           <!----CONTENT START------->
           <div class="blocks container">
-            
           <div class="form-floating m-2">
-            <textarea class="form-control" name='question' placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
-            <label for="floatingTextarea2"><?php echo $numrow;?>. </label>
+            <input class="form-control" name="question" value="<?php echo $row["Question"];?>" id="floatingTextarea2" style="height: 100px"></input>
+            <label for="floatingTextarea2"><?php echo $num;?>. </label>
           </div>
           <div class="container m-2">
             <div class="row">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" >
+                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['Answer']=="A"){echo "checked";}?>>
                 A.)
-                <input class="answer"type="text"id="ans1" name="A">
+                <input class="answer"type="text"id="ans1" name="A" value="<?php echo $row['A'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" >
+                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['Answer']=="B"){echo "checked";}?>>
                 B.)
-                <input class="answer"type="text"id="ans2" name="B">
+                <input class="answer"type="text"id="ans2" name="B"  value="<?php echo $row['B'];?>">
               </input>
               </div>
             </div>
             <div class="row ">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13">
+                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['Answer']=="C"){echo "checked";}?>>
                 C.)
-                <input class="answer"type="text"id="ans3" name="C">
+                <input class="answer"type="text"id="ans3" name="C"  value="<?php echo $row['C'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14"  >
+                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['Answer']=="D"){echo "checked";}?>>
                 D.)
-                <input class="answer"type="text"id="ans4" name="D">
+                <input class="answer"type="text"id="ans4" name="D" value="<?php echo $row['D'];?>">
               </input>
               </div>
           </div>
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="javascript:history.back()" type="button" class="button">
-            Cancel
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-          </a>
           <button type="submit" name='done' class="button">
                   Save
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </button>
+          <a href="AQuestionTable.php" type="button" class="button">
+            Cancel
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </a>
           </div>
         </div>
       </div>
-    </div>
-    <?php
-          if(isset($_POST['done'])){
-            
+      <?php
+    if(isset($_POST['done'])){
+    
+    
+    $result1= "UPDATE quiz SET Question='" . $_POST['question']."', A='". $_POST['A'] ."', 
+    B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', Answer='".$_POST['flexRadioDefault']."' WHERE id='$id'";
+    if($conn->query($result1)===TRUE){
+      $_POST['edoc']=$code;
+      echo '<script type="text/javascript">' .
+      'console.log("Q1 updated successfully");</script>';
+      echo '<script type="text/javascript">' . 'window.location = "AQuestionTable.php"'.'</script>';
 
-            $Question=$_POST['question'];
-            if($Question == NULL ){
-              echo '<script type="text/javascript">'.'alert("Please enter a question.");</script>';
-            }
-            else{
-     
-            $A=$_POST['A'];
-            $B=$_POST['B'];
-            $C=$_POST['C'];
-            $D=$_POST['D'];
-            $ans=$_POST['flexRadioDefault'];
-            
-          $result =mysqli_query($conn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
-          
-          echo '<script type="text/javascript">' .'history.go(-2); '. '</script>';
-         }
-        }
-   ?> 
-  </form>
+    }else{
+      echo '<script type="text/javascript">' .
+      'console.log("FAILED!");</script>';
+    }
+  }
+?>
+</form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

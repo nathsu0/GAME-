@@ -1,7 +1,7 @@
 <?php
     session_start();
     $coode = $_SESSION['CreateCode'];
-    $user =   $_GET['teacher'];
+    $user1 =$_SESSION['teach'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,7 +57,7 @@
             </label>
             </div> 
             <div class="container">
-                <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-3 mt-5"
+                <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

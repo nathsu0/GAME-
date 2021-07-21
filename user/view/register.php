@@ -1,5 +1,5 @@
 <?php
-    include 'teacher/accounts.php';
+    include 'teacher/Aaccounts.php';
     $usere="";
     $pww="";
     if(isset($_POST['submit'])){

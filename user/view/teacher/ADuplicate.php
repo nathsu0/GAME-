@@ -1,11 +1,11 @@
 <?php
       session_start();
             
-      include 'conn.php';
-      include 'random.php';
+      include 'Aconn.php';
+      include 'Arandom.php';
       $db = mysqli_connect('localhost','root','','question');
 
-      $user =   $_GET['teacher'];
+      $user1 =$_SESSION['teach'];
       $eee ="";
 
       if(isset($_POST['done'])){
@@ -31,7 +31,7 @@
         $_SESSION['decode'] = $mamama;
         $_SESSION['cccode'] = $cooode;
         
-       echo '<script type="text/javascript">' .'window.location = "Dcode.php?teacher='.$user.'"' . '</script>';
+       echo '<script type="text/javascript">' .'window.location = "ADcode.php"' . '</script>';
       }
     }
 ?>
@@ -90,7 +90,7 @@
             
             <br>
             <div class="butt container">
-                  <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button">
+                  <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button">
                     Back
                     <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                   </a>

@@ -1,6 +1,6 @@
 <?php
        session_start();
-       $user =   $_GET['teacher'];
+       $user1 =$_SESSION['teach'];
        $conn = mysqli_connect('localhost','root','','question');
 
 ?>
@@ -66,17 +66,17 @@
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from tanong WHERE USER='$user' ORDER BY GAMENAME");
+            $result = mysqli_query($conn,"SELECT * from tanong WHERE USER='$user1' ORDER BY GAMENAME");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
+                  <td name="code"><a href="AEditTable.php?code=<?php echo $row["CODE"];?>" >
                   <?php  echo $row["CODE"];?> </td></a>
-                  <td name="gn"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
+                  <td name="gn"><a href="AEditTable.php?code=<?php echo $row["CODE"];?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
-                  <td name="sub"><a href="EditTable.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" >
+                  <td name="sub"><a href="AEditTable.php?code=<?php echo $row["CODE"];?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
-                  <td name="del"><a href="Delete.php?code=<?php echo $row["CODE"];?>&teacher=<?=$user?>" type="button" class="btn btn-success" 
+                  <td name="del"><a href="ADelete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-success" 
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
             </a>
@@ -88,7 +88,7 @@
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php?teacher=<?=$user?>" type="button" class="button me-2">
+            <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

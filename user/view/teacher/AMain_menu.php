@@ -1,7 +1,8 @@
 <?php
        session_start();
-       $user =   $_GET['teacher'];
-       $_SESSION['username'] = $user;
+       $user1 =   $_GET['teach'];
+       $_SESSION['teach'] = $user1;
+       $_SESSION['username'] = $user1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +22,7 @@
        <!----MAIN CONTAINER-->
     <div class="Main container">
         <!-----CONTENT IN CONTAINER-->    
-      <form method='post' action='Main_menu.php'>
+      <form method='post'>
       <div class="Box container mt-5 p-0">
          <!---NAVIGATION BAR START-->
          <link rel="stylesheet" href="../css/common.css">
@@ -68,24 +69,24 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="Create.php?teacher=<?=$user?>" type="button" class="btn border border-warning bg-warning text-dark">Create Questions</a>
+                            <a href="ACreate.php?" type="button" class="btn border border-warning bg-warning text-dark">Create Questions</a>
                           </div>
                         </div>
                       </div>
                     </div>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href ="EditView.php?teacher=<?=$user?>" type="button" class="button">Edit Question
+                    <a href ="AEditView.php?" type="button" class="button">Edit Question
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="ViewScore.php?teacher=<?=$user?>" type="button" class="button">View Score of Students
+                    <a href="AViewScore.php?" type="button" class="button">View Score of Students
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="Duplicate.php?teacher=<?=$user?>" type="button" class="button">Duplicate Game
+                    <a href="ADuplicate.php?" type="button" class="button">Duplicate Game
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>
