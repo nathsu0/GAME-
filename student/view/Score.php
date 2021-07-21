@@ -69,7 +69,7 @@
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
-            <a href="Code.php" type="button" class="button btn-bubble1">Exit</a>
+            <a onclick="history.go(-7)" type="button" class="button btn-bubble1">Exit</a>
         </div> 
         </div>
       </div>
