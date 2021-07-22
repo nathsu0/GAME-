@@ -155,6 +155,12 @@ var a10 ;
 
 // let resetStatus = false;
 
+ctx.imageSmoothingEnabled = true; /* standard */
+ctx.mozImageSmoothingEnabled = true; /* Firefox */
+ctx.oImageSmoothingEnabled = true; /* Opera */
+ctx.webkitImageSmoothingEnabled = true; /* Safari */
+ctx.msImageSmoothingEnabled = true; /* IE */
+ctx.imageSmoothingQuality = 'high';
 
 function timex(){
     var renderPositionX = CANVAS_WIDTH * 0.45;
