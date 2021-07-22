@@ -2,10 +2,10 @@
           session_start();
           $user1 =$_SESSION['teach'];
           $code = $_GET['code'];
-          $conn = new mysqli('localhost','root','',$code);  
+          include 'Aconncode.php';
           $id = $_GET['ID'];
           $num = $_GET['num'];
-          $result = mysqli_query($conn,"SELECT * FROM quiz WHERE id='$id'");
+          $result = mysqli_query($codeconn,"SELECT * FROM quiz WHERE id='$id'");
           $row = mysqli_fetch_assoc($result);
 ?><!doctype html>
 <html lang="en">
@@ -105,7 +105,7 @@
     
     $result1= "UPDATE quiz SET Question='" . $_POST['question']."', A='". $_POST['A'] ."', 
     B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', Answer='".$_POST['flexRadioDefault']."' WHERE id='$id'";
-    if($conn->query($result1)===TRUE){
+    if($codeconn->query($result1)===TRUE){
       $_POST['edoc']=$code;
       echo '<script type="text/javascript">' .
       'console.log("Q1 updated successfully");</script>';

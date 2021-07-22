@@ -76,7 +76,7 @@ include '../includes/navbar.php';
                   Save
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </button>
-          <a href="EditTable.php" type="button" class="button">
+          <a href="EditTable.php?code=<?=$code?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>

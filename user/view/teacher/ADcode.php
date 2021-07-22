@@ -13,8 +13,8 @@
         $conn->query( "INSERT INTO $code.$TABLE SELECT * FROM $decode.$TABLE" ) or die( $conn->error );
 
     endwhile;
-    $newconn = new mysqli ('localhost', 'root' , '',$code);
-    $del = mysqli_query($newconn, "DELETE FROM scores");
+    include "Aconncode.php";
+    $del = mysqli_query($codeconn, "DELETE FROM scores");
     include 'Aquestiondb.php';
     $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
     $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
