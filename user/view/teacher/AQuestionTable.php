@@ -5,9 +5,9 @@
           //$user1 = $_SESSION['username'];
           $user1 =$_SESSION['teach'];
           $code = $_SESSION['CreateCode'];
-          $mysqli = new mysqli('localhost','root','',$code);  
+          include 'Aconncode.php'; 
           $rescon =new mysqli('localhost','root','','question');  
-          $result = mysqli_query($mysqli,"SELECT * from quiz");
+          $result = mysqli_query($codeconn,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
           $res = mysqli_query($rescon,"SELECT * from tanong where CODE='$code'");
           $row6=mysqli_fetch_assoc($res)
@@ -151,7 +151,6 @@
           echo"<script>alert('You already exceed the number of items!')</script>";
         }
         else{
-          $mysqli = new mysqli ('localhost','root','','question'); 
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
   
           $_SESSION['numrow']=$numrow+1;
@@ -161,10 +160,9 @@
       }
 
       if(isset($_POST['done'])){
-        $mysqli = new mysqli ('localhost','root','','question');
         
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
-        if($mysqli->query($result1)===TRUE){
+        if($rescon->query($result1)===TRUE){
           echo '<script type="text/javascript">' .
           'console.log("Q1 updated successfully");</script>';
           echo '<script type="text/javascript">' . 'window.location = "ACreateCode.php"'.'</script>';
