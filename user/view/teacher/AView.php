@@ -2,7 +2,7 @@
        session_start();
        $user1 =$_SESSION['teach'];
        $code = $_GET['code'];
-       $conn = mysqli_connect('localhost','root','',$code);
+       include 'Aconncode.php';
        $count=1;
 
 ?>
@@ -66,7 +66,7 @@
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from scores");
+            $result = mysqli_query($codeconn,"SELECT * from scores");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>

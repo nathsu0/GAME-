@@ -1,5 +1,5 @@
 <?php
-    $conn1 = new mysqli('localhost', 'root', '');
+    include "Aconn.php";
     $t1= 'teacher1';
     $p1='teacher1';
     $t2= 'teacher2';

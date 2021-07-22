@@ -3,7 +3,7 @@
           $code = $_SESSION['Create'];
           $user1 =$_SESSION['teach'];
           $numrow = $_SESSION['numrow'];
-          $conn = new mysqli ('localhost', 'root','',$code);
+          include "Aconncode.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -116,7 +116,7 @@
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
             
-          $result =mysqli_query($conn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
+          $result =mysqli_query($codeconn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
           VALUES('$Question', '$A','$B','$C','$D', '$ans')");
           
           echo '<script type="text/javascript">' .'window.location = "AQuestionTable.php"' . '</script>';
