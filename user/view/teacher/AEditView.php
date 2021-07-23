@@ -1,7 +1,8 @@
 <?php
        session_start();
        $user1 =$_SESSION['teach'];
-       $conn = mysqli_connect('localhost','root','','question');
+       include 'Aquizconn.php';
+       $conn = $ques;
 
 ?>
 
