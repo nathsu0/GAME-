@@ -2,7 +2,8 @@
 <?php
     include 'accounts.php';
        session_start();
-    $mysqli = mysqli_connect('localhost','root','','quiz');
+       include 'conn.php';
+    $mysqli = $quiz;
     if(isset($_POST['submit'])){
         $username=$_POST['username'];
         $password=($_POST['password']);

@@ -1,7 +1,8 @@
 <?php
        session_start();
        $user = $_SESSION['username'];
-       $conn = mysqli_connect('localhost','root','','question');
+       include 'conn.php';
+       $conn = $ques;
 
 ?>
 

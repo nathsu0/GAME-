@@ -184,8 +184,6 @@ include '../includes/navbar.php';
          $_SESSION['SUBJECTname']=$subject;
          $name = $_POST['name'];
          $_SESSION['GAMENAME']=$name;
-         include 'questiondb.php';
-            $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
             VALUES('$mamama','$user','$subject','$name')");
           

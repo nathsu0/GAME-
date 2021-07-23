@@ -3,7 +3,8 @@
             
       include 'conn.php';
       include 'random.php';
-      $db = mysqli_connect('localhost','root','','question');
+      include 'conn.php';
+      $db =$ques;
 
       $user = $_SESSION['username'];
       $eee="";

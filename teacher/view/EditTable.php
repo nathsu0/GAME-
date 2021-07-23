@@ -3,8 +3,9 @@
           //$user = $_SESSION['username'];
           $user = $_SESSION['username'];
           $code = $_GET['code'];
-          $mysqli = new mysqli('localhost','root','',$code);  
-          $rescon =new mysqli('localhost','root','','question');  
+          include 'conn.php';
+          $mysqli = $conncode;
+          $rescon = $ques; 
           $result = mysqli_query($mysqli,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
           $res = mysqli_query($rescon,"SELECT * from tanong where CODE='$code'");
