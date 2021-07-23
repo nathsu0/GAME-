@@ -17,29 +17,29 @@
     echo "Table not created: ".$conn->error;
     }
 
-        $mysqli = new mysqli('localhost','root','','quiz');
+        include "Aquizconn.php";
         
 
 
-    $resulta =mysqli_query($mysqli,"SELECT * from accounts where username = '$t1' and passwords='$p1'");
+    $resulta =mysqli_query($quiz,"SELECT * from accounts where username = '$t1' and passwords='$p1'");
     if(mysqli_num_rows($resulta)>0){
             echo '<script type="text/javascript">'.'console.log("error");</script>';
     }else{
-        $result1 =mysqli_query($mysqli,"INSERT into accounts(username, passwords)
+        $result1 =mysqli_query($quiz,"INSERT into accounts(username, passwords)
         VALUES('teacher1', 'teacher1')");
     }
-    $resultb =mysqli_query($mysqli,"SELECT * from accounts where username = '$t2' and passwords='$p2'");
+    $resultb =mysqli_query($quiz,"SELECT * from accounts where username = '$t2' and passwords='$p2'");
     if(mysqli_num_rows($resultb)>0){
             echo '<script type="text/javascript">'.'console.log("error");</script>';
     }else{
-        $result2 =mysqli_query($mysqli,"INSERT into accounts(username, passwords)
+        $result2 =mysqli_query($quiz,"INSERT into accounts(username, passwords)
         VALUES('teacher2', 'teacher2')");
     }
-    $resultc =mysqli_query($mysqli,"SELECT * from accounts where username = '$t3' and passwords='$p3'");
+    $resultc =mysqli_query($quiz,"SELECT * from accounts where username = '$t3' and passwords='$p3'");
     if(mysqli_num_rows($resultc)>0){
             echo '<script type="text/javascript">'.'console.log("error");</script>';
     }else{
-        $result3 =mysqli_query($mysqli,"INSERT into accounts(username, passwords)
+        $result3 =mysqli_query($quiz,"INSERT into accounts(username, passwords)
         VALUES('teacher3', 'teacher3')");
     }
 
