@@ -1,5 +1,5 @@
 <?php
-        include 'teacher/Aquizconn.php';
+        include 'Aquizconn.php';
        $conn = $quiz;
       
 ?>
