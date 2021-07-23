@@ -1,7 +1,7 @@
 <?php
     session_start();
     $code = $_GET['code'];
-    include 'conn.php';
+    $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
     $id = $_GET['ID'];
     $sql = mysqli_query($conncode, "DELETE FROM  quiz WHERE  id='$id'"); 
     

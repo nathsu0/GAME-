@@ -2,8 +2,7 @@
        session_start();
        $user = $_SESSION['username'];
        $code = $_GET['code'];
-       include 'conn.php';
-       $conn = $conncode;
+       $conn =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
        $count=1;
 
 ?>

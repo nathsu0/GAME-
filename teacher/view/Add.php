@@ -4,6 +4,7 @@
           $user = $_SESSION['username'];
           $numrow = $_SESSION['numrow'];
           include 'conn.php';
+          $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
 ?>
 <!doctype html>
 <html lang="en">

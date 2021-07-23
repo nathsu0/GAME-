@@ -4,6 +4,7 @@
           $user = $_SESSION['username'];
           $code = $_GET['code'];
           include 'conn.php';
+          $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
           $mysqli = $conncode;
           $rescon = $ques; 
           $result = mysqli_query($mysqli,"SELECT * from quiz");
