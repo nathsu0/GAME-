@@ -93,8 +93,7 @@ include '../includes/navbar.php';
       $_POST['edoc']=$code;
       echo '<script type="text/javascript">' .
       'console.log("Q1 updated successfully");</script>';
-      
-    echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
+      echo '<script type="text/javascript">' . 'window.location = "EditTable.php?code='.$code.'"'.'</script>';
 
     }else{
       echo '<script type="text/javascript">' .

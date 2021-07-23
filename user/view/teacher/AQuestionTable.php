@@ -1,11 +1,13 @@
 <?php
           session_start();
-          //$user = $_SESSION['username'];
-          $user = $_SESSION['username'];
-          $code = $_GET['code'];
-          $mysqli = new mysqli('localhost','root','',$code);  
+          include 'Arandom.php';
+          include 'Aconn.php';
+          //$user1 = $_SESSION['username'];
+          $user1 =$_SESSION['teach'];
+          $code = $_SESSION['CreateCode'];
+          include 'Aconncode.php'; 
           $rescon =new mysqli('localhost','root','','question');  
-          $result = mysqli_query($mysqli,"SELECT * from quiz");
+          $result = mysqli_query($codeconn,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
           $res = mysqli_query($rescon,"SELECT * from tanong where CODE='$code'");
           $row6=mysqli_fetch_assoc($res)
@@ -13,16 +15,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Edit Quiz <?php echo $code;?></title>
+    <title><?=$row6['GAMENAME'];?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/QuestionTable.css">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../../css/teacher/QuestionTable.css">
+    <link rel="stylesheet" href="../../css/teacher/common.css">
   </head>
   <body>
      <!----MAIN CONTAINER-->
@@ -30,11 +32,28 @@
       <!-----CONTENT IN CONTAINER-->
         <div class="Box container  mt-5 p-0">
           <!---NAVIGATION BAR START-->
-          <?php 
-
-include '../includes/navbar.php';
-
-?>
+          <link rel="stylesheet" href="../css/common.css">
+<nav class="top navbar navbar-expand-lg navbar-light bg-light bg-transparent text-dark">
+  <div class="container-fluid my-1">
+    <label class="navbar-brand"></label>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item me-3">
+          Admin
+          <img src="../../img/teacher/person-fill.svg">
+        </li>
+        <li class="nav-item">
+          <a href="../table.php">Home
+            <img src="../../img/teacher/box-arrow-right.svg">
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <form method='POST'>
           <!----CONTENT START------->
           <div class="blocks container"> <br>
@@ -100,9 +119,8 @@ include '../includes/navbar.php';
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
                     <td><?php echo $row['Answer']; ?></td>
-                    <td name="del"><a href="EditF copy.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" 
-                    type="button" class="btn btn-success" >EDIT </a>
-                    <a href="DeleteQ copy.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
+                    <td name="del"><a href="AEditF.php?ID=<?php echo $row["id"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
+            </td>   <td><a href="ADeleteQ.php?ID=<?php echo $row["id"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   </tr>
                       
@@ -128,29 +146,26 @@ include '../includes/navbar.php';
     </div>
     <?php
       if(isset($_POST['add'])){
+        
         if($numrow >=10){
           echo"<script>alert('You already exceed the number of items!')</script>";
-          $mysqli = new mysqli ('localhost','root','','question');
-          $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
-         
         }
         else{
-          $mysqli = new mysqli ('localhost','root','','question');
-          $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";  
+        $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
+  
           $_SESSION['numrow']=$numrow+1;
           $_SESSION['Create']=$code;
-          echo '<script type="text/javascript">' . 'window.location = "Add copy.php"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "AAdd.php"'.'</script>';
         }
       }
 
       if(isset($_POST['done'])){
-        $mysqli = new mysqli ('localhost','root','','question');
         
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
-        if($mysqli->query($result1)===TRUE){
+        if($rescon->query($result1)===TRUE){
           echo '<script type="text/javascript">' .
           'console.log("Q1 updated successfully");</script>';
-          echo '<script type="text/javascript">' . 'window.location = "EditView.php"'.'</script>';
+          echo '<script type="text/javascript">' . 'window.location = "ACreateCode.php"'.'</script>';
     
         }else{
           echo '<script type="text/javascript">' .
@@ -163,7 +178,7 @@ include '../includes/navbar.php';
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="../../asset/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/QuestionTable.js"></script>
+    <script src="../../../asset/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/teacher/QuestionTable.js"></script>
   </body>
 </html>

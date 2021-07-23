@@ -1,7 +1,5 @@
 <?php
-       session_start();
        $conn = mysqli_connect('localhost','root','','quiz');
-       $teacher = '';
       
 ?>
 <!doctype html>
@@ -33,7 +31,6 @@
                 <ul class="navbar-nav ms-auto">
                  
                   <li class="nav-item">
-                    <a href="option.html">Log Out
                       
                       </a>
                   </li>
@@ -61,10 +58,10 @@
             $result = mysqli_query($conn,"SELECT * from accounts ORDER BY 'ID' ");
             while($row=mysqli_fetch_assoc($result)){
               ?>
-              <tr><a href = "Created.php" class="row-link">
-                  <td name="id"> <a href="teacher/Main_menu.php?teacher=<?php echo $row["username"];?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
-                  <td name="username"> <a href="teacher/Main_menu.php?teacher=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
-                  <td name="pw"> <a href="teacher/Main_menu.php?teacher=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["passwords"];?></a></td></div>
+              <tr><a href = "ACreated.php" class="row-link">
+                  <td name="id"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
+                  <td name="username"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
+                  <td name="pw"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["passwords"];?></a></td></div>
                   <input type="hidden" name="teach" value="<?php echo $row["username"]; ?>"></input>
             </a>
               </tr>
