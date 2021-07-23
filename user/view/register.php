@@ -69,7 +69,15 @@
                             Register
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
+                        
                 </div>
+                <div class = "button d-flex justify-content-center mb-2">
+                <a href="table.php" type="button" class="button ">
+                Back
+                </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </a>
+</div>
             </div>
         </form>
       </div>

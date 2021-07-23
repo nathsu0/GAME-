@@ -3,7 +3,8 @@
             
       include 'Aconn.php';
       include 'Arandom.php';
-      $db = mysqli_connect('localhost','root','','question');
+      include 'Aquizconn.php';
+      $db = $ques;
 
       $user1 =$_SESSION['teach'];
       $eee ="";

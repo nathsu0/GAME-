@@ -4,7 +4,8 @@
           $user1 =$_SESSION['teach'];
           $code = $_GET['code'];
           include 'Aconncode.php';
-          $rescon =new mysqli('localhost','root','','question');  
+          include 'Aquizconn.php';
+          $rescon = $ques; 
           $result = mysqli_query($codeconn,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
           $res = mysqli_query($rescon,"SELECT * from tanong where CODE='$code'");
