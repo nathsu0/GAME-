@@ -6,7 +6,7 @@ h1{
 }
 .blocks{
     color: whitesmoke;
-    background-image: url('../img/Board.png');
+    background-image: url('../img/teacher/Board.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 20px 30px;
