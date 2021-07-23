@@ -6,16 +6,15 @@
     $p2='teacher2';
     $t3= 'teacher3';
     $p3='teacher3';
-    //we create the database with the following command;
     $sql = "CREATE DATABASE IF NOT EXISTS quiz";
-    if ($conn1->query($sql) === FALSE){
+    if ($conn->query($sql) === FALSE){
     return true;
     }
 
     $tanong = "CREATE TABLE IF NOT EXISTS quiz.accounts(
         ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, username MEDIUMTEXT, passwords VARCHAR(30))";
-    if ($conn1->query($tanong) === FALSE){
-    echo "Table not created: ".$conn1->error;
+    if ($conn->query($tanong) === FALSE){
+    echo "Table not created: ".$conn->error;
     }
 
         $mysqli = new mysqli('localhost','root','','quiz');
