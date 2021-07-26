@@ -21,7 +21,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sign in</title>
+    <title>Log in</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,7 +38,7 @@
         <!-----SIGN IN CONTAINER-->
         <form class="form-container-style" method ="POST" action='Sign_in.php'>
             <div class="blocks form-group container mt-5">
-                <h1 class="display-4 text-center">Sign in</h1>
+                <h1 class="display-4 text-center">Log in</h1>
                 <!------USER INPUT START-->
                     <!----USERNAME-->
                 <div class="Username input-group">
@@ -54,7 +54,7 @@
                 <!-------BUTTON-------->
                 <div class = "button d-flex justify-content-center">
                         <button type="submit" name="submit" class="button">
-                            Sign in
+                            Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
                 </div>

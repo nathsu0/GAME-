@@ -120,6 +120,9 @@ include '../includes/navbar.php';
           if(isset($_POST['done'])){
             
             $mamama = $_POST['ccode'];
+            
+         $subject=$_POST['subjects'];
+         $_SESSION['SUBJECTname']=$subject;
 
             $Question=$_POST['question'];
             if($Question == NULL ){
@@ -180,8 +183,6 @@ include '../includes/navbar.php';
           VALUES('$Question', '$A','$B','$C','$D', '$ans')");
           
           include 'questiondb.php';
-         $subject=$_POST['subjects'];
-         $_SESSION['SUBJECTname']=$subject;
          $name = $_POST['name'];
          $_SESSION['GAMENAME']=$name;
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
