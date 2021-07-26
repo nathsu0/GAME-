@@ -1,5 +1,6 @@
 <?php
-       $conn = mysqli_connect('localhost','root','','quiz');
+        include 'Aquizconn.php';
+       $conn = $quiz;
       
 ?>
 <!doctype html>

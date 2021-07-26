@@ -88,7 +88,7 @@
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="AEditTAble.php" type="button" class="button">
+          <a href="AEditTAble.php?code=<?=$code?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>

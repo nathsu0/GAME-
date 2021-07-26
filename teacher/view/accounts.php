@@ -1,5 +1,6 @@
 <?php
-    $conn1 = new mysqli('localhost', 'root', '');
+include 'conn.php';
+    $conn1 = $conn;
     $t1= 'teacher1';
     $p1='teacher1';
     $t2= 'teacher2';

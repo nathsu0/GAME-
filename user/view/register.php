@@ -1,11 +1,13 @@
 <?php
     include 'teacher/Aaccounts.php';
+    include "Aquizconn.php";
     $usere="";
     $pww="";
     if(isset($_POST['submit'])){
     $tea = $_POST['username'];
     $pw = $_POST['password'];
     $Cpw = $_POST['confirm'];
+    $mysqli = $quiz;
     $resultd =mysqli_query($mysqli,"SELECT * from accounts where username = '$tea'");
     if(mysqli_num_rows($resultd)>0 ){
        $usere = "Username already taken.";

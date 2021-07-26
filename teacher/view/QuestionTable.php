@@ -5,8 +5,8 @@
           //$user = $_SESSION['username'];
           $user = $_SESSION['username'];
           $code = $_SESSION['CreateCode'];
-          $mysqli = new mysqli('localhost','root','',$code);  
-          $rescon =new mysqli('localhost','root','','question');  
+          $mysqli = new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+          $rescon = $ques;
           $result = mysqli_query($mysqli,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
           $res = mysqli_query($rescon,"SELECT * from tanong where CODE='$code'");

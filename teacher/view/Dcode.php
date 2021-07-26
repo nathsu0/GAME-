@@ -5,6 +5,7 @@
     $decode = $_SESSION['decode'];
     $code = $_SESSION['cccode'];
     include 'conn.php';
+    $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
     $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
 
     while( $table = $tables->fetch_array() ): $TABLE = $table[0];
@@ -13,10 +14,10 @@
         $conn->query( "INSERT INTO $code.$TABLE SELECT * FROM $decode.$TABLE" ) or die( $conn->error );
 
     endwhile;
-    $newconn = new mysqli ('localhost', 'root' , '',$code);
+    $newconn = $conncode;
     $del = mysqli_query($newconn, "DELETE FROM scores");
     include 'questiondb.php';
-    $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
+ 
     $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
     $row6 = mysqli_fetch_assoc($result6);
     $subj = $row6['SUBJ'];
