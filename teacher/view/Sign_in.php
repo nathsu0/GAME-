@@ -54,7 +54,7 @@
                 <!-------BUTTON-------->
                 <div class = "button d-flex justify-content-center">
                         <button type="submit" name="submit" class="button">
-                            Sign in
+                            Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
                 </div>
