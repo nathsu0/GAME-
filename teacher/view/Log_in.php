@@ -36,7 +36,7 @@
       <!----MAIN CONTAINER-->
     <div class="Main container-lg align-items-sm-center">
         <!-----SIGN IN CONTAINER-->
-        <form class="form-container-style" method ="POST" action='Sign_in.php'>
+        <form class="form-container-style" method ="POST" action='Log_in.php'>
             <div class="blocks form-group container mt-5">
                 <h1 class="display-4 text-center">Log in</h1>
                 <!------USER INPUT START-->

@@ -49,7 +49,7 @@ include '../includes/navbar.php';
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
-                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Araling Panlipunan">Araling Panlipunan</option>
                     <option value="Social Science">Social Science</option>
                     <option value="Computer">Computer</option>
                     <option value="Christian Living">Christian Living</option>
