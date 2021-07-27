@@ -142,8 +142,7 @@ include '../includes/navbar.php';
           VALUES('$mamama','$Question', '$A','$B','$C','$D', '$ans')");
  
          $name = $_POST['name'];
-         $_SESSION['GAMENAME']=$name;
-            $result =mysqli_query($conn,"INSERT into quiz(gamecode,  userid, gamesubject, gamename)
+            $result =mysqli_query($conn,"INSERT into quiz(gamecode, userid, gamesubject, gamename)
             VALUES('$mamama','$id','$subject','$name')");
           
          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';

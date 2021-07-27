@@ -3,10 +3,10 @@
             
       include 'conn.php';
       include 'random.php';
-      include 'conn.php';
-      $db =$ques;
 
       $user = $_SESSION['username'];
+      $id = $_SESSION['userid'];
+
       $eee="";
 
       if(isset($_POST['done'])){

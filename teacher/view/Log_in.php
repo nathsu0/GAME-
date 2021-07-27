@@ -11,7 +11,8 @@
     if(mysqli_num_rows($result)>0){
              $_SESSION['username'] = $username;
              $id= $i['ID'];
-               header("location:Main_menu.php?id=.'$id'.");
+             echo '<script type="text/javascript">' .'window.location = "Main_menu.php?id='.$id.'"' . '</script>';
+         
         }else{
         echo"<script>alert('Incorrect username and/or password.')</script>";
     }

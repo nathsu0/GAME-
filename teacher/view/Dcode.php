@@ -4,8 +4,8 @@
     $user= $_SESSION['username'];
     $decode = $_SESSION['decode'];
     $code = $_SESSION['cccode'];
+    $id = $_SESSION['userid'];
     include 'conn.php';
-    include 'conncode.php';
     $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
 
     while( $table = $tables->fetch_array() ): $TABLE = $table[0];
