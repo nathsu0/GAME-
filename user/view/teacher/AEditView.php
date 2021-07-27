@@ -77,7 +77,7 @@
                   <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
                   <td name="sub"><a href="AEditTable.php?code=<?php echo $row["CODE"];?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
-                  <td name="del"><a href="ADelete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-success" 
+                  <td name="del"><a href="ADelete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-danger" 
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
             </a>

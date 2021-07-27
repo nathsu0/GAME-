@@ -24,7 +24,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/QuestionTable.css">
+    <link rel="stylesheet" href="../css/QuestionTable.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/common.css">
   </head>
   <body>
