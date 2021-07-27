@@ -1,16 +1,17 @@
 # GAME
-wamp server
-used conn
+wamp server LOCALHOST 
+used in conn.php, 
 Host: "localhost";
 User: "root";
 Password: "";
-Db name: "";
+
+
 
 for user's view;
 Open user\view\option.html;
 
 for teacher's view only;
-Open teacher\view\Sign_in.php;
+Open teacher\view\Log_in.php;
 Database will be automatically created.
 
 
