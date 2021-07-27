@@ -7,16 +7,15 @@
     $tea = $_POST['username'];
     $pw = $_POST['password'];
     $Cpw = $_POST['confirm'];
-    $mysqli = $quiz;
-    $resultd =mysqli_query($mysqli,"SELECT * from accounts where username = '$tea'");
+    $resultd =mysqli_query( $quiz,"SELECT * from accounts where username = '$tea'");
     if(mysqli_num_rows($resultd)>0 ){
        $usere = "Username already taken.";
     }
-    if($Cpw != $pw){
+    else if($Cpw != $pw){
         $pww ="Passwords do not match.";
     }
     else{
-        $resultdo =mysqli_query($mysqli,"INSERT into accounts(username, passwords)
+        $resultdo =mysqli_query($quiz,"INSERT into accounts(username, passwords)
         VALUES('$tea', '$pw')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
          echo '<script type="text/javascript">' . 'window.location = "table.php"'.'</script>';

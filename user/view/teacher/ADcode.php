@@ -16,7 +16,6 @@
     include "Aconncode.php";
     $del = mysqli_query($codeconn, "DELETE FROM scores");
     include 'Aquestiondb.php';
-    include 'Aquizconn.php';
     $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
     $row6 = mysqli_fetch_assoc($result6);
     $subj = $row6['SUBJ'];
