@@ -3,37 +3,31 @@
             
       include 'conn.php';
       include 'random.php';
-
-      $user = $_SESSION['username'];
+      $user =$_SESSION['username'];
       $id = $_SESSION['userid'];
-
-      $eee="";
+      $eee ="";
 
       if(isset($_POST['done'])){
-      $mam = $_POST['dcode'];
+      $mamama = $_POST['dcode'];
       $cooode = $_POST['ccode'];
-      
-      if($conn->select_db($mam)=== false){
-        $eee = "Please enter a valid code.";
-       
-      }else{
-       // echo '<script type="text/javascript">'.'console.log("Database exist");</script>';
-        // Create database
-        $sql = "CREATE DATABASE $cooode"; 
-        if ($conn->query($sql) === TRUE) {
-          echo '<script type="text/javascript">' .
-          'console.log("Database created successfully");</script>';
-        } else {
-          echo '<script type="text/javascript">' .
-          'console.log(""Error creating database: "");</script>'. $conn->error;
-          
+      $dup = mysqli_query($conn, "SELECT * from quiz WHERE gamecode = '$mamama'");
+      if(mysqli_num_rows($dup)>0){
+        $_SESSION['cccode']=$cooode;
+        $_SESSION['duplicate'] = $mamama;
+        $look =mysqli_query ($conn,"SELECT * FROM quiz WHERE gamecode='$mamama'");
+        while($row1=mysqli_fetch_assoc($look)){
+          $newname = $row1['gamename'].' copy';
+          $subk = $row1['gamesubject'];
+          $sql = mysqli_query($conn,"INSERT into quiz(userid, gamename, gamecode, gamesubject)
+          VALUES ('$id','$newname','$cooode','$subk')");
         }
-       
-        $_SESSION['decode'] = $mam;
-        $_SESSION['cccode'] = $cooode;
-        
-       echo '<script type="text/javascript">' .'window.location = "Dcode.php"' . '</script>';
+
+        echo '<script type="text/javascript">' .'window.location = "Dcode.php"' . '</script>';
+      }else{
+        $eee = "Please enter a valid code.";
       }
+    
+      
     }
 ?>
 <!doctype html>
@@ -70,7 +64,7 @@ include '../includes/navbar.php';?>
              <br>
             
             <div class="butt container">
-                  <a href="Main_menu.php" type="button" class="button">
+                  <a href="Main_menu.php?id=<?=$id?>" type="button" class="button">
                     Back
                     <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                   </a>

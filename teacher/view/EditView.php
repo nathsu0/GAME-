@@ -70,7 +70,7 @@ include '../includes/navbar.php';
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php" type="button" class="button me-2">
+            <a href="Main_menu.php?id=<?=$id?>" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>
