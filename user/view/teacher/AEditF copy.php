@@ -2,10 +2,10 @@
           session_start();
           $user1 =$_SESSION['teach'];
           $code = $_GET['code'];
-          include "Aconncode.php";
+          include "conn.php";
           $id = $_GET['ID'];
           $num = $_GET['num'];
-          $result = mysqli_query($codeconn,"SELECT * FROM quiz WHERE id='$id'");
+          $result = mysqli_query($conn,"SELECT * FROM quiz_question WHERE ID='$id'");
           $row = mysqli_fetch_assoc($result);
 ?><!doctype html>
 <html lang="en">
@@ -53,19 +53,19 @@
           <!----CONTENT START------->
           <div class="blocks container">
           <div class="form-floating m-2">
-            <input class="form-control" name="question" value="<?php echo $row["Question"];?>" id="floatingTextarea2" style="height: 100px"></input>
+            <input class="form-control" name="question" value="<?php echo $row["question"];?>" id="floatingTextarea2" style="height: 100px"></input>
             <label for="floatingTextarea2"><?php echo $num;?>. </label>
           </div>
           <div class="container m-2">
             <div class="row">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['Answer']=="A"){echo "checked";}?>>
+                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['answer']=="A"){echo "checked";}?>>
                 A.)
                 <input class="answer"type="text"id="ans1" name="A" value="<?php echo $row['A'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['Answer']=="B"){echo "checked";}?>>
+                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['answer']=="B"){echo "checked";}?>>
                 B.)
                 <input class="answer"type="text"id="ans2" name="B"  value="<?php echo $row['B'];?>">
               </input>
@@ -73,13 +73,13 @@
             </div>
             <div class="row ">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['Answer']=="C"){echo "checked";}?>>
+                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['answer']=="C"){echo "checked";}?>>
                 C.)
                 <input class="answer"type="text"id="ans3" name="C"  value="<?php echo $row['C'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['Answer']=="D"){echo "checked";}?>>
+                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['answer']=="D"){echo "checked";}?>>
                 D.)
                 <input class="answer"type="text"id="ans4" name="D" value="<?php echo $row['D'];?>">
               </input>
@@ -103,9 +103,9 @@
     if(isset($_POST['done'])){
     
     
-    $result1= "UPDATE quiz SET Question='" . $_POST['question']."', A='". $_POST['A'] ."', 
-    B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', Answer='".$_POST['flexRadioDefault']."' WHERE id='$id'";
-    if($codeconn->query($result1)===TRUE){
+    $result1= "UPDATE quiz_question SET question='" . $_POST['question']."', A='". $_POST['A'] ."', 
+    B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', answer='".$_POST['flexRadioDefault']."' WHERE id='$id'";
+    if($conn->query($result1)===TRUE){
       $_POST['edoc']=$code;
       echo '<script type="text/javascript">' .
       'console.log("Q1 updated successfully");</script>';

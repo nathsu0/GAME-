@@ -2,7 +2,7 @@
        session_start();
        $user1 =$_SESSION['teach'];
        $code = $_GET['code'];
-       include 'Aconncode.php';
+       include 'conn.php';
        $count=1;
 
 ?>

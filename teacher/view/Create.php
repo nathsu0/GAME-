@@ -143,6 +143,7 @@ include '../includes/navbar.php';
            // CONNECT DB FOR TABLES
            include 'mysqlimama.php';
            // CREATE TABLES
+           
             $sql = "CREATE TABLE quiz (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
               Question MEDIUMTEXT NOT NULL,
