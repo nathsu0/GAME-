@@ -3,7 +3,6 @@
             
       include 'Aconn.php';
       include 'Arandom.php';
-      include 'Aquizconn.php';
       $db = $ques;
 
       $user1 =$_SESSION['teach'];

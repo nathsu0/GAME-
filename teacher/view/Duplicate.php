@@ -10,10 +10,10 @@
       $eee="";
 
       if(isset($_POST['done'])){
-      $mamama = $_POST['dcode'];
+      $mam = $_POST['dcode'];
       $cooode = $_POST['ccode'];
       
-      if($conn->select_db($mamama)=== false){
+      if($conn->select_db($mam)=== false){
         $eee = "Please enter a valid code.";
        
       }else{
@@ -29,7 +29,7 @@
           
         }
        
-        $_SESSION['decode'] = $mamama;
+        $_SESSION['decode'] = $mam;
         $_SESSION['cccode'] = $cooode;
         
        echo '<script type="text/javascript">' .'window.location = "Dcode.php"' . '</script>';

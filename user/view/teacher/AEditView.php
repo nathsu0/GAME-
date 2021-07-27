@@ -1,7 +1,7 @@
 <?php
        session_start();
        $user1 =$_SESSION['teach'];
-       include 'Aquizconn.php';
+       include 'Aconn.php';
        $conn = $ques;
 
 ?>

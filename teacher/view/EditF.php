@@ -4,7 +4,7 @@
           $user = $_SESSION['username'];
           $code = $_GET['code'];
           include 'conn.php';
-          $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+          include 'conncode.php';
           $id = $_GET['ID'];
           $num = $_GET['num'];
           $result = mysqli_query($conncode,"SELECT * FROM quiz WHERE id='$id'");
@@ -77,7 +77,7 @@ include '../includes/navbar.php';
                   Save
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </button>
-          <a href="EditTable.php?code=<?=$code?>" type="button" class="button">
+          <a href="QuestionTable.php?code=<?=$code?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>

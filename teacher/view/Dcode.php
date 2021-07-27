@@ -5,7 +5,7 @@
     $decode = $_SESSION['decode'];
     $code = $_SESSION['cccode'];
     include 'conn.php';
-    $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+    include 'conncode.php';
     $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
 
     while( $table = $tables->fetch_array() ): $TABLE = $table[0];

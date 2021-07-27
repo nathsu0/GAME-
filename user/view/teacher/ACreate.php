@@ -66,7 +66,7 @@
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
-                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Araling Panlipunan">Araling Panlipunan</option>
                     <option value="Social Science">Social Science</option>
                     <option value="Computer">Computer</option>
                     <option value="Christian Living">Christian Living</option>
@@ -155,7 +155,7 @@
              'console.log("Error creating database");</script>'. $conn->error;
            }
            // CONNECT DB FOR TABLES
-           $mysqli= new mysqli ('localhost', 'root' , '', $mamama);  
+           include 'Amysqlimama.php';
            // CREATE TABLES
             $sql = "CREATE TABLE quiz (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -201,7 +201,6 @@
          $_SESSION['SUBJECTname']=$subject;
          $name = $_POST['name'];
          $_SESSION['GAMENAME']=$name;
-            $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
             VALUES('$mamama','$user1','$subject','$name')");
           

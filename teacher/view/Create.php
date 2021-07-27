@@ -45,11 +45,11 @@ include '../includes/navbar.php';
                   <label for="subjects">Choose a subject:</label>
                   <select name="subjects" id="sub">
                     <option value="None">None</option default>
-                    <option value="Math">Mathematics</option>
+                    <option value="Mathematics">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
-                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Araling Panlipunan">Araling Panlipunan</option>
                     <option value="Social Science">Social Science</option>
                     <option value="Computer">Computer</option>
                     <option value="Christian Living">Christian Living</option>
@@ -120,6 +120,9 @@ include '../includes/navbar.php';
           if(isset($_POST['done'])){
             
             $mamama = $_POST['ccode'];
+            
+         $subject=$_POST['subjects'];
+         $_SESSION['SUBJECTname']=$subject;
 
             $Question=$_POST['question'];
             if($Question == NULL ){
@@ -138,7 +141,7 @@ include '../includes/navbar.php';
              'console.log("Error creating database");</script>'. $conn->error;
            }
            // CONNECT DB FOR TABLES
-           $mysqli= new mysqli ('localhost', 'root' , '', $mamama);  
+           include 'mysqlimama.php';
            // CREATE TABLES
             $sql = "CREATE TABLE quiz (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -180,8 +183,6 @@ include '../includes/navbar.php';
           VALUES('$Question', '$A','$B','$C','$D', '$ans')");
           
           include 'questiondb.php';
-         $subject=$_POST['subjects'];
-         $_SESSION['SUBJECTname']=$subject;
          $name = $_POST['name'];
          $_SESSION['GAMENAME']=$name;
             $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)

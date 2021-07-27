@@ -4,7 +4,7 @@
           $user = $_SESSION['username'];
           $code = $_GET['code'];
           include 'conn.php';
-          $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+          include 'conncode.php';
           $mysqli = $conncode;
           $rescon = $ques; 
           $result = mysqli_query($mysqli,"SELECT * from quiz");
@@ -52,7 +52,7 @@ include '../includes/navbar.php';
           <label for="subjects">Choose a subject:</label>
           <select name="subjects" id="subjects">
             <option value="None" <?php if($row6['SUBJ'] == "None"){echo "selected";}?>>None</option>
-            <option value="Math"<?php if($row6['SUBJ'] == "Math"){echo "selected";}?>>Mathematics</option>
+            <option value="Mathematics"<?php if($row6['SUBJ'] == "Mathematics"){echo "selected";}?>>Mathematics</option>
             <option value="Science"<?php if($row6['SUBJ'] == "Science"){echo "selected";}?>>Science</option>
             <option value="English"<?php if($row6['SUBJ'] == "English"){echo "selected";}?>>English</option>
             <option value="Filipino"<?php if($row6['SUBJ'] == "Filipino"){echo "selected";}?>>Filipino</option>
@@ -132,12 +132,12 @@ include '../includes/navbar.php';
       if(isset($_POST['add'])){
         if($numrow >=10){
           echo"<script>alert('You already exceed the number of items!')</script>";
-          $mysqli = new mysqli ('localhost','root','','question');
+          $mysqli = $ques;
           $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
          
         }
         else{
-          $mysqli = new mysqli ('localhost','root','','question');
+          $mysqli = $ques;
           $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";  
           $_SESSION['numrow']=$numrow+1;
           $_SESSION['Create']=$code;
@@ -146,7 +146,7 @@ include '../includes/navbar.php';
       }
 
       if(isset($_POST['done'])){
-        $mysqli = new mysqli ('localhost','root','','question');
+        $mysqli = $ques;
         
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
         if($mysqli->query($result1)===TRUE){
