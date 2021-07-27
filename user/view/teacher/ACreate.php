@@ -62,7 +62,7 @@
                   <label for="subjects">Choose a subject:</label>
                   <select name="subjects" id="sub">
                     <option value="None">None</option default>
-                    <option value="Math">Mathematics</option>
+                    <option value="Mathematics">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>

@@ -68,7 +68,7 @@
           <label for="subjects">Choose a subject:</label>
           <select name="subjects" id="subjects">
             <option value="None" <?php if($row6['SUBJ'] == "None"){echo "selected";}?>>None</option>
-            <option value="Math"<?php if($row6['SUBJ'] == "Math"){echo "selected";}?>>Mathematics</option>
+            <option value="Mathematics"<?php if($row6['SUBJ'] == "Mathematics"){echo "selected";}?>>Mathematics</option>
             <option value="Science"<?php if($row6['SUBJ'] == "Science"){echo "selected";}?>>Science</option>
             <option value="English"<?php if($row6['SUBJ'] == "English"){echo "selected";}?>>English</option>
             <option value="Filipino"<?php if($row6['SUBJ'] == "Filipino"){echo "selected";}?>>Filipino</option>
