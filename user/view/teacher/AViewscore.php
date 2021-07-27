@@ -67,11 +67,11 @@
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="AView.php?code=<?php echo $row["gamecode"];?>"  class="row-link">
+                  <td name="code"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
                   <div style="height:100%;width:100%"><?php  echo $row["gamecode"];?>  </td></div></a>
-                  <td name="gn"><a href="AView.php?code=<?php echo $row["gamecode"];?>" class="row-link">
+                  <td name="gn"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>" class="row-link">
                   <div style="height:100%;width:100%"><?php  echo $row["gamename"];?> </td></div></a>
-                  <td name="sub"><a href="AView.php?code=<?php echo $row["gamecode"];?>"  class="row-link">
+                  <td name="sub"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
                   <?php  echo $row["gamesubject"];?> </td></div></a>
               
             

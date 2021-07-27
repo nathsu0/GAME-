@@ -58,6 +58,8 @@ if ($conn->query($user) === FALSE){
         ID INT AUTO_INCREMENT, 
         userid VARCHAR(15), 
         quiz_id VARCHAR(15),
+        score int(4),
+        avatar VARCHAR(60),
         PRIMARY KEY(ID)
         )";
     
