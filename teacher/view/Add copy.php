@@ -4,7 +4,7 @@
           $user = $_SESSION['username'];
           $numrow = $_SESSION['numrow'];
           include 'conn.php';
-          $conncode =new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+          include 'conncode.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -103,7 +103,7 @@ include '../includes/navbar.php';
           $result =mysqli_query($conncode,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
           VALUES('$Question', '$A','$B','$C','$D', '$ans')");
           
-          echo '<script type="text/javascript">' .'history.go(-2); '. '</script>';
+          echo '<script type="text/javascript">' . 'window.location = "EditTable.php?code='.$code.'"'.'</script>';
          }
         }
    ?> 

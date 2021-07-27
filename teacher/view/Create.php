@@ -141,7 +141,6 @@ include '../includes/navbar.php';
              'console.log("Error creating database");</script>'. $conn->error;
            }
            // CONNECT DB FOR TABLES
-           $mysqli= new mysqli ('localhost', 'root' , '', $mamama);  
            // CREATE TABLES
             $sql = "CREATE TABLE quiz (
               id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

@@ -19,7 +19,7 @@ include 'conn.php';
     echo "Table not created: ".$conn1->error;
     }
 
-        $mysqli = new mysqli('localhost','root','','quiz');
+        $mysqli = $quiz;
         
 
 

@@ -5,7 +5,8 @@
           //$user = $_SESSION['username'];
           $user = $_SESSION['username'];
           $code = $_SESSION['CreateCode'];
-          $mysqli = new mysqli ('localhost', 'root', '',$code) or die($conn->error);
+          include 'conncode.php';
+          $mysqli = $conncode;
           $rescon = $ques;
           $result = mysqli_query($mysqli,"SELECT * from quiz");
           $numrow =  mysqli_num_rows($result);
@@ -134,7 +135,7 @@ include '../includes/navbar.php';
           echo"<script>alert('You already exceed the number of items!')</script>";
         }
         else{
-          $mysqli = new mysqli ('localhost','root','','question'); 
+          $mysqli = $ques;
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
   
           $_SESSION['numrow']=$numrow+1;
@@ -144,7 +145,7 @@ include '../includes/navbar.php';
       }
 
       if(isset($_POST['done'])){
-        $mysqli = new mysqli ('localhost','root','','question');
+        $mysqli = $ques;
         
         $result1= "UPDATE tanong SET SUBJ='" . $_POST['subjects']."', GAMENAME='". $_POST['name'] ."' WHERE CODE='$code'";
         if($mysqli->query($result1)===TRUE){
