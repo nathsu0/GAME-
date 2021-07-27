@@ -1,6 +1,7 @@
 # GAME
 wamp server LOCALHOST 
-used in conn.php, 
+used in teacher: conn.php, conncode.php, mysqlimama.php
+user: Aquizconn.php teacher: Aconn.php, Aconncode.php, Amysqlimama.php
 Host: "localhost";
 User: "root";
 Password: "";
