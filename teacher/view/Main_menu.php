@@ -1,6 +1,8 @@
 <?php
        session_start();
        $user = $_SESSION['username'];
+      $id = $_GET['id'];
+      $_SESSION['userid'] = $id;
 ?>
 <!doctype html>
 <html lang="en">

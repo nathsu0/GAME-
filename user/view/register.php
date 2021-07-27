@@ -15,8 +15,8 @@
         $pww ="Passwords do not match.";
     }
     else{
-        $resultdo =mysqli_query($conn,"INSERT into user(username, passwords)
-        VALUES('$tea', '$pw')");
+        $resultdo =mysqli_query($conn,"INSERT into user(username, passwords, roles)
+        VALUES('$tea', '$pw','teacher')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
          echo '<script type="text/javascript">' . 'window.location = "table.php"'.'</script>';
     }

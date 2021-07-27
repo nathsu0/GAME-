@@ -3,8 +3,7 @@
           $code = $_SESSION['Create'];
           $user = $_SESSION['username'];
           $numrow = $_SESSION['numrow'];
-          include 'conn.php';
-          include 'conncode.php';
+          include "conn.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,10 +99,10 @@ include '../includes/navbar.php';
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
             
-          $result =mysqli_query($conncode,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
-          
-          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
+            $insert = mysqli_query ($conn,"INSERT INTO quiz_question(gamecode, question, A,B,C,D,answer)
+            VALUES('$code','$Question','$A','$B','$C','$D','$ans')");
+
+          echo '<script type="text/javascript">' .'window.location = "QuestionTable.php"' . '</script>';
          }
         }
    ?> 

@@ -1,18 +1,17 @@
 
 <?php
-    include 'accounts.php';
        session_start();
        include 'conn.php';
-    $mysqli = $quiz;
     if(isset($_POST['submit'])){
         $username=$_POST['username'];
         $password=($_POST['password']);
         
-    $result =mysqli_query($mysqli,"SELECT * from accounts where username = '$username' and passwords='$password'");
-        
+    $result =mysqli_query($conn,"SELECT * from user where username = '$username' and passwords='$password'");
+        $i =  mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result)>0){
              $_SESSION['username'] = $username;
-               header("location:Main_menu.php");
+             $id= $i['ID'];
+               header("location:Main_menu.php?id=.'$id'.");
         }else{
         echo"<script>alert('Incorrect username and/or password.')</script>";
     }
