@@ -1,29 +1,24 @@
 <?php
-      
     session_start();
-    $user= $_SESSION['username'];
-    $decode = $_SESSION['decode'];
+    $id = $_SESSION['userid'];
+    $user =$_SESSION['username'];
+    $decode = $_SESSION['duplicate'];
     $code = $_SESSION['cccode'];
     include 'conn.php';
-    $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
+    $find = mysqli_query ($conn,"SELECT * FROM quiz_question WHERE gamecode='$decode'");
+ 
 
-    while( $table = $tables->fetch_array() ): $TABLE = $table[0];
-        // Copy table and contents in destination database
-        $conn->query( "CREATE TABLE $code.$TABLE LIKE $decode.$TABLE" ) or die( $conn->error );
-        $conn->query( "INSERT INTO $code.$TABLE SELECT * FROM $decode.$TABLE" ) or die( $conn->error );
+    while($row=mysqli_fetch_assoc($find)){
+      $q = $row['question'];
+      $a = $row['A'];
+      $b = $row['B'];
+      $c = $row['C'];
+      $d = $row['D'];
+      $ans= $row['answer'];
+      $sql = mysqli_query($conn,"INSERT into quiz_question(gamecode, question, A, B, C, D, answer)
+      VALUES ('$code','$q','$a','$b','$c','$d','$ans')");
+    };
 
-    endwhile;
-    $newconn = new mysqli ('localhost', 'root' , '',$code);
-    $del = mysqli_query($newconn, "DELETE FROM scores");
-    include 'questiondb.php';
-    $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
-    $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
-    $row6 = mysqli_fetch_assoc($result6);
-    $subj = $row6['SUBJ'];
-    $name = $row6['GAMENAME'] ." copy";
-    $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
-    VALUES('$code','$user','$subj','$name')");
-      
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,7 +52,7 @@ include '../includes/navbar.php';
                 <label><?php echo $code; ?></label>
             </div> <br><br>
             <div class="container">
-                <a href="Main_menu.php" type="button" class="button me-3 mt-5"
+                <a href="Main_menu.php?id=<?=$id?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

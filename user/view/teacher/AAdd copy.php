@@ -1,9 +1,9 @@
 <?php
           session_start();
+          include 'conn.php';
           $code = $_SESSION['Create'];
           $user1 =$_SESSION['teach'];
           $numrow = $_SESSION['numrow'];
-          include "Aconncode.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -88,7 +88,7 @@
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="AEditTAble.php" type="button" class="button">
+          <a href="AEditTAble.php?code=<?=$code?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>
@@ -116,8 +116,8 @@
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
             
-          $result =mysqli_query($codeconn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
+          $result =mysqli_query($conn,"INSERT into quiz_question(gamecode, question,	A,	B,	C,	D, answer)
+          VALUES('$code','$Question', '$A','$B','$C','$D', '$ans')");
           
           echo '<script type="text/javascript">' .'window.location = "AEditTable.php?code='.$code.'"' . '</script>';
          }

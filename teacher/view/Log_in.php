@@ -1,17 +1,18 @@
 
 <?php
-    include 'accounts.php';
        session_start();
-    $mysqli = mysqli_connect('localhost','root','','quiz');
+       include 'conn.php';
     if(isset($_POST['submit'])){
         $username=$_POST['username'];
         $password=($_POST['password']);
         
-    $result =mysqli_query($mysqli,"SELECT * from accounts where username = '$username' and passwords='$password'");
-        
+    $result =mysqli_query($conn,"SELECT * from user where username = '$username' and passwords='$password'");
+        $i =  mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result)>0){
              $_SESSION['username'] = $username;
-               header("location:Main_menu.php");
+             $id= $i['ID'];
+             echo '<script type="text/javascript">' .'window.location = "Main_menu.php?id='.$id.'"' . '</script>';
+         
         }else{
         echo"<script>alert('Incorrect username and/or password.')</script>";
     }
@@ -20,7 +21,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sign in</title>
+    <title>Log in</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,9 +36,9 @@
       <!----MAIN CONTAINER-->
     <div class="Main container-lg align-items-sm-center">
         <!-----SIGN IN CONTAINER-->
-        <form class="form-container-style" method ="POST" action='Sign_in.php'>
+        <form class="form-container-style" method ="POST" action='Log_in.php'>
             <div class="blocks form-group container mt-5">
-                <h1 class="display-4 text-center">Sign in</h1>
+                <h1 class="display-4 text-center">Log in</h1>
                 <!------USER INPUT START-->
                     <!----USERNAME-->
                 <div class="Username input-group">
@@ -53,7 +54,7 @@
                 <!-------BUTTON-------->
                 <div class = "button d-flex justify-content-center">
                         <button type="submit" name="submit" class="button">
-                            Sign in
+                            Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
                 </div>

@@ -1,29 +1,32 @@
 <?php
       
     session_start();
+    $id = $_SESSION['userid'];
     $user1 =$_SESSION['teach'];
-    $decode = $_SESSION['decode'];
+    $decode = $_SESSION['duplicate'];
     $code = $_SESSION['cccode'];
-    include 'Aconn.php';
-    $tables = $conn->query( "SHOW TABLES FROM $decode" ) or die( $conn->error );
+    include 'conn.php';
+    $find = mysqli_query ($conn,"SELECT * FROM quiz_question WHERE gamecode='$decode'");
+    $look =mysqli_query ($conn,"SELECT * FROM quiz WHERE gamecode='$decode'");
+    $ddd = mysqli_fetch_assoc($look);
 
-    while( $table = $tables->fetch_array() ): $TABLE = $table[0];
-        // Copy table and contents in destination database
-        $conn->query( "CREATE TABLE $code.$TABLE LIKE $decode.$TABLE" ) or die( $conn->error );
-        $conn->query( "INSERT INTO $code.$TABLE SELECT * FROM $decode.$TABLE" ) or die( $conn->error );
+    while($row=mysqli_fetch_assoc($find)){
+      $q = $row['question'];
+      $a = $row['A'];
+      $b = $row['B'];
+      $c = $row['C'];
+      $d = $row['D'];
+      $ans= $row['answer'];
+      $sql = mysqli_query($conn,"INSERT into quiz_question(gamecode, question, A, B, C, D, answer)
+      VALUES ('$code','$q','$a','$b','$c','$d','$ans')");
+    };
+    while($row1=mysqli_fetch_assoc($look)){
+      $newname = $row1['gamename'].'copy';
+      $subk = $row1['gamesubject'];
+      $sql1 = mysqli_query($conn,"INSERT into quiz (userid, gamename, gamecode, gamesubject)
+      VALUES ('$id','$newname','$code','$newname','$subk')");
+    }
 
-    endwhile;
-    include "Aconncode.php";
-    $del = mysqli_query($codeconn, "DELETE FROM scores");
-    include 'Aquestiondb.php';
-    $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
-    $result6 = mysqli_query($ques,"SELECT * FROM tanong WHERE CODE='$decode'");
-    $row6 = mysqli_fetch_assoc($result6);
-    $subj = $row6['SUBJ'];
-    $name = $row6['GAMENAME'] ." copy";
-    $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
-    VALUES('$code','$user1','$subj','$name')");
-      
 ?>
 <!doctype html>
 <html lang="en">
@@ -76,7 +79,7 @@
                 <label><?php echo $code; ?></label>
             </div> <br><br>
             <div class="container">
-                <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-3 mt-5"
+                <a href="AMain_menu.php?teach=<?=$user1?>&id=<?=$id?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

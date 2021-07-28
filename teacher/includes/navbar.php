@@ -12,7 +12,7 @@
           <img src="../img/person-fill.svg">
         </li>
         <li class="nav-item">
-          <a href="../view/Sign_in.php">Log Out
+          <a href="../view/Log_in.php">Log Out
             <img src="../img/box-arrow-right.svg">
             </a>
         </li>

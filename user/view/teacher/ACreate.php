@@ -1,9 +1,9 @@
 <?php
           session_start();
           include 'Arandom.php';
-          include 'Aconn.php';
-          //$user1 = $_SESSION['username'];
           $user1 =$_SESSION['teach'];
+          $id = $_SESSION['userid'];
+          include 'conn.php';
 
 ?>
 <!doctype html>
@@ -62,11 +62,11 @@
                   <label for="subjects">Choose a subject:</label>
                   <select name="subjects" id="sub">
                     <option value="None">None</option default>
-                    <option value="Math">Mathematics</option>
+                    <option value="Mathematics">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
                     <option value="Filipino">Filipino</option>
-                    <option value="AP">Araling Panlipunan</option>
+                    <option value="Araling Panlipunan">Araling Panlipunan</option>
                     <option value="Social Science">Social Science</option>
                     <option value="Computer">Computer</option>
                     <option value="Christian Living">Christian Living</option>
@@ -120,7 +120,7 @@
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button">
+          <a href="AMain_menu.php?teach=<?=$user1?>&id=<?=$id?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>
@@ -137,76 +137,29 @@
           if(isset($_POST['done'])){
             
             $mamama = $_POST['ccode'];
-
             $Question=$_POST['question'];
+            
             if($Question == NULL ){
               echo '<script type="text/javascript">'.'alert("Please enter a question.");</script>';
             }
             else{
-
             $_SESSION['CreateCode'] = $mamama;
-            // Create database
-            $sql = "CREATE DATABASE $mamama"; 
-            if ($conn->query($sql) === TRUE) {
-             echo '<script type="text/javascript">' .
-             'console.log("Database created successfully");</script>';
-           } else {
-             echo '<script type="text/javascript">' .
-             'console.log("Error creating database");</script>'. $conn->error;
-           }
-           // CONNECT DB FOR TABLES
-           $mysqli= new mysqli ('localhost', 'root' , '', $mamama);  
-           // CREATE TABLES
-            $sql = "CREATE TABLE quiz (
-              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              Question MEDIUMTEXT NOT NULL,
-              A MEDIUMTEXT , B MEDIUMTEXT ,
-              C MEDIUMTEXT , D MEDIUMTEXT ,
-              Answer VARCHAR(50)
-              )";
-            if ($mysqli->query($sql) === TRUE) {
-              echo '<script type="text/javascript">' .
-            'console.log("Table quiz created successfully");</script>';
-            } else {
-              echo '<script type="text/javascript">' .
-            'console.log("Error creating table: ");</script>'. $mysqli->error;
-            }
-            $sql = "CREATE TABLE SCORES (
-              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              NAMES MEDIUMTEXT, Avatar VARCHAR(255),
-              SCORE int(6) 
-              )";
-            if ($mysqli->query($sql) === TRUE) {
-              echo '<script type="text/javascript">' .
-            'console.log("Table SCORES created successfully");</script>';
-            } else {
-              echo '<script type="text/javascript">' .
-            'console.log("Error creating table SCORES ");</script>'. $mysqli->error;
-            }
-         
-          
-          
             $A=$_POST['A'];
             $B=$_POST['B'];
             $C=$_POST['C'];
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
+            $gamename = $_POST['name'];
+            $subj = $_POST['subjects'];
+
+            $sql = mysqli_query($conn, "INSERT INTO quiz (userid, gamename, gamecode, gamesubject)
+            VALUES ('$id', '$gamename','$mamama','$subj') ");
             
-            
-          $result =mysqli_query($mysqli,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
-          
-          include 'Aquestiondb.php';
-         $subject=$_POST['subjects'];
-         $_SESSION['SUBJECTname']=$subject;
-         $name = $_POST['name'];
-         $_SESSION['GAMENAME']=$name;
-            $ques= mysqli_connect ('localhost', 'root' , '', 'question');  
-            $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
-            VALUES('$mamama','$user1','$subject','$name')");
-          
-         echo '<script type="text/javascript">' . 'window.location = "AQuestionTable.php"'.'</script>';
-         }
+            $insert = mysqli_query ($conn,"INSERT INTO quiz_question(gamecode, question, A,B,C,D,answer)
+            VALUES('$mamama','$Question','$A','$B','$C','$D','$ans')");
+
+    echo '<script type="text/javascript">' . 'window.location = "AQuestionTable.php"'.'</script>';
+          }
         }
    ?> 
   </form>

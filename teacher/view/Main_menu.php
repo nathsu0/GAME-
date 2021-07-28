@@ -1,6 +1,8 @@
 <?php
        session_start();
        $user = $_SESSION['username'];
+      $id = $_GET['id'];
+      $_SESSION['userid'] = $id;
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,28 +33,10 @@
                 <div class="blocks container">
                     <div class="row col-sm-8 ms-1">
                     <!-- Button trigger modal -->
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Create Questions
+                    <div class="row col-sm-8 mt-4 ms-1">
+                    <a href ="Create.php" type="button" class="button">Create Question
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
-                            <button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            You can't Log out while making a questions
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="Create.php" type="button" class="btn border border-warning bg-warning text-dark">Create Questions</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
                     <a href ="EditView.php" type="button" class="button">Edit Question

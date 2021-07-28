@@ -1,7 +1,8 @@
 <?php
        session_start();
        $user1 =$_SESSION['teach'];
-       $ques = mysqli_connect('localhost','root','','question');
+       $id = $_SESSION['userid'];
+       include 'conn.php';
 
 ?>
 <!doctype html>
@@ -62,16 +63,16 @@
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($ques,"SELECT * from tanong WHERE USER='$user1'ORDER BY GAMENAME");
+            $result = mysqli_query($conn,"SELECT * from quiz WHERE userid='$id'ORDER BY gamename");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="AView.php?code=<?php echo $row["CODE"];?>"  class="row-link">
-                  <div style="height:100%;width:100%"><?php  echo $row["CODE"];?>  </td></div></a>
-                  <td name="gn"><a href="AView.php?code=<?php echo $row["CODE"];?>" class="row-link">
-                  <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?> </td></div></a>
-                  <td name="sub"><a href="AView.php?code=<?php echo $row["CODE"];?>"  class="row-link">
-                  <?php  echo $row["SUBJ"];?> </td></div></a>
+                  <td name="code"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
+                  <div style="height:100%;width:100%"><?php  echo $row["gamecode"];?>  </td></div></a>
+                  <td name="gn"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>" class="row-link">
+                  <div style="height:100%;width:100%"><?php  echo $row["gamename"];?> </td></div></a>
+                  <td name="sub"><a href="AView.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
+                  <?php  echo $row["gamesubject"];?> </td></div></a>
               
             
               </tr>
@@ -82,7 +83,7 @@
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-2">
+            <a href="AMain_menu.php?teach=<?=$user1?>&id=<?=$id?>" type="button" class="button me-2">
               Main menu
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

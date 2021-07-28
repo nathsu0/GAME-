@@ -1,8 +1,10 @@
 <?php
        session_start();
        $user1 =   $_GET['teach'];
+       $id = $_GET['id'];
        $_SESSION['teach'] = $user1;
        $_SESSION['username'] = $user1;
+       $_SESSION['userid'] = $id;
 ?>
 <!doctype html>
 <html lang="en">

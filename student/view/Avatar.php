@@ -1,5 +1,6 @@
 <?php
-  include 'codeconn.php';
+  session_start();
+  include 'conn.php';
   $player=$_SESSION['player'];
   if(isset($_POST['boy'])){
     $pic = "../img/Boy.png";

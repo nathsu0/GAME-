@@ -1,6 +1,6 @@
 <?php
-       $conn = mysqli_connect('localhost','root','','quiz');
-      
+include 'database.php';
+include 'teacher/conn.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,14 +55,14 @@
                     </thead>
                     <tbody class="hoverTable">
                     <?php
-            $result = mysqli_query($conn,"SELECT * from accounts ORDER BY 'ID' ");
+            $result = mysqli_query($conn,"SELECT * from user ORDER BY 'ID' ");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr><a href = "ACreated.php" class="row-link">
-                  <td name="id"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
-                  <td name="username"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
-                  <td name="pw"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["passwords"];?></a></td></div>
-                  <input type="hidden" name="teach" value="<?php echo $row["username"]; ?>"></input>
+                  <td name="id"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
+                  <td name="username"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
+                  <td name="pw"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["passwords"];?></a></td></div>
+                 
             </a>
               </tr>
               

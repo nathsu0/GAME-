@@ -1,7 +1,8 @@
 <?php
        session_start();
        $user = $_SESSION['username'];
-       $ques = mysqli_connect('localhost','root','','question');
+       include 'conn.php';
+       $id = $_SESSION['userid'];
 
 ?>
 <!doctype html>
@@ -44,16 +45,16 @@ include '../includes/navbar.php'
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($ques,"SELECT * from tanong WHERE USER='$user'ORDER BY GAMENAME");
+            $result = mysqli_query($conn,"SELECT * from quiz WHERE userid='$id'ORDER BY gamename");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="View.php?code=<?php echo $row["CODE"];?>"  class="row-link">
-                  <div style="height:100%;width:100%"><?php  echo $row["CODE"];?>  </td></div></a>
-                  <td name="gn"><a href="View.php?code=<?php echo $row["CODE"];?>" class="row-link">
-                  <div style="height:100%;width:100%"><?php  echo $row["GAMENAME"];?> </td></div></a>
-                  <td name="sub"><a href="View.php?code=<?php echo $row["CODE"];?>"  class="row-link">
-                  <?php  echo $row["SUBJ"];?> </td></div></a>
+                  <td name="code"><a href="View.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
+                  <div style="height:100%;width:100%"><?php  echo $row["gamecode"];?>  </td></div></a>
+                  <td name="gn"><a href="View.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>" class="row-link">
+                  <div style="height:100%;width:100%"><?php  echo $row["gamename"];?> </td></div></a>
+                  <td name="sub"><a href="View.php?code=<?php echo $row["gamecode"];?>&qid=<?=$row['ID']?>"  class="row-link">
+                  <?php  echo $row["gamesubject"];?> </td></div></a>
               
             
               </tr>
@@ -64,7 +65,7 @@ include '../includes/navbar.php'
           </table>
      
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php" type="button" class="button me-2">
+            <a href="Main_menu.php?id=<?=$id?>" type="button" class="button me-2">
               Main menu
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>
