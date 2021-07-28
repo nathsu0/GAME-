@@ -2,6 +2,7 @@
 session_start();
   include 'conn.php';
   $count=1;
+  $link = $_SESSION['link'];
   $player=$_SESSION['player'];
   $id =$_SESSION['id'];
   $result = mysqli_query($conn,"SELECT * from quiz_attemp WHERE quiz_id ='$id' ORDER BY score desc ");
@@ -71,7 +72,7 @@ session_start();
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
-            <a onclick="history.go(-7)" type="button" class="button btn-bubble1">Exit</a>
+            <a href="<?=$link?>" type="button" class="button btn-bubble1">Exit</a>
         </div> 
         </div>
       </div>

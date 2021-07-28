@@ -3,14 +3,18 @@
    include 'conn.php';
    if(isset($_POST['done'])){
     $code = $_POST['code'];
+    $test = mysqli_query($conn,"SELECT * from quiz WHERE gamecode ='$code'");
     
-    if($conn->select_db($code)=== false){
-    echo '<script type="text/javascript">'.'alert("Please enter a valid code.");</script>';
+    if(mysqli_num_rows($test)>0){
+      $_SESSION['code']=$code;
+      $_SESSION['link']='Codes.php';
+      $row = mysqli_fetch_assoc($test);
+      $id = $row['ID'];
+      echo '<script type="text/javascript">' .'window.location = "Start.php?code='.$code.'&id='.$id.'"' . '</script>'; 
      
     }else{
-      $_SESSION['code']=$code;
-     echo '<script type="text/javascript">' .'window.location = "Start.php?code='.$code.'"' . '</script>';
-    }
+      echo '<script type="text/javascript">'.'alert("Please enter a valid code.");</script>';
+     }
   }
 ?>
 <!doctype html>
