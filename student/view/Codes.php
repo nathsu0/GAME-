@@ -7,6 +7,7 @@
     
     if(mysqli_num_rows($test)>0){
       $_SESSION['code']=$code;
+      $_SESSION['link']='Codes.php';
       $row = mysqli_fetch_assoc($test);
       $id = $row['ID'];
       echo '<script type="text/javascript">' .'window.location = "Start.php?code='.$code.'&id='.$id.'"' . '</script>'; 
