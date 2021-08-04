@@ -44,13 +44,13 @@ include '../includes/navbar.php';
             <div class="row">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['answer']=="A"){echo "checked";}?>>
-                A.)
+                A.
                 <input class="answer"type="text"id="ans1" name="A" value="<?php echo $row['A'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['answer']=="B"){echo "checked";}?>>
-                B.)
+                B.
                 <input class="answer"type="text"id="ans2" name="B"  value="<?php echo $row['B'];?>">
               </input>
               </div>
@@ -58,13 +58,13 @@ include '../includes/navbar.php';
             <div class="row ">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['answer']=="C"){echo "checked";}?>>
-                C.)
+                C.
                 <input class="answer"type="text"id="ans3" name="C"  value="<?php echo $row['C'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['answer']=="D"){echo "checked";}?>>
-                D.)
+                D.
                 <input class="answer"type="text"id="ans4" name="D" value="<?php echo $row['D'];?>">
               </input>
               </div>

@@ -143,8 +143,11 @@ include '../includes/navbar.php';
       }
 
       if(isset($_POST['done'])){
-        
         $result1= "UPDATE quiz SET gamesubject='" . $_POST['subjects']."', gamename='". $_POST['name'] ."' WHERE gamecode='$code'";
+   
+        if($numrow <1){
+          echo"<script>alert('Enter atleast 1 question!')</script>";
+        } else{
         if($conn->query($result1)===TRUE){
           echo '<script type="text/javascript">' .
           'console.log("Q1 updated successfully");</script>';
@@ -153,8 +156,7 @@ include '../includes/navbar.php';
         }else{
           echo '<script type="text/javascript">' .
           'console.log("FAILED!");</script>';
-        }
-      }
+}      }}
     ?>
           </form>
     <!-- Optional JavaScript -->
