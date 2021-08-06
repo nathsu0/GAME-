@@ -1,5 +1,5 @@
 <?php
-    include 'teacher/conn.php';
+    include 'conn.php';
     $usere="";
     $pww="";
     if(isset($_POST['submit'])){
@@ -18,7 +18,7 @@
         $resultdo =mysqli_query($conn,"INSERT into user(username, passwords, roles)
         VALUES('$tea', '$pw','teacher')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
-         echo '<script type="text/javascript">' . 'window.location = "table.php"'.'</script>';
+         echo '<script type="text/javascript">' . 'window.location = "Log_in.php"'.'</script>';
     }
 }
 
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---Sign in CSS -->
     <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="../css/teacher/common.css">
+    <link rel="stylesheet" href="../css/common.css">
 </head>
   <body>
     <!----MAIN CONTAINER-->
@@ -48,18 +48,18 @@
                     <!----USERNAME-->
                     <label><?=$usere?></label>
                 <div class="Username input-group">
-                    <span class="input-group-text" ><img src="../img/teacher/person-circle.svg"></span>
+                    <span class="input-group-text" ><img src="../img/person-circle.svg"></span>
                     
                     <input type="text" name='username' class="form-control" placeholder="Username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                     <!-----PASSWORD-->
                     <label><?=$pww?></label>
                 <div class="Password input-group">
-                    <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
+                    <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
                     <input type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="Password input-group">
-                    <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
+                    <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
                     <input type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                 
@@ -73,7 +73,7 @@
                         
                 </div>
                 <div class = "button d-flex justify-content-center mb-2">
-                <a href="table.php" type="button" class="button ">
+                <a href="Log_in.php" type="button" class="button ">
                 Back
                 </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>

@@ -2,7 +2,6 @@
 <?php
        session_start();
        include "database.php";
-       include 'conn.php';
     if(isset($_POST['submit'])){
         $username=$_POST['username'];
         $password=($_POST['password']);
@@ -58,10 +57,11 @@
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
-                        <a href="register.php" type="button" class="button me-2">
-                Register
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </a>
+
+                        <a href="register.php"type="submit" name="add" class="button">
+                            Register
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</a>
                 </div>
             </div>
         </form>
