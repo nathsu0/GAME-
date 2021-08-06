@@ -93,15 +93,16 @@
             <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                  <th scope="col">#</th>
                     <th scope="col">Question</th>
-                    <th scope="col">A</th>
-                    <th scope="col">B</th>
-                    <th scope="col">C</th>
-                    <th scope="col">D</th>
+                    <th scope="col">Option 1</th>
+                    <th scope="col">Option 2</th>
+                    <th scope="col">Option 3</th>
+                    <th scope="col">Option 4</th>
                     <th scope="col">Answer</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
+                    
                   </tr>
                 </thead>
                 <tbody>
