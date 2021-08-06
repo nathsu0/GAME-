@@ -83,7 +83,7 @@
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="AViewScore.php?" type="button" class="button">View Score of Students
+                    <a href="AViewscore.php?" type="button" class="button">View Score of Students
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>

@@ -83,7 +83,7 @@
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="AViewScore.php" type="button" class="button me-2">
+            <a href="AViewscore.php" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>
