@@ -48,7 +48,8 @@ $_SESSION['qcount']=$qcount;
           <div class="choice">
           <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
-          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php echo $row['answer'];?>"></input>
+          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php $rem =$row['answer'];
+          echo $row[$rem];?>"></input>
         </div>
           <div class="choice-button">
           <button id="submitButton<?php echo $count;?>" class="button btn-bubble1">Submit</button>
