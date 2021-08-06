@@ -34,19 +34,19 @@ $_SESSION['qcount']=$qcount;
         </div>
    
         <div class="choice">
-          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A">
+          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="<?php echo $row['A'];?>">
           <label for="answer1<?php echo $count;?>"><?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B">
+          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="<?php echo $row['B'];?>">
           <label for="answer2<?php echo $count;?>"><?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C">
+          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="<?php echo $row['C'];?>">
           <label for="answer3<?php echo $count;?>"><?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
+          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="<?php echo $row['D'];?>">
           <label for="answer4<?php echo $count;?>"><?php echo $row['D'];?></label>
           <input type="hidden" id="rans<?php echo $count;?>" value ="<?php $rem =$row['answer'];
           echo $row[$rem];?>"></input>
@@ -88,7 +88,7 @@ $_SESSION['qcount']=$qcount;
 </div> 
 
 <?php
-$rans = $row['answer'];
+$rans = $row[$rem];
 $_SESSION['answer'.$count]=$rans;
 $totalscore = "<script>document.write(tscore)</script>"; 
 $count++;
