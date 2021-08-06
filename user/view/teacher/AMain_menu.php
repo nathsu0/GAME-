@@ -1,8 +1,10 @@
 <?php
        session_start();
        $user1 =   $_GET['teach'];
+       $id = $_GET['id'];
        $_SESSION['teach'] = $user1;
        $_SESSION['username'] = $user1;
+       $_SESSION['userid'] = $id;
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,7 +63,7 @@
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="AViewScore.php?" type="button" class="button">View Score of Students
+                    <a href="AViewscore.php?" type="button" class="button">View Score of Students
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>

@@ -4,10 +4,9 @@
           $user = $_SESSION['username'];
           $code = $_GET['code'];
           include 'conn.php';
-          include 'conncode.php';
           $id = $_GET['ID'];
           $num = $_GET['num'];
-          $result = mysqli_query($conncode,"SELECT * FROM quiz WHERE id='$id'");
+          $result = mysqli_query($conn,"SELECT * FROM quiz_question WHERE id='$id'");
           $row = mysqli_fetch_assoc($result);
 ?><!doctype html>
 <html lang="en">
@@ -38,34 +37,34 @@ include '../includes/navbar.php';
           <!----CONTENT START------->
           <div class="blocks container">
           <div class="form-floating m-2">
-            <input class="form-control" name="question" value="<?php echo $row["Question"];?>" id="floatingTextarea2" style="height: 100px"></input>
+            <input class="form-control" name="question" value="<?php echo $row["question"];?>" id="floatingTextarea2" style="height: 100px"></input>
             <label for="floatingTextarea2"><?php echo $num;?>. </label>
           </div>
           <div class="container m-2">
             <div class="row">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['Answer']=="A"){echo "checked";}?>>
-                A.)
+                <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" <?php if ($row['answer']=="A"){echo "checked";}?>>
+                Opt 1
                 <input class="answer"type="text"id="ans1" name="A" value="<?php echo $row['A'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['Answer']=="B"){echo "checked";}?>>
-                B.)
+                <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" <?php if ($row['answer']=="B"){echo "checked";}?>>
+                Opt 2
                 <input class="answer"type="text"id="ans2" name="B"  value="<?php echo $row['B'];?>">
               </input>
               </div>
             </div>
             <div class="row ">
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['Answer']=="C"){echo "checked";}?>>
-                C.)
+                <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13"<?php if ($row['answer']=="C"){echo "checked";}?>>
+                Opt 3
                 <input class="answer"type="text"id="ans3" name="C"  value="<?php echo $row['C'];?>">
               </input>
               </div>
               <div class="form-check col-sm">
-                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['Answer']=="D"){echo "checked";}?>>
-                D.)
+                <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14" <?php if ($row['answer']=="D"){echo "checked";}?>>
+                Opt 4
                 <input class="answer"type="text"id="ans4" name="D" value="<?php echo $row['D'];?>">
               </input>
               </div>
@@ -88,14 +87,13 @@ include '../includes/navbar.php';
     if(isset($_POST['done'])){
     
     
-    $result1= "UPDATE quiz SET Question='" . $_POST['question']."', A='". $_POST['A'] ."', 
-    B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', Answer='".$_POST['flexRadioDefault']."' WHERE id='$id'";
-    if($conncode->query($result1)===TRUE){
+    $result1= "UPDATE quiz_question SET question='" . $_POST['question']."', A='". $_POST['A'] ."', 
+    B='". $_POST['B'] ."', C='". $_POST['C'] ."', D='". $_POST['D'] ."', answer='".$_POST['flexRadioDefault']."' WHERE ID='$id'";
+    if($conn->query($result1)===TRUE){
       $_POST['edoc']=$code;
       echo '<script type="text/javascript">' .
       'console.log("Q1 updated successfully");</script>';
-      
-    echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
+      echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
 
     }else{
       echo '<script type="text/javascript">' .

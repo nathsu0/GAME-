@@ -1,6 +1,8 @@
 <?php
-  include "codeconn.php";
-  $result = mysqli_query($con1,"SELECT * from quiz ORDER BY RAND()");
+ session_start();
+  include "conn.php";
+  $code=$_SESSION['code'];
+  $result = mysqli_query($conn,"SELECT * from quiz_question WHERE gamecode ='$code' ORDER BY RAND()");
   $qcount=  mysqli_num_rows($result);
   $count =1;
   
@@ -24,11 +26,11 @@ $_SESSION['qcount']=$qcount;
 <body>
  <?php
     while ($row = mysqli_fetch_assoc($result)){
-      $_SESSION['answer'.$count]=$row['Answer'];
+      $_SESSION['answer'.$count]=$row['answer'];
  ?>
   <div id = "questionModal<?php echo $count;?>" class="modal">
           <div class="modal-content" >
-            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>.) <?php echo $row['Question']; $_SESSION['Question'.$count]=$row['Question']; ?></textarea>
+            <textarea id = "question<?php echo $count;?>" disabled><?php echo $count;?>.) <?php echo $row['question']; $_SESSION['question'.$count]=$row['question']; ?></textarea>
         </div>
    
         <div class="choice">
@@ -46,7 +48,8 @@ $_SESSION['qcount']=$qcount;
           <div class="choice">
           <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
           <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
-          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php echo $row['Answer'];?>"></input>
+          <input type="hidden" id="rans<?php echo $count;?>" value ="<?php $rem =$row['answer'];
+          echo $row[$rem];?>"></input>
         </div>
           <div class="choice-button">
           <button id="submitButton<?php echo $count;?>" class="button btn-bubble1">Submit</button>
@@ -85,7 +88,7 @@ $_SESSION['qcount']=$qcount;
 </div> 
 
 <?php
-$rans = $row['Answer'];
+$rans = $row['answer'];
 $_SESSION['answer'.$count]=$rans;
 $totalscore = "<script>document.write(tscore)</script>"; 
 $count++;

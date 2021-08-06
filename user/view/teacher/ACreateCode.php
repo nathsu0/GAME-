@@ -2,6 +2,7 @@
     session_start();
     $coode = $_SESSION['CreateCode'];
     $user1 =$_SESSION['teach'];
+    $id = $_SESSION['userid'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,7 +58,7 @@
             </label>
             </div> 
             <div class="container">
-                <a href="AMain_menu.php?teach=<?=$user1?>" type="button" class="button me-3 mt-5"
+                <a href="AMain_menu.php?teach=<?=$user1?>&id=<?=$id?>" type="button" class="button me-3 mt-5"
                 >Done
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>

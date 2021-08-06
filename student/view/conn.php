@@ -1,3 +1,3 @@
 <?php
-    $conn = new mysqli ('localhost', 'root', '') or die($conn->error);
+    $conn = new mysqli ('localhost', 'root', '','GAME') or die($conn->error);
 ?>

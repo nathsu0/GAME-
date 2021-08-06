@@ -1,8 +1,8 @@
 <?php
        session_start();
-       $user = $_SESSION['username'];
        include 'conn.php';
-       $conn = $ques;
+       $user = $_SESSION['username'];
+       $id = $_SESSION['userid'];
 
 ?>
 
@@ -48,17 +48,17 @@ include '../includes/navbar.php';
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from tanong WHERE USER='$user' ORDER BY GAMENAME");
+            $result = mysqli_query($conn,"SELECT * from quiz WHERE userid ='$id' ORDER BY gamename");
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
-                  <td name="code"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
-                  <?php  echo $row["CODE"];?> </td></a>
-                  <td name="gn"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
-                  <div style="height:150%;width:100%"><?php  echo $row["GAMENAME"];?></td></div></a>
-                  <td name="sub"><a href="EditTable.php?code=<?php echo $row["CODE"];?>" >
-                  <div style="height:150%;width:100%"><?php  echo $row["SUBJ"];?> </td></div></a>
-                  <td name="del"><a href="Delete.php?code=<?php echo $row["CODE"];?>" type="button" class="btn btn-success" 
+                  <td name="code"><a href="EditTable.php?code=<?php echo $row["gamecode"];?>" >
+                  <?php  echo $row["gamecode"];?> </td></a>
+                  <td name="gn"><a href="EditTable.php?code=<?php echo $row["gamecode"];?>" >
+                  <div style="height:150%;width:100%"><?php  echo $row["gamename"];?></td></div></a>
+                  <td name="sub"><a href="EditTable.php?code=<?php echo $row["gamecode"];?>" >
+                  <div style="height:150%;width:100%"><?php  echo $row["gamesubject"];?> </td></div></a>
+                  <td name="del"><a href="Delete.php?code=<?php echo $row["gamecode"];?>" type="button" class="btn btn-success" 
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
             </a>
@@ -70,7 +70,7 @@ include '../includes/navbar.php';
           </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <a href="Main_menu.php" type="button" class="button me-2">
+            <a href="Main_menu.php?id=<?=$id?>" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

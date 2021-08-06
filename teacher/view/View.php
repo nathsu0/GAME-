@@ -2,8 +2,9 @@
        session_start();
        $user = $_SESSION['username'];
        $code = $_GET['code'];
-       include 'conncode.php';
-       $conn=$conncode;
+       $id = $_SESSION['userid'];
+       $qid=$_GET['qid'];
+       include 'conn.php';
        $count=1;
 
 ?>
@@ -48,13 +49,13 @@
             </thead>
             <tbody class="hoverTable">
             <?php
-            $result = mysqli_query($conn,"SELECT * from scores");
-            while($row=mysqli_fetch_assoc($result)){
+            $result = mysqli_query($conn,"SELECT * from quiz_attemp WHERE quiz_id = '$qid' ");
+            while($row=mysqli_fetch_assoc($result)){ 
               ?>
               <tr>
                   <td name="ID"  class="row-link"><?php  echo $count;?> </a></td>
-                  <td name="name" class="row-link"><?php  echo $row["NAMES"];?></a></td>
-                  <td name="score" class="row-link"><?php  echo $row["SCORE"];?> </a></td>
+                  <td name="name" class="row-link"><?php  echo $row["userid"];?></a></td>
+                  <td name="score" class="row-link"><?php  echo $row["score"];?> </a></td>
             </a>
               </tr>
               
@@ -64,7 +65,7 @@
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
-            <a href="ViewScore.php" type="button" class="button me-2">
+            <a href="Viewscore.php" type="button" class="button me-2">
               Back
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </a>

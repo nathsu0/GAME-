@@ -3,7 +3,7 @@
           $code = $_SESSION['Create'];
           $user1 =$_SESSION['teach'];
           $numrow = $_SESSION['numrow'];
-          include "Aconncode.php";
+          include "conn.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,13 +60,13 @@
             <div class="row">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" >
-                A.)
+                A.
                 <input class="answer"type="text"id="ans1" name="A">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" >
-                B.)
+                B.
                 <input class="answer"type="text"id="ans2" name="B">
               </input>
               </div>
@@ -74,13 +74,13 @@
             <div class="row ">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13">
-                C.)
+                C.
                 <input class="answer"type="text"id="ans3" name="C">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14"  >
-                D.)
+                D.
                 <input class="answer"type="text"id="ans4" name="D">
               </input>
               </div>
@@ -116,9 +116,9 @@
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
             
-          $result =mysqli_query($codeconn,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
-          
+            $insert = mysqli_query ($conn,"INSERT INTO quiz_question(gamecode, question, A,B,C,D,answer)
+            VALUES('$code','$Question','$A','$B','$C','$D','$ans')");
+
           echo '<script type="text/javascript">' .'window.location = "AQuestionTable.php"' . '</script>';
          }
         }

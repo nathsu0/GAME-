@@ -1,22 +1,22 @@
 <?php
-    include 'teacher/Aaccounts.php';
-    include "Aquizconn.php";
+    include 'teacher/conn.php';
     $usere="";
     $pww="";
     if(isset($_POST['submit'])){
     $tea = $_POST['username'];
     $pw = $_POST['password'];
     $Cpw = $_POST['confirm'];
-    $resultd =mysqli_query( $quiz,"SELECT * from accounts where username = '$tea'");
-    if(mysqli_num_rows($resultd)>0 ){
+
+    $resulta =mysqli_query($conn,"SELECT * from user where username = '$tea'");
+    if(mysqli_num_rows($resulta)>0 ){
        $usere = "Username already taken.";
     }
     else if($Cpw != $pw){
         $pww ="Passwords do not match.";
     }
     else{
-        $resultdo =mysqli_query($quiz,"INSERT into accounts(username, passwords)
-        VALUES('$tea', '$pw')");
+        $resultdo =mysqli_query($conn,"INSERT into user(username, passwords, roles)
+        VALUES('$tea', '$pw','teacher')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
          echo '<script type="text/javascript">' . 'window.location = "table.php"'.'</script>';
     }

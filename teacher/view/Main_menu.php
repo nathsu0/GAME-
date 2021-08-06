@@ -1,6 +1,8 @@
 <?php
        session_start();
        $user = $_SESSION['username'];
+      $id = $_GET['id'];
+      $_SESSION['userid'] = $id;
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,7 +44,7 @@
                     </a>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href="ViewScore.php" type="button" class="button">View Score of Students
+                    <a href="Viewscore.php" type="button" class="button">View Score of Students
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </a>
                     </div>

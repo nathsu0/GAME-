@@ -1,8 +1,11 @@
 <?php
-  include 'codeconn.php';
+session_start();
+  include 'conn.php';
   $count=1;
+  $link = $_SESSION['link'];
   $player=$_SESSION['player'];
-  $result = mysqli_query($con1,'SELECT * from scores ORDER BY SCORE desc');
+  $id =$_SESSION['id'];
+  $result = mysqli_query($conn,"SELECT * from quiz_attemp WHERE quiz_id ='$id' ORDER BY score desc ");
  
 ?>
 <!doctype html>
@@ -43,7 +46,7 @@
             <tbody>
               <?php while ( $row=mysqli_fetch_assoc($result)) {
 
-                if($row['NAMES']=="$player"){
+                if($row['userid']=="$player"){
                   ?>
                   <tr style="background-color:rgba(100,149,237,0.8)">
                   <?php
@@ -57,9 +60,9 @@
               
                 
                 <th scope="row"><?=$count?></th>
-                <td>  <img src="<?=$row['Avatar'];?>">&nbsp;&nbsp;&nbsp;
-                <?= $row['NAMES'];?></td>
-                <td><?=$row['SCORE']?></td>
+                <td>  <img src="<?=$row['avatar'];?>">&nbsp;&nbsp;&nbsp;
+                <?= $row['userid'];?></td>
+                <td><?=$row['score']?></td>
               </tr>
               <?php
               $count++;
@@ -69,7 +72,7 @@
             </tbody>
           </table>
           <div class="container d-flex justify-content-end">
-            <a onclick="history.go(-7)" type="button" class="button btn-bubble1">Exit</a>
+            <a href="<?=$link?>" type="button" class="button btn-bubble1">Exit</a>
         </div> 
         </div>
       </div>

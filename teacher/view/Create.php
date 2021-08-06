@@ -4,6 +4,7 @@
           include 'conn.php';
           //$user = $_SESSION['username'];
           $user = $_SESSION['username'];
+          $id = $_SESSION['userid'];
 
 ?>
 <!doctype html>
@@ -75,13 +76,13 @@ include '../includes/navbar.php';
             <div class="row">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" >
-                A.)
+                Opt 1
                 <input class="answer"type="text"id="ans1" name="A">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" >
-                B.)
+                Opt 2
                 <input class="answer"type="text"id="ans2" name="B">
               </input>
               </div>
@@ -89,13 +90,13 @@ include '../includes/navbar.php';
             <div class="row ">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13">
-                C.)
+                Opt 3
                 <input class="answer"type="text"id="ans3" name="C">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14"  >
-                D.)
+                Opt 4
                 <input class="answer"type="text"id="ans4" name="D">
               </input>
               </div>
@@ -103,7 +104,7 @@ include '../includes/navbar.php';
           </div>
           <!---RADIOT BUTTON ENDS-->
           <div class="container d-flex justify-content-end">
-          <a href="Main_menu.php" type="button" class="button">
+          <a href="Main_menu.php?id=<?=$id?>" type="button" class="button">
             Cancel
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </a>
@@ -131,62 +132,18 @@ include '../includes/navbar.php';
             else{
 
             $_SESSION['CreateCode'] = $mamama;
-            // Create database
-            $sql = "CREATE DATABASE $mamama"; 
-            if ($conn->query($sql) === TRUE) {
-             echo '<script type="text/javascript">' .
-             'console.log("Database created successfully");</script>';
-           } else {
-             echo '<script type="text/javascript">' .
-             'console.log("Error creating database");</script>'. $conn->error;
-           }
-           // CONNECT DB FOR TABLES
-           include 'mysqlimama.php';
-           // CREATE TABLES
-            $sql = "CREATE TABLE quiz (
-              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              Question MEDIUMTEXT NOT NULL,
-              A MEDIUMTEXT , B MEDIUMTEXT ,
-              C MEDIUMTEXT , D MEDIUMTEXT ,
-              Answer VARCHAR(50)
-              )";
-            if ($mysqli->query($sql) === TRUE) {
-              echo '<script type="text/javascript">' .
-            'console.log("Table quiz created successfully");</script>';
-            } else {
-              echo '<script type="text/javascript">' .
-            'console.log("Error creating table: ");</script>'. $mysqli->error;
-            }
-            $sql = "CREATE TABLE SCORES (
-              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              NAMES MEDIUMTEXT, Avatar VARCHAR(255),
-              SCORE int(6) 
-              )";
-            if ($mysqli->query($sql) === TRUE) {
-              echo '<script type="text/javascript">' .
-            'console.log("Table SCORES created successfully");</script>';
-            } else {
-              echo '<script type="text/javascript">' .
-            'console.log("Error creating table SCORES ");</script>'. $mysqli->error;
-            }
-         
-          
-          
             $A=$_POST['A'];
             $B=$_POST['B'];
             $C=$_POST['C'];
             $D=$_POST['D'];
             $ans=$_POST['flexRadioDefault'];
             
-            
-          $result =mysqli_query($mysqli,"INSERT into quiz(Question,	A,	B,	C,	D, Answer)
-          VALUES('$Question', '$A','$B','$C','$D', '$ans')");
-          
-          include 'questiondb.php';
+          $result =mysqli_query($conn,"INSERT into quiz_question(gamecode, question,	A,	B,	C,	D, answer)
+          VALUES('$mamama','$Question', '$A','$B','$C','$D', '$ans')");
+ 
          $name = $_POST['name'];
-         $_SESSION['GAMENAME']=$name;
-            $result =mysqli_query($ques,"INSERT into tanong(CODE ,  USER, SUBJ, GAMENAME)
-            VALUES('$mamama','$user','$subject','$name')");
+            $result =mysqli_query($conn,"INSERT into quiz(gamecode, userid, gamesubject, gamename)
+            VALUES('$mamama','$id','$subject','$name')");
           
          echo '<script type="text/javascript">' . 'window.location = "QuestionTable.php"'.'</script>';
          }
