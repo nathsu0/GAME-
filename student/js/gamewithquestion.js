@@ -382,11 +382,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal1.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus1 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal1.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
                 
@@ -515,11 +517,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal2.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus2 == false){
                    wrongChoice();
                    setTimeout(function() {alert("Answer is Incorrect!");
                        questionModal2.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -644,11 +648,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal3.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus3 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal3.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
           
@@ -773,11 +779,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal4.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus4 == false){
                    wrongChoice();
                    setTimeout(function() {alert("Answer is Incorrect!");
                        questionModal4.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -900,11 +908,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal5.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus5 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal5.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
 
@@ -1027,11 +1037,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal6.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus6 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal6.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -1153,11 +1165,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal7.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus7 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Imcorrect!");
                         questionModal7.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -1279,11 +1293,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal8.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus8 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal8.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -1405,11 +1421,13 @@ function multipleChoiceQuestion(){
                     setTimeout(function() {alert("Answer is Correct!");
                         questionModal9.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }else if(feedbackStatus9 == false){
                     wrongChoice();
                     setTimeout(function() {alert("Answer is Incorrect!");
                         questionModal9.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
                 }
             }
         }
@@ -1441,11 +1459,13 @@ function multipleChoiceQuestion(){
                 setTimeout(function() {alert("Answer is Correct!");
                     questionModal10.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
             }else if(feedbackStatus10 == false){
                 wrongChoice();
                 setTimeout(function() {alert("Answer is Incorrect!");
                     questionModal10.style.display = "none";}, 50);
                     gameOver();
+                    gameOverMusic();
             }
 
     
@@ -1460,11 +1480,14 @@ function multipleChoiceQuestion(){
                 setTimeout(function() {alert("Answer is Correct!");
                     questionModal10.style.display = "none";}, 50);
                 gameOver();
+                gameOverMusic();
             }else if(feedbackStatus10 == false){
                 wrongChoice();
                 setTimeout(function() {alert("Answer is Incorrect!");
                     questionModal10.style.display = "none";}, 50);
                 gameOver();
+                gameOverMusic();
+                
             }
         }
     }
@@ -1523,6 +1546,11 @@ function rightChoice(){
 function wrongChoice(){
     var backgroundMusic = new Audio("../audio/WrongAnswer.mp3");
 	backgroundMusic.currentTime = 1; 
+    backgroundMusic.play();
+}
+function gameOverMusic(){
+    var backgroundMusic = new Audio("../audio/GameOver.mp3"); 
+	backgroundMusic.currentTime = 0.8; 
     backgroundMusic.play();
 }
 
@@ -1623,6 +1651,7 @@ function reduceLifePoints(){
         }else if(lifes.lives == 0){
             if(lifes.frameX1 < 2) {
                 lifes.frameX1++;
+                gameOverMusic();
                 gameOver();
                 console.log("0 life");
                 if(lifes.frameX1 > 3){
@@ -1636,7 +1665,6 @@ function reduceLifePoints(){
 }
 
 function gameOver(){
-
 startGameStatus = false;
 
 if(startGameStatus == false){
@@ -4630,6 +4658,8 @@ canvas.addEventListener('click',(event) =>{
 startGame();
 // multipleChoiceQuestion();
 bgMusic();
+
+// gameOverMusic();
 // bubbleRespawn();
 
 // // POP UP JS//
