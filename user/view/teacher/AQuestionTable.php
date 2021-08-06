@@ -95,10 +95,10 @@ include 'conn.php';
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Question</th>
-                    <th scope="col">A</th>
-                    <th scope="col">B</th>
-                    <th scope="col">C</th>
-                    <th scope="col">D</th>
+                    <th scope="col">Option 1</th>
+                    <th scope="col">Option 2</th>
+                    <th scope="col">Option 3</th>
+                    <th scope="col">Option 4</th>
                     <th scope="col">Answer</th>
                     <th scope="col"></th>
                   </tr>
@@ -115,7 +115,9 @@ include 'conn.php';
                     <td><?php echo $row['B']; ?></td>
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
-                    <td><?php echo $row['answer']; ?></td>
+                    <td><?php 
+                    
+                    echo $row['answer']; ?></td>
                     <td name="del"><a href="AEditF.php?ID=<?php echo $row["ID"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
             </td>   <td><a href="ADeleteQ.php?ID=<?php echo $row["ID"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
