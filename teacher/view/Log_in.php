@@ -58,6 +58,10 @@
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
+                        <a href="register.php" type="button" class="button me-2">
+                Register
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </a>
                 </div>
             </div>
         </form>
