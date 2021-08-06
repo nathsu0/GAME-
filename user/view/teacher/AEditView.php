@@ -71,6 +71,7 @@
             while($row=mysqli_fetch_assoc($result)){
               ?>
               <tr>
+
                   <td name="code"><a href="AEditTable.php?code=<?php echo $row["gamecode"];?>" >
                   <?php  echo $row["gamecode"];?> </td></a>
                   <td name="gn"><a href="AEditTable.php?code=<?php echo $row["gamecode"];?>" >
@@ -78,6 +79,7 @@
                   <td name="sub"><a href="AEditTable.php?code=<?php echo $row["gamecode"];?>" >
                   <div style="height:100%;width:100%"><?php  echo $row["gamesubject"];?> </td></div></a>
                   <td name="del"><a href="ADelete.php?code=<?php echo $row["gamecode"];?>" type="button" class="btn btn-success" 
+
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
                   
             </a>

@@ -22,12 +22,12 @@
 .form-check{
     margin-top: 20px;
 }
-#sub{
-    width: 100px;
-}
 .answer{
     width: 400px;
     vertical-align: -0.10em;
+}
+#subjects{
+    width: 100px;
 }
 .container{
     font-size: 20px;
@@ -77,11 +77,7 @@
     .formradio{
         display: none;
         visibility: hidden;
-    }
-    #sub{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+    } 
     .items{
         margin-top: 0;
     }
