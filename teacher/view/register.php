@@ -11,6 +11,12 @@
     if(mysqli_num_rows($resulta)>0 ){
        $usere = "Username already taken.";
     }
+    else if($tea == NULL){
+        $usere = "Enter a username.";
+    }
+    else if($Cpw == NULL){
+        $pww ="Enter a password.";
+    }
     else if($Cpw != $pw){
         $pww ="Passwords do not match.";
     }
