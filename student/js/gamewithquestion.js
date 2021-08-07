@@ -66,6 +66,8 @@ var gameOverModal = document.getElementById("gameOverModal");
 var restartButton = document.getElementById("restartButton");
 var exitButton = document.getElementById("exitButton");
 
+
+
 var N = 0;
 
 //setting canvas size
@@ -132,6 +134,74 @@ let questionStatus10 = true;
 //php variable
 var totalCountOfQuestions = qcount;
 
+//questions correct answer
+if(qcount == 1){
+    var rans = document.getElementById("rans1").value;
+}else if(qcount == 2){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+}else if(qcount == 3){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+}else if(qcount == 4){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+}else if(qcount == 5){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+}else if(qcount == 6){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+    var rans6 = document.getElementById("rans6").value;
+}else if(qcount == 7){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+    var rans6 = document.getElementById("rans6").value;
+    var rans7 = document.getElementById("rans7").value;
+}else if(qcount == 8){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+    var rans6 = document.getElementById("rans6").value;
+    var rans7 = document.getElementById("rans7").value;
+    var rans8 = document.getElementById("rans8").value;
+}else if(qcount == 9){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+    var rans6 = document.getElementById("rans6").value;
+    var rans7 = document.getElementById("rans7").value;
+    var rans8 = document.getElementById("rans8").value;
+    var rans9 = document.getElementById("rans9").value;
+}else if(qcount == 10){
+    var rans = document.getElementById("rans1").value;
+    var rans2 = document.getElementById("rans2").value;
+    var rans3 = document.getElementById("rans3").value;
+    var rans4 = document.getElementById("rans4").value;
+    var rans5 = document.getElementById("rans5").value;
+    var rans6 = document.getElementById("rans6").value;
+    var rans7 = document.getElementById("rans7").value;
+    var rans8 = document.getElementById("rans8").value;
+    var rans9 = document.getElementById("rans9").value;
+    var rans10 = document.getElementById("rans10").value;
+}
+
 var N1=0 ;
 var N2 =0;
 var N3 =0;
@@ -152,6 +222,9 @@ var a7 ;
 var a8 ;
 var a9 ;
 var a10 ;
+
+//alert status
+var alertStatus;
 
 // let resetStatus = false;
 
@@ -213,46 +286,49 @@ if(startGameStatus == true || questionStatus1 == true){
 
 
 function startGame(){
-    // if(startGameStatus == false){
-    //     // When the user clicks the button, open the modal 
-    //     startModal.style.display = "block";
-    //     // questionStatus5 = false;
-    //     // evaluation();
-    //     // allQuestionsModal.style.display = "block";
-        
-    // }
     startGameStatus = true;
         bubbleRespawn();
-        console.log(imageWidth," , ", imageHeight);
-     
-     // When the user clicks on playButton, close the modal and start the game
-    //  btnStart.onclick = function() {
-    //    startModal.style.display = "none";
-    //    gameStoryModal.style.display = "block";
-    //  }
+}
 
-    //  btnSkip.onclick = function() {
-    //     gameStoryModal.style.display = "none";
-    //    startGameStatus = true;
-    //     bubbleRespawn();
-    //   }
+function CorrectFeedback(){
+   var x = alert("Answer is Correct!");
+   console.log(alertStatus);
+   if(x == undefined){
+    alertStatus = true;
+    console.log(alertStatus);
+    questionModal1.style.display = "none";
+    questionModal2.style.display = "none";
+    questionModal3.style.display = "none";
+    questionModal4.style.display = "none";
+    questionModal5.style.display = "none";
+    questionModal6.style.display = "none";
+    questionModal7.style.display = "none";
+    questionModal8.style.display = "none";
+    questionModal9.style.display = "none";
+    questionModal10.style.display = "none";
+   }
+   
+   alertStatus = false;
+}
 
-    // When the user clicks on <span> (x), close the modal
-//     span.onclick = function() {
-//     gameStoryModal.style.display = "none";
-//   }
-
- 
-
-  // When the user clicks anywhere outside of the modal, close it
-//   window.onclick = function(event) {
-//     if (event.target == mechanicsModal) {
-//         mechanicsModal.style.display = "none";
-//     }
-//   }
-  
-  
-    // requestAnimationFrame(startGame);
+function IncorrectFeedback(){
+   var x = alert("Answer is Incorrect!");
+   console.log(alertStatus);
+   if(x == undefined){
+     alertStatus = true;
+     console.log(alertStatus);
+     questionModal1.style.display = "none";
+     questionModal2.style.display = "none";
+     questionModal3.style.display = "none";
+     questionModal4.style.display = "none";
+     questionModal5.style.display = "none";
+     questionModal6.style.display = "none";
+     questionModal7.style.display = "none";
+     questionModal8.style.display = "none";
+     questionModal9.style.display = "none";
+     questionModal10.style.display = "none";
+   }
+   alertStatus = false;
 }
 
 function multipleChoiceQuestion(){
@@ -264,7 +340,6 @@ function multipleChoiceQuestion(){
                 questionStatus1 = true;
                 console.log(questionStatus1);
 
-            var rans = document.getElementById("rans1").value;
             var radioValue = $("input[name='choices1']:checked").val();
             if(radioValue== rans){
                 var feedbackStatus1 = true;
@@ -281,17 +356,13 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 1){
                 if(feedbackStatus1 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal1.style.display = "none";}, 50);
-                           
-                   
+                    setTimeout(CorrectFeedback,50);
+
                 }else if(feedbackStatus1 == false){
                     wrongChoice();
-                    //alert("Answer is Incorrect! ");
-		        setTimeout(function() {alert("Answer is Incorrect!");
-                	questionModal1.style.display = "none";}, 50);
-                       
-                }  //reset Staggering frame
+                    setTimeout(IncorrectFeedback,50);
+                } 
+                 //reset Staggering frame
                 staggerFrames = 10;
 
 
@@ -379,16 +450,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 1){
                 if(feedbackStatus1 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal1.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus1 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal1.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
                 
@@ -402,7 +469,6 @@ function multipleChoiceQuestion(){
                 questionStatus2 = true;
                 console.log(questionStatus2);
 
-            var rans2 = document.getElementById("rans2").value;
             var radioValue2 = $("input[name='choices2']:checked").val();
             if(radioValue2== rans2){
                 var feedbackStatus2 =true;
@@ -419,13 +485,11 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 2){
                 if(feedbackStatus2 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal2.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                    
                 }else if(feedbackStatus2 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal2.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 
             //reset Staggering frame
@@ -514,16 +578,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 2){
                 if(feedbackStatus2 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal2.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus2 == false){
                    wrongChoice();
-                   setTimeout(function() {alert("Answer is Incorrect!");
-                       questionModal2.style.display = "none";}, 50);
+                   setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -534,7 +594,6 @@ function multipleChoiceQuestion(){
         btnSubmit3.onclick= function() {
                 questionStatus3 = true;
                 console.log(questionStatus3);
-                var rans3 = document.getElementById("rans3").value;
                 var radioValue3 = $("input[name='choices3']:checked").val();
                 if(radioValue3== rans3){
                     var feedbackStatus3 = true;
@@ -552,12 +611,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 3){  
                 if(feedbackStatus3 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal3.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus3 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal3.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -645,16 +702,14 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 3){
                 if(feedbackStatus3 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal3.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
+                    console.log(alertStatus+"  asdasdas");
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus3 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal3.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
+                    console.log(alertStatus+"  asdasdas");
                     gameOver();
-                    gameOverMusic();
                 }
             }
           
@@ -666,7 +721,6 @@ function multipleChoiceQuestion(){
         btnSubmit4.onclick= function() {
                 questionStatus4 = true;
                 console.log(questionStatus4);
-                var rans4 = document.getElementById("rans4").value;
                 var radioValue4 = $("input[name='choices4']:checked").val();
                 if(radioValue4== rans4){
                     var feedbackStatus4 = true;
@@ -683,12 +737,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 4){
                 if(feedbackStatus4 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal4.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus4 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal4.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -776,16 +828,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 4){
                 if(feedbackStatus4 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal4.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus4 == false){
                    wrongChoice();
-                   setTimeout(function() {alert("Answer is Incorrect!");
-                       questionModal4.style.display = "none";}, 50);
+                   setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -795,7 +843,6 @@ function multipleChoiceQuestion(){
         }
         btnSubmit5.onclick= function() {
                 questionStatus5 = true;
-                var rans5 = document.getElementById("rans5").value;
             var radioValue5 = $("input[name='choices5']:checked").val();
             if(radioValue5== rans5){
                 var feedbackStatus5= true;
@@ -812,12 +859,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 5){
                 if(feedbackStatus5 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal5.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus5 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal5.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -905,16 +950,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 5){
                 if(feedbackStatus5 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal5.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus5 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal5.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
 
@@ -925,7 +966,6 @@ function multipleChoiceQuestion(){
         }
         btnSubmit6.onclick= function() {
                 questionStatus6 = true;
-                var rans6 = document.getElementById("rans6").value;
                 var radioValue6 = $("input[name='choices6']:checked").val();
                 if(radioValue6== rans6){
                     var feedbackStatus6 = true;
@@ -941,12 +981,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 6){
                 if(feedbackStatus6 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal6.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus6 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal6.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1034,16 +1072,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 6){
                 if(feedbackStatus6 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal6.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus6 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal6.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -1053,7 +1087,6 @@ function multipleChoiceQuestion(){
         }
         btnSubmit7.onclick= function() {
                 questionStatus7 = true;
-                var rans7 = document.getElementById("rans7").value;
                 var radioValue7 = $("input[name='choices7']:checked").val();
                 if(radioValue7== rans7){
                     var feedbackStatus7 = true;
@@ -1069,12 +1102,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 7){
                 if(feedbackStatus7 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal7.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus7 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Imcorrect!");
-                        questionModal7.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1162,16 +1193,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 7){
                 if(feedbackStatus7 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal7.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus7 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Imcorrect!");
-                        questionModal7.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -1181,7 +1208,6 @@ function multipleChoiceQuestion(){
         }
         btnSubmit8.onclick= function() {
                 questionStatus8 = true;
-                var rans8 = document.getElementById("rans8").value;
             var radioValue8 = $("input[name='choices8']:checked").val();
             if(radioValue8== rans8){
                 var feedbackStatus8 =true;
@@ -1197,12 +1223,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 8){
                 if(feedbackStatus8 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal8.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus8 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal8.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1290,16 +1314,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 8){
                 if(feedbackStatus8 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal8.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus8 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal8.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -1309,7 +1329,6 @@ function multipleChoiceQuestion(){
         }
         btnSubmit9.onclick= function() {
                 questionStatus9 = true;
-                var rans9 = document.getElementById("rans9").value;
                 var radioValue9 = $("input[name='choices9']:checked").val();
                 if(radioValue9== rans9){
                     var feedbackStatus9 = true;
@@ -1325,12 +1344,10 @@ function multipleChoiceQuestion(){
             if(totalCountOfQuestions != 9){
                 if(feedbackStatus9 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal9.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                 }else if(feedbackStatus9 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal9.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                 }
                 //reset Staggering frame
                 staggerFrames = 10;
@@ -1418,16 +1435,12 @@ function multipleChoiceQuestion(){
             }else if(totalCountOfQuestions == 9){
                 if(feedbackStatus9 == true){
                     rightChoice();
-                    setTimeout(function() {alert("Answer is Correct!");
-                        questionModal9.style.display = "none";}, 50);
+                    setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }else if(feedbackStatus9 == false){
                     wrongChoice();
-                    setTimeout(function() {alert("Answer is Incorrect!");
-                        questionModal9.style.display = "none";}, 50);
+                    setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
                 }
             }
         }
@@ -1438,8 +1451,6 @@ function multipleChoiceQuestion(){
         btnSubmit10.onclick= function() {
                 questionStatus10 = true;
 
-          
-            var rans10 = document.getElementById("rans10").value;
             var radioValue10 = $("input[name='choices10']:checked").val();
             if(radioValue10== rans10){
 
@@ -1456,16 +1467,12 @@ function multipleChoiceQuestion(){
         if(totalCountOfQuestions != 10){
             if(feedbackStatus10 == true){
                 rightChoice();
-                setTimeout(function() {alert("Answer is Correct!");
-                    questionModal10.style.display = "none";}, 50);
+                setTimeout(CorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
             }else if(feedbackStatus10 == false){
                 wrongChoice();
-                setTimeout(function() {alert("Answer is Incorrect!");
-                    questionModal10.style.display = "none";}, 50);
+                setTimeout(IncorrectFeedback,50);
                     gameOver();
-                    gameOverMusic();
             }
 
     
@@ -1477,16 +1484,12 @@ function multipleChoiceQuestion(){
         }else if(totalCountOfQuestions == 10){
             if(feedbackStatus10 == true){
                 rightChoice();
-                setTimeout(function() {alert("Answer is Correct!");
-                    questionModal10.style.display = "none";}, 50);
+                setTimeout(CorrectFeedback,50);
                 gameOver();
-                gameOverMusic();
             }else if(feedbackStatus10 == false){
                 wrongChoice();
-                setTimeout(function() {alert("Answer is Incorrect!");
-                    questionModal10.style.display = "none";}, 50);
+                setTimeout(IncorrectFeedback,50);
                 gameOver();
-                gameOverMusic();
                 
             }
         }
@@ -1550,7 +1553,6 @@ function wrongChoice(){
 }
 function gameOverMusic(){
     var backgroundMusic = new Audio("../audio/GameOver.mp3"); 
-	backgroundMusic.currentTime = 0.8; 
     backgroundMusic.play();
 }
 
@@ -1651,7 +1653,6 @@ function reduceLifePoints(){
         }else if(lifes.lives == 0){
             if(lifes.frameX1 < 2) {
                 lifes.frameX1++;
-                gameOverMusic();
                 gameOver();
                 console.log("0 life");
                 if(lifes.frameX1 > 3){
@@ -1673,9 +1674,14 @@ if(startGameStatus == false){
     var tscore = score;
     sessionStorage.setItem("Totalscore", tscore);
     document.getElementById("name").innerHTML = "Total Score: " + tscore +"/"+ item;
+        if(alertStatus == true){
+            setTimeout(gameOverMusic,500)
+        }else{
+            gameOverMusic();
+        }
 
-    restartButton.onclick= function() {
-        
+
+    restartButton.onclick= function() {       
         gameOverModal.style.display ="none";
         location.href = "gamewithqa.php";
     }
@@ -4660,7 +4666,6 @@ startGame();
 // multipleChoiceQuestion();
 bgMusic();
 
-// gameOverMusic();
 // bubbleRespawn();
 
 // // POP UP JS//

@@ -95,7 +95,6 @@ $count++;
     }
 
 ?>
-
     <canvas id="canvas1"></canvas>
     <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
