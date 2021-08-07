@@ -52,17 +52,20 @@
                 </div>
                 <!--USER INPUT END-->
                 <!-------BUTTON-------->
-                <div class = "button d-flex justify-content-center">
-                        <button type="submit" name="submit" class="button">
+                <div class = "container d-flex justify-content-center">
+                <a href="../../user/view/option.html"type="submit" name="add" class="button">
+                            Back
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</a>
+                <button type="submit" name="submit" class="button">
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
-
+                
                         <a href="register.php"type="submit" name="add" class="button">
                             Register
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</a>
-                </div>
+</a></div>
             </div>
         </form>
       </div>

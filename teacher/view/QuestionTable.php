@@ -21,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---CREATE CSS-->
-    <link rel="stylesheet" href="../css/QuestionTable.css">
+    <link rel="stylesheet" href="../css/QuestionTable.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/common.css">
   </head>
   <body>
@@ -79,10 +79,10 @@ include '../includes/navbar.php';
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Question</th>
-                    <th scope="col">A</th>
-                    <th scope="col">B</th>
-                    <th scope="col">C</th>
-                    <th scope="col">D</th>
+                    <th scope="col">Option 1</th>
+                    <th scope="col">Option 2</th>
+                    <th scope="col">Option 3</th>
+                    <th scope="col">Option 4</th>
                     <th scope="col">Answer</th>
                     <th scope="col" >Edit/Delete</th>
                   </tr>
@@ -99,7 +99,9 @@ include '../includes/navbar.php';
                     <td><?php echo $row['B']; ?></td>
                     <td><?php echo $row['C']; ?></td>
                     <td><?php echo $row['D']; ?></td>
-                    <td><?php echo $row['answer']; ?></td>
+                    <td><?php 
+                    $rem = $row['answer'];
+                    echo $row[$rem] ; ?></td>
                     <td name="del"><a href="EditF.php?ID=<?php echo $row["ID"];?>&num=<?php echo $count;?>&code=<?php echo $code;?>" type="button" class="btn btn-success" >EDIT </a>
             <a href="DeleteQ.php?ID=<?php echo $row["ID"];?>&code=<?php echo $code;?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Are you sure?');">DELETE </a></td>
