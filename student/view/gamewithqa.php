@@ -34,20 +34,20 @@ $_SESSION['qcount']=$qcount;
         </div>
    
         <div class="choice">
-          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="A">
-          <label for="answer1<?php echo $count;?>">A. <?php echo $row['A'];?></label>
+          <input type="radio" id="answer1<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['A'.$count]=$row['A'];?>" value="<?php echo $row['A'];?>">
+          <label for="answer1<?php echo $count;?>"><?php echo $row['A'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="B">
-          <label for="answer2<?php echo $count;?>">B. <?php echo $row['B'];?></label>
+          <input type="radio" id="answer2<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['B'.$count]=$row['B'];?>" value="<?php echo $row['B'];?>">
+          <label for="answer2<?php echo $count;?>"><?php echo $row['B'];?></label>
         </div>
           <div class="choice">
-          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="C">
-          <label for="answer3<?php echo $count;?>">C. <?php echo $row['C'];?></label>
+          <input type="radio" id="answer3<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['C'.$count]=$row['C'];?>" value="<?php echo $row['C'];?>">
+          <label for="answer3<?php echo $count;?>"><?php echo $row['C'];?></label>
           </div>
           <div class="choice">
-          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="D">
-          <label for="answer4<?php echo $count;?>">D. <?php echo $row['D'];?></label>
+          <input type="radio" id="answer4<?php echo $count;?>" name="choices<?php echo $count; $_SESSION['D'.$count]=$row['D'];?>" value="<?php echo $row['D'];?>">
+          <label for="answer4<?php echo $count;?>"><?php echo $row['D'];?></label>
           <input type="hidden" id="rans<?php echo $count;?>" value ="<?php $rem =$row['answer'];
           echo $row[$rem];?>"></input>
         </div>
@@ -88,20 +88,17 @@ $_SESSION['qcount']=$qcount;
 </div> 
 
 <?php
-$rans = $row['answer'];
+$rans = $row[$rem];
 $_SESSION['answer'.$count]=$rans;
 $totalscore = "<script>document.write(tscore)</script>"; 
 $count++;
     }
 
 ?>
-
     <canvas id="canvas1"></canvas>
     <script type="text/javascript">var qcount = "<?= $qcount?>";</script>
     <script type="text/javascript" src="../js/gamewithquestion.js"></script>
-<?php
 
-?>
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
