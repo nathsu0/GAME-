@@ -38,26 +38,30 @@
         <div class="Box container">
             <!----CONTENT START------->
           <div class="blocks container mt-3 p-0">
-            <div class="row d-flex justify-content-center">
-            <div class="col-sm-6">
+            <div class="row">
+            <div class="col-lg-6">
+            <div class="card">
               <div class="character"><br>
-                <img src="../img/ABoy.png">
+                <img src="../img/ABoy.png"class="card-img-top" alt="...">
                 <div class="card-body"><br>
                   <p>Choose your avatar </p>
                   <div class="container d-flex justify-content-center">
                     <button  type="submit" name="boy" class="button btn-bubble1">Next</button>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
+            <div class="card">
               <div class="character"><br>
-                <img src="../img/AGirl.png">
+                <img src="../img/AGirl.png"class="card-img-top" alt="...">
                 <div class="card-body"><br>
                   <p>Choose your avatar</p>
                   <div class="container d-flex justify-content-center">
                   <button type="submit" name="girl"  class="button btn-bubble1">Next</button>
                   </div>
+                </div>
                 </div>
               </div>
             </div>

@@ -20,23 +20,35 @@ img{
 .Password{
     margin-bottom: 30px;
 }
+
 ::placeholder{
     font-size: 20px;
 }
 .Main{
     padding: 30px;
     margin-top: 10px;
-    height: 640px;
+    height: auto;
 }
 .form-group{
-    height: 400px;
+    height: auto;
     border-radius: 20px;
     border: 3px solid #473432;
 }
 .button{
-    margin:auto;
+    margin: 5px auto;
     display:block;
     text-align: center;
     width: 150px;
     height: 50px;
+}
+#eye{
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-image: var(--icon);
+    background-repeat:no-repeat ;
+    background-size:80%;
+    background-position: center;
+    height: 40px;
+    width: 40px;
 }

@@ -34,7 +34,7 @@
 </head>
   <body>
       <!----MAIN CONTAINER-->
-    <div class="Main container-lg align-items-sm-center">
+    <div class="Main align-items-sm-center">
         <!-----SIGN IN CONTAINER-->
         <form class="form-container-style" method ="POST" action='Log_in.php'>
             <div class="blocks form-group container mt-5">
@@ -48,24 +48,32 @@
                     <!-----PASSWORD-->
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="password"  id = "password"name='password'class="form-control">
+                    <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
+                    
                 </div>
                 <!--USER INPUT END-->
                 <!-------BUTTON-------->
-                <div class = "container d-flex justify-content-center">
+                <div class = "container ">
+                <div class="row d-flex justify-content-between">
+                <div class="col-md">
                 <a href="../../user/view/option.html"type="submit" name="add" class="button">
                             Back
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</a>
+                </a>
+                </div>
+                <div class="col-md">
                 <button type="submit" name="submit" class="button">
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
-                
+                        </div>
+                        <div class="col-md">
                         <a href="register.php"type="submit" name="add" class="button">
                             Register
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</a></div>
+                </a></div>
+                </div>
             </div>
         </form>
       </div>

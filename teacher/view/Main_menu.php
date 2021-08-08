@@ -34,9 +34,30 @@
                     <div class="row col-sm-8 ms-1">
                     <!-- Button trigger modal -->
                     <div class="row col-sm-8 mt-4 ms-1">
-                    <a href ="Create.php" type="button" class="button">Create Question
+                   <!-- Button trigger modal -->
+                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Create Question
                       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                    </a>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Warning</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            You cannot log out when adding your question. Be sure to type each question and option, choose the correct answer and click save. Ready?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href ="Create.php" type="button" class="btn btn-warning">Create Question</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     </div>
                     <div class="row col-sm-8 mt-4 ms-1">
                     <a href ="EditView.php" type="button" class="button">Edit Question
