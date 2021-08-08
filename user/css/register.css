@@ -10,15 +10,12 @@ h1{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 20px 30px;
-    
 }
 img{
     width: 25px;
     height: 25px;
 }
-.Username{
-    margin-bottom: 30px;
-}
+
 .Password{
     margin-bottom: 30px;
 }
