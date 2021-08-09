@@ -8,7 +8,7 @@
   $count=1;
   $tscore = $_GET['total'];
   $int =(int)$tscore;
-  $res=mysqli_query($conn,"SELECT * FROM quiz_attemp WHERE userid='$player'");
+  $res=mysqli_query($conn,"SELECT * FROM quiz_attemp WHERE userid='$player' and quiz_id='$id'");
   if(mysqli_num_rows($res)==0){
   $resu= mysqli_query($conn,"INSERT INTO quiz_attemp(userid, quiz_id) VALUES('$player','$id')");
   $result = mysqli_query($conn,"UPDATE quiz_attemp SET score='$int', avatar='$pic' WHERE userid='$player'");
@@ -67,10 +67,10 @@
                 <strong>Question <?=$count?>: </strong> <?=$_SESSION['question'.$count];?>
                 <br>
                 <strong>Choices : </strong> 
-                <br> A. <?=$_SESSION['A'.$count];?>
-                <br> B. <?=$_SESSION['B'.$count];?>
-                <br> C. <?=$_SESSION['C'.$count];?>
-                <br> D. <?=$_SESSION['D'.$count];?><br>
+                <br> <li><?=$_SESSION['A'.$count];?>
+                <br> <li><?=$_SESSION['B'.$count];?>
+                <br> <li><?=$_SESSION['C'.$count];?>
+                <br> <li><?=$_SESSION['D'.$count];?><br>
                 <strong>Your answer : </strong> <?= $_GET['A'.$count];?>
                 <br>
               </div>
@@ -87,10 +87,10 @@
                 <strong>Question <?=$count?>: </strong> <?=$_SESSION['question'.$count];?>
                 <br>
                 <strong>Choices : </strong> 
-                <br> A. <?=$_SESSION['A'.$count];?>
-                <br> B. <?=$_SESSION['B'.$count];?>
-                <br> C. <?=$_SESSION['C'.$count];?>
-                <br> D. <?=$_SESSION['D'.$count];?><br>
+                <br> <li><?=$_SESSION['A'.$count];?>
+                <br> <li><?=$_SESSION['B'.$count];?>
+                <br> <li><?=$_SESSION['C'.$count];?>
+                <br> <li><?=$_SESSION['D'.$count];?><br>
                 <strong>Your answer : </strong> <?= $_GET['A'.$count];?>
                 <br>
                 <strong>Correct Answer : </strong> <?=$_SESSION['answer'.$count]?>
