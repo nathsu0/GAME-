@@ -17,7 +17,7 @@ include 'teacher/conn.php';
 </head>
   <body>
     <!----MAIN CONTAINER-->
-    <div class="Main container">
+    <div class="Main container ">
         <!-----CONTENT IN CONTAINER-->
           <div class="Box containermt-5 p-0">
            <!---NAVIGATION BAR START-->
@@ -40,17 +40,16 @@ include 'teacher/conn.php';
           </nav>
    <!----NAVIGATION BAR END-->
             <!----CONTENT START------->
-            <div class="blocks container">
+            <div class="blocks container ">
             <h2>Teacher Account</h2>
             <form method = 'post' action = ''>
             <div class="table-responsive">
-              <label>Select username.</label>
+              <label>Click Username.</label>
                 <table class="table ">
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Username</th>
-                        <th scope="col">Password</th>
                       </tr>
                     </thead>
                     <tbody class="hoverTable">
@@ -60,9 +59,7 @@ include 'teacher/conn.php';
               ?>
               <tr><a href = "ACreated.php" class="row-link">
                   <td name="id"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
-                  <td name="username"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
-                  <td name="pw"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["passwords"];?></a></td></div>
-                 
+                  <td name="username"> <a href="../../teacher/view/Log_in.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
             </a>
               </tr>
               
@@ -72,15 +69,44 @@ include 'teacher/conn.php';
                     </tbody>
                   </table>
             </div>
-            <div class="container d-flex justify-content-end">
-              <a href="register.php" type="button" class="button me-2">
-                Add Account
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </a>
-              <a href="option.html" type="button" class="button me-2">
+            <div class="container ">
+            <div class="row">
+                <div class="col-lg d-flex justify-content-center">
+            <a href="option.html" type="button" class="button">
                 Back
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>
+          </div>
+          <div class="col-lg d-flex justify-content-center">
+              <a href="register.php" type="button" class="button">
+                Add Account
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </a>
+          </div>
+              <div class="col-lg d-flex justify-content-center">
+             <!-- Button trigger modal -->
+                  <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Instruction
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"style = "color:black">Instruction</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body"style = "color:black">
+                        Hey there! With Bubble Popper, you can create your own questions, view the student's scores and duplicate the game that can be accessed by students. Click on the username to access these features. 
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
           </div> 
           </div>
         </div>
