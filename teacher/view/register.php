@@ -62,11 +62,13 @@
                     <label><?=$pww?></label>
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id = "password"type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id = "cpassword"type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <span class="input-group-text" id="ceye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
                 
                 <!--USER INPUT END-->

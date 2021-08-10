@@ -26,12 +26,21 @@ body {
     font-size: 20px;
     text-shadow: 1px 1px black;
 }
+#mechan{
+    font-size: 13px;
+}
 p{
     color: white;
 }
 .button{
     margin: 2vh 0 0 0;
     line-height: 65px;
+  }
+  .carousel-indicators{
+      display: none;
+  }
+  #mechan{
+      font-size: 18px;
   }
 /*MEDIA
 *

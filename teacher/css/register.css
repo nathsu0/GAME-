@@ -6,18 +6,17 @@ h1{
 }
 .blocks{
     color: whitesmoke;
-    background-image: url('../img/teacher/Board.png');
+    background-image: url('../img/Board.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 20px 30px;
-    
 }
 img{
     width: 25px;
     height: 25px;
 }
 .Username{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .Password{
     margin-bottom: 30px;
@@ -41,4 +40,26 @@ img{
     text-align: center;
     width: 150px;
     height: 50px;
+}
+#eye{
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-image: var(--icon);
+    background-repeat:no-repeat ;
+    background-size:80%;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+#ceye{
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-image: var(--icon);
+    background-repeat:no-repeat ;
+    background-size:80%;
+    background-position: center;
+    height: 40px;
+    width: 40px;
 }

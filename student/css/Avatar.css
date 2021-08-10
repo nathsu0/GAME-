@@ -26,11 +26,13 @@ img{
 .character{
     text-align: center;
     background-image: url('../img/clear.png');
-    background-size: 60% 85%;
     background-repeat: no-repeat;
     background-position: center;
     height: 90vh;
-    width: 40vw;
+    width: 100%;
+}
+.card{
+    margin: 30px;
 }
 .card-body{
     padding: 0 10vw;
@@ -63,4 +65,11 @@ img{
         margin-top: 20px;
     }
     }
-
+    @media (min-width: 350px) and (max-width: 1000px) {
+        .character{
+            width: 500px;;
+        }
+        .card{
+            width: 500px;
+        }
+    }
