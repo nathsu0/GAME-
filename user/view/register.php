@@ -34,7 +34,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---Sign in CSS -->
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/teacher/common.css">
 </head>
   <body>
@@ -54,13 +54,17 @@
                 </div>
                     <!-----PASSWORD-->
                     <label><?=$pww?></label>
-                <div class="Password input-group">
-                    <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
-                    <input type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <div class="Password input-group">
+                    <span class="input-group-text" ><img src="../../teacher/img/lock-fill.svg"></span>
+                    <input type="password"  id = "password"name='password'class="form-control">
+                    <span class="input-group-text"id="eye" style ="--icon: url(../../teacher/img/eye-fill.svg);"></span>
+                    
                 </div>
                 <div class="Password input-group">
-                    <span class="input-group-text" ><img src="../img/teacher/lock-fill.svg"></span>
-                    <input type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <span class="input-group-text" ><img src="../../teacher/img/lock-fill.svg"></span>
+                    <input type="password"  id = "password"name='password'class="form-control">
+                    <span class="input-group-text"id="ceye" style ="--icon: url(../../teacher/img/eye-fill.svg);"></span>
+                    
                 </div>
                 
                 <!--USER INPUT END-->
