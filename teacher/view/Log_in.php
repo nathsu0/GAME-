@@ -43,7 +43,7 @@
                     <!----USERNAME-->
                 <div class="Username input-group">
                     <span class="input-group-text" ><img src="../img/person-circle.svg"></span>
-                    <input type="text" name='username' class="form-control" placeholder="Username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input disabled type="text" name='username' class="form-control" placeholder="Username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                     <!-----PASSWORD-->
                 <div class="Password input-group">
@@ -55,24 +55,20 @@
                 <!--USER INPUT END-->
                 <!-------BUTTON-------->
                 <div class = "container ">
-                <div class="row d-flex justify-content-between">
-                <div class="col-md">
+                <div class="row d-flex justify-content-center">
+                <div class="col-sm">
                 <a href="../../user/view/option.html"type="submit" name="add" class="button">
                             Back
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </a>
                 </div>
-                <div class="col-md">
+                <div class="col-sm">
                 <button type="submit" name="submit" class="button">
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
                         </div>
-                        <div class="col-md">
-                        <a href="register.php"type="submit" name="add" class="button">
-                            Register
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </a></div>
+                       
                 </div>
             </div>
         </form>

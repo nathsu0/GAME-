@@ -40,6 +40,7 @@ a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
 }
+
 .button{
     height: auto;
     padding: 0;
@@ -143,6 +144,7 @@ a, a:hover, a:focus, a:active {
 .blocks table{
     color: whitesmoke;
 }
+
 .form-check{
     margin-top: 20px;
 }
