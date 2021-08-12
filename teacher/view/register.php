@@ -40,7 +40,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../asset/bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <!---Sign in CSS -->
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/common.css">
 </head>
   <body>
@@ -62,10 +62,13 @@
                     <label><?=$pww?></label>
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input id = "password"type="password"  name='password'class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id = "password"type="password"  onKeyUp=check() maxlength="15"name='password' class="form-control" placeholder="Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
-                <div class="Password input-group">
+               
+                <div class="hint" id="length"></div>
+                
+                <div class="CPassword input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
                     <input id = "cpassword"type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     <span class="input-group-text" id="ceye" style ="--icon: url(../img/eye-fill.svg);"></span>
@@ -81,14 +84,25 @@
                         
                 </div>
                 <div class = "button d-flex justify-content-center mb-2">
-                <a href="Log_in.php" type="button" class="button ">
+                <a href="../../user/view/table.php" type="button" class="button ">
                 Back
                 </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+               
               </a>
 </div>
             </div>
         </form>
+        <script>
+           
+           function check() {
+    stringLength = document.getElementById('password').value.length;
+    if (stringLength >= 15) {
+         document.getElementById('length').innerText = "Maximum characters are 15"
+    } else {
+        document.getElementById('length').innerText = ""
+    }
+}
+            </script> 
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

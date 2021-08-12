@@ -78,7 +78,7 @@ include 'teacher/conn.php';
               </a>
           </div>
           <div class="col-lg d-flex justify-content-center">
-              <a href="register.php" type="button" class="button">
+              <a href="../../teacher/view/register.php" type="button" class="button">
                 Add Account
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </a>
