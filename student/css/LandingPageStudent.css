@@ -1,0 +1,60 @@
+/*COMMON
+*
+*/
+/*CONTENT
+*
+*/
+
+.box{
+    z-index: 2;
+    position: absolute;
+}
+h1{
+    color: solid black;
+    margin: 15px 0 20px 20px;
+}
+.blocks{
+    z-index: 2;
+    position: absolute;
+    height: auto;
+    background: none;
+    
+}
+.welcome{
+    background-image: linear-gradient(
+			to right bottom,
+			rgba(187, 235, 248, 0.8),
+			rgba(0, 108, 248, 0.8)
+		),
+		url("../img/Bleader.png");
+    background-size: cover;
+  	background-position: top;
+  	position: relative;
+
+  	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: auto;
+}
+p{
+    margin-bottom: 9%;
+}
+.button{
+    margin-top: 1vh;
+    line-height: 65px;
+  }
+
+
+/*MEDIA
+*
+*/
+@media (min-width: 350px) and (max-width: 992px) { 
+    .button{
+        margin-bottom: 15vh;
+       
+      }
+    
+    html,
+    body {
+  overflow: visible;
+    }
+    }
+

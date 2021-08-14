@@ -1,0 +1,184 @@
+/*Contents
+*
+*/
+button{
+    width: 150px;
+}
+/* EFFECTS
+*
+*/
+  .logo{
+    background-image: url('../img/Board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+}
+  @-webkit-keyframes openTopLine {
+    0% {
+      width: 0;
+      transform: translateY(5em);
+    }
+    50% {
+      width: 27em;
+      transform: translateY(5em);
+    }
+    100% {
+      width: 27em;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes openTopLine {
+    0% {
+      width: 0;
+      transform: translateY(5em);
+    }
+    50% {
+      width: 27em;
+      transform: translateY(5em);
+    }
+    100% {
+      width: 27em;
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes openBottomLine {
+    0% {
+      width: 0;
+      transform: translateY(-5em);
+    }
+    50% {
+      width: 27em;
+      transform: translateY(-5em);
+    }
+    100% {
+      width: 27em;
+      transform: translateY(0);
+    }
+  }
+  @keyframes openBottomLine {
+    0% {
+      width: 0;
+      transform: translateY(-5em);
+    }
+    50% {
+      width: 27em;
+      transform: translateY(-5em);
+    }
+    100% {
+      width: 27em;
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes slideContent {
+    0%, 30% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideContent {
+    0%, 30% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .logo {
+    font-size: 1.1em;
+    font-family: "Roboto Slab";
+    text-align: center;
+    color: #bdbdbd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+  .logo .line {
+    height: 1px;
+    background: #bdbdbd;
+    display: inline-block;
+    width: 27em;
+  }
+  .logo .line.topLine {
+    -webkit-animation: openTopLine 1.5s;
+            animation: openTopLine 1.5s;
+  }
+  .logo .line.bottomLine {
+    -webkit-animation: openBottomLine 1.5s;
+            animation: openBottomLine 1.5s;
+  }
+  .logo .content {
+    -webkit-animation: slideContent 1s;
+            animation: slideContent 1s;
+    -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+    -webkit-animation-delay: 1.25s;
+            animation-delay: 1.25s;
+  }
+  .logo .content .vintage {
+    font-weight: 400;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #212121, 2px 2px 0px #bdbdbd;
+    letter-spacing: 4px;
+  }
+  .logo .content .since {
+    font-weight: 100;
+    margin: 0.25em auto 0.5em;
+  }
+  .logo .content .desc {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+  }
+  .logo .content .skillz {
+    font-size: 1.2em;
+    margin-top: 0.25em;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .logo .content .links a {
+    display: inline-block;
+    color: #bdbdbd;
+    font-size: 1.25em;
+    margin: 0.25em 0.2em 0;
+    transition: color 0.1s;
+    cursor: pointer;
+    transition: color 0.15s;
+    -webkit-animation: slideContent 1s;
+            animation: slideContent 1s;
+    -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+  }
+  .logo .content .links a:nth-of-type(1n) {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  .logo .content .links a:nth-of-type(2n) {
+    -webkit-animation-delay: 2.25s;
+            animation-delay: 2.25s;
+  }
+  .logo .content .links a:nth-of-type(3n) {
+    -webkit-animation-delay: 2.5s;
+            animation-delay: 2.5s;
+  }
+  .logo .content .links a:nth-of-type(4n) {
+    -webkit-animation-delay: 2.75s;
+            animation-delay: 2.75s;
+  }
+  .logo .content .links a:nth-of-type(5n) {
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+  }
+  .logo .content .links a:hover {
+    color: white;
+  }
