@@ -27,7 +27,7 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php';
+include '../includes/navbar copy.php';
 
 ?>
           <form method="POST" action="">
