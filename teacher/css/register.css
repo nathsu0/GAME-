@@ -67,7 +67,18 @@ img{
     width: 40px;
 }
 
+<<<<<<< Updated upstream
 .hint
+=======
+.max
+{
+  margin-left: 50px;  
+  font-size:0.8em;
+  color:white;
+}
+
+.min
+>>>>>>> Stashed changes
 {
   margin-left: 50px;  
   font-size:0.8em;

@@ -66,11 +66,13 @@
                     <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
                
-                <div class="hint" id="length"></div>
+
+                <div class="max" id="max"></div>
+                <div class="min" id="min"></div>
                 
                 <div class="CPassword input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input id = "cpassword"type="password"  name='confirm'class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id = "cpassword"type="password"  name='confirm'maxlength="15"class="form-control" placeholder="Confirm Password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     <span class="input-group-text" id="ceye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
                 
@@ -97,9 +99,17 @@
            function check() {
     stringLength = document.getElementById('password').value.length;
     if (stringLength >= 15) {
-         document.getElementById('length').innerText = "Maximum characters are 15"
-    } else {
-        document.getElementById('length').innerText = ""
+         document.getElementById('max').innerText = "Maximum characters are 15";
+    } 
+    else if (stringLength == 4 ||stringLength ==3 ||stringLength ==2 ||stringLength ==1){
+        document.getElementById('min').innerText = "Minimum characters are 4";
+    }
+    else if (stringLength === 0){
+        document.getElementById('min').innerText = "";
+    }
+    else {
+        document.getElementById('max').innerText = "";
+        document.getElementById('min').innerText = "";
     }
 }
             </script> 
