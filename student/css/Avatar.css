@@ -26,6 +26,7 @@ img{
 .character{
     text-align: center;
     background-image: url('../img/clear.png');
+    background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;
     height: 90vh;
@@ -33,6 +34,8 @@ img{
 }
 .card{
     margin: 30px;
+    background: transparent;
+    border: none;
 }
 .card-body{
     padding: 0 10vw;
