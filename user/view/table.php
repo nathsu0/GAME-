@@ -44,7 +44,7 @@ include 'teacher/conn.php';
             <h2>Teacher Account</h2>
             <form method = 'post' action = ''>
             <div class="table-responsive">
-              <label>Click a username.</label>
+              <label>Click a username</label>
                 <table class="table ">
                     <thead>
                       <tr>

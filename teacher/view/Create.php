@@ -76,13 +76,13 @@ include '../includes/navbar.php';
             <div class="row">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="A"name="flexRadioDefault" id="flexRadioDefault11" >
-                Opt 1
+                
                 <input class="answer"type="text"id="ans1" name="A">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="B" name="flexRadioDefault" id="flexRadioDefault12" >
-                Opt 2
+                
                 <input class="answer"type="text"id="ans2" name="B">
               </input>
               </div>
@@ -90,13 +90,13 @@ include '../includes/navbar.php';
             <div class="row ">
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="C" name="flexRadioDefault" id="flexRadioDefault13">
-                Opt 3
+                
                 <input class="answer"type="text"id="ans3" name="C">
               </input>
               </div>
               <div class="form-check col-sm">
                 <input class="form-check-input" type="radio" value="D" name="flexRadioDefault" id="flexRadioDefault14"  >
-                Opt 4
+                
                 <input class="answer"type="text"id="ans4" name="D">
               </input>
               </div>
