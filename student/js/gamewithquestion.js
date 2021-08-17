@@ -341,7 +341,7 @@ function multipleChoiceQuestion(){
                 console.log(questionStatus1);
 
             var radioValue = $("input[name='choices1']:checked").val();
-            if(radioValue== rans){
+            if(radioValue == rans){
                 var feedbackStatus1 = true;
                 score = score+10;
                 N1 = 1;
@@ -447,17 +447,17 @@ function multipleChoiceQuestion(){
                         lifePoints();
                     }
 
-            }else if(totalCountOfQuestions == 1){
-                if(feedbackStatus1 == true){
-                    rightChoice();
-                    setTimeout(CorrectFeedback,50);
-                    gameOver();
-                }else if(feedbackStatus1 == false){
-                    wrongChoice();
-                    setTimeout(IncorrectFeedback,50);
-                    gameOver();
+                }else if(totalCountOfQuestions == 1){
+                    if(feedbackStatus1 == true){
+                        rightChoice();
+                        setTimeout(CorrectFeedback,50);
+                        gameOver();
+                    }else if(feedbackStatus1 == false){
+                       wrongChoice();
+                       setTimeout(IncorrectFeedback,50);
+                        gameOver();
+                    }
                 }
-            }
                 
                         
         }
@@ -1675,9 +1675,11 @@ if(startGameStatus == false){
     sessionStorage.setItem("Totalscore", tscore);
     document.getElementById("name").innerHTML = "Total Score: " + tscore +"/"+ item;
         if(alertStatus == true){
-            setTimeout(gameOverMusic,500)
-        }else{
+            setTimeout(gameOverMusic,500);
+        }else if(lifes.lives == 0){
             gameOverMusic();
+        }else{
+            setTimeout(gameOverMusic,500);
         }
 
 
