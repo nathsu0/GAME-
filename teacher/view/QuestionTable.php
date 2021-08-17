@@ -13,7 +13,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title><?=$row6['GAMENAME'];?></title>
+    <title><?=$row6['gamename'];?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
           <!---NAVIGATION BAR START-->
           <?php 
 
-include '../includes/navbar.php';
+include '../includes/navbar copy.php';
 
 ?>
 <form method='POST'>
@@ -149,7 +149,7 @@ include '../includes/navbar.php';
         $result1= "UPDATE quiz SET gamesubject='" . $_POST['subjects']."', gamename='". $_POST['name'] ."' WHERE gamecode='$code'";
    
         if($numrow <1){
-          echo"<script>alert('Enter atleast 1 question!')</script>";
+          echo"<script>alert('Enter atleast 1 question! ')</script>";
         } else{
         if($conn->query($result1)===TRUE){
           echo '<script type="text/javascript">' .

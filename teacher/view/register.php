@@ -24,7 +24,7 @@
         $resultdo =mysqli_query($conn,"INSERT into user(username, passwords, roles)
         VALUES('$tea', '$pw','teacher')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
-         echo '<script type="text/javascript">' . 'window.location = "Log_in.php"'.'</script>';
+         echo '<script type="text/javascript">' . 'window.location = "Log_in.php?teach='.$tea.'"'.'</script>';
     }
 }
 
