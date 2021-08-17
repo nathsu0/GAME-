@@ -24,7 +24,7 @@
         $resultdo =mysqli_query($conn,"INSERT into user(username, passwords, roles)
         VALUES('$tea', '$pw','teacher')");
          echo '<script type="text/javascript">'.'alert("Registered successfully.");</script>';
-         echo '<script type="text/javascript">' . 'window.location = "Log_in.php"'.'</script>';
+         echo '<script type="text/javascript">' . 'window.location = "Log_in.php?teach='.$tea.'"'.'</script>';
     }
 }
 
@@ -66,12 +66,9 @@
                     <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                 </div>
                
-<<<<<<< Updated upstream
-                <div class="hint" id="length"></div>
-=======
+
                 <div class="max" id="max"></div>
                 <div class="min" id="min"></div>
->>>>>>> Stashed changes
                 
                 <div class="CPassword input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
@@ -102,23 +99,17 @@
            function check() {
     stringLength = document.getElementById('password').value.length;
     if (stringLength >= 15) {
-<<<<<<< Updated upstream
-         document.getElementById('length').innerText = "Maximum characters are 15"
-    } else {
-        document.getElementById('length').innerText = ""
-=======
-         document.getElementById('max').innerText = "Maximum characters are 15"
+         document.getElementById('max').innerText = "Maximum characters are 15";
     } 
     else if (stringLength == 4 ||stringLength ==3 ||stringLength ==2 ||stringLength ==1){
-        document.getElementById('min').innerText = "Manimum characters are 4"
+        document.getElementById('min').innerText = "Minimum characters are 4";
     }
     else if (stringLength === 0){
-        document.getElementById('min').innerText = ""
+        document.getElementById('min').innerText = "";
     }
     else {
-        document.getElementById('max').innerText = ""
-        document.getElementById('min').innerText = ""
->>>>>>> Stashed changes
+        document.getElementById('max').innerText = "";
+        document.getElementById('min').innerText = "";
     }
 }
             </script> 
