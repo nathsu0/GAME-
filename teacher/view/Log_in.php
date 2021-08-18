@@ -2,16 +2,16 @@
 <?php
        session_start();
        include "database.php";
-        $teach = $_GET['teach'];
         $error = '';
        if(isset($_POST['submit'])){
-        $username=$teach;
-        $password=($_POST['password']);
+        $username=$_POST['username'];
+        $password=$_POST['password'];
         
     $result =mysqli_query($conn,"SELECT * from user where username = '$username' and passwords='$password'");
         $i =  mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result)>0){
              $_SESSION['username'] = $username;
+             $_SESSION['teachlink']="Log_in.php";
              $id= $i['ID'];
              echo '<script type="text/javascript">' .'window.location = "Main_menu.php?id='.$id.'"' . '</script>';
          
@@ -52,7 +52,7 @@
                     <!----USERNAME-->
                 <div class="Username input-group">
                     <span class="input-group-text" ><img src="../img/person-circle.svg"></span>
-                    <input disabled type="text" name='username' class="form-control" placeholder="<?=$teach;?>" 
+                    <input type="text" name='username' class="form-control" placeholder="Username" 
                     aria-label="Sizing example input"  id="txt_1" onkeyup='saveValue(this);'
                     aria-describedby="inputGroup-sizing-default" >
                 </div>
@@ -60,7 +60,7 @@
                     <!-----PASSWORD-->
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
-                    <input type="password"  id = "password"name='password'class="form-control">
+                    <input type="password"  id = "password"name='password'class="form-control" placeholder="Password">
                     <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                     
                 </div>

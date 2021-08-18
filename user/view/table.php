@@ -57,9 +57,9 @@ include 'teacher/conn.php';
             $result = mysqli_query($conn,"SELECT * from user ORDER BY 'ID' ");
             while($row=mysqli_fetch_assoc($result)){
               ?>
-              <tr><a href = "ACreated.php" class="row-link">
-                  <td name="id"> <a href="teacher/AMain_menu.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>" class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
-                  <td name="username"> <a href="../../teacher/view/Log_in.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
+              <tr><a class="row-link">
+                  <td name="id"> <a href="../../teacher/view/Log_in1.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["ID"];?></a></td></div>
+                  <td name="username"> <a href="../../teacher/view/Log_in1.php?teach=<?php echo $row["username"];?>&id=<?= $row["ID"]?>"  class="row-link"><div style="height:100%;width:100%"><?php  echo $row["username"];?> </a></td></div>
             </a>
               </tr>
               
