@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="../css/common.css">
 <nav class="top navbar navbar-expand-lg navbar-light bg-light bg-transparent text-dark">
   <div class="container-fluid my-1">
@@ -12,7 +13,7 @@
           <img src="../img/person-fill.svg">
         </li>
         <li class="nav-item">
-          <a href="../../user/view/table.php">Log Out
+          <a href=<?= $_SESSION['teachlink']?>>Log Out
             <img src="../img/box-arrow-right.svg">
             </a>
         </li>

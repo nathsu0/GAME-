@@ -2,20 +2,23 @@
 <?php
        session_start();
        include "database.php";
-    if(isset($_POST['submit'])){
-        $username=$_POST['username'];
+        $teach = $_GET['teach'];
+        $error = '';
+       if(isset($_POST['submit'])){
+        $username=$teach;
         $password=($_POST['password']);
         
     $result =mysqli_query($conn,"SELECT * from user where username = '$username' and passwords='$password'");
         $i =  mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result)>0){
              $_SESSION['username'] = $username;
+             $_SESSION['teachlink']="../../user/view/table.php";
              $id= $i['ID'];
              echo '<script type="text/javascript">' .'window.location = "Main_menu.php?id='.$id.'"' . '</script>';
          
         }else{
-        echo"<script>alert('Incorrect username and/or password.')</script>";
-    }
+        $error ='Incorrect password.';
+   }
 }
 ?>
 <!doctype html>
@@ -31,20 +34,30 @@
     <!---Sign in CSS -->
     <link rel="stylesheet" href="../css/Sign_in.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/common.css">
+    <style>
+    .label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+}
+        </style>
 </head>
   <body>
       <!----MAIN CONTAINER-->
     <div class="Main align-items-sm-center">
         <!-----SIGN IN CONTAINER-->
-        <form class="form-container-style" method ="POST" action='Log_in.php'>
+        <form class="form-container-style" method ="POST" action=''>
             <div class="blocks form-group container mt-5">
                 <h1 class="display-4 text-center">Log in</h1>
                 <!------USER INPUT START-->
                     <!----USERNAME-->
                 <div class="Username input-group">
                     <span class="input-group-text" ><img src="../img/person-circle.svg"></span>
-                    <input disabled type="text" name='username' class="form-control" placeholder="Username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input disabled type="text" name='username' class="form-control" placeholder="<?=$teach;?>" 
+                    aria-label="Sizing example input"  id="txt_1" onkeyup='saveValue(this);'
+                    aria-describedby="inputGroup-sizing-default" >
                 </div>
+                <span class="label" ><?=$error?></span>
                     <!-----PASSWORD-->
                 <div class="Password input-group">
                     <span class="input-group-text" ><img src="../img/lock-fill.svg"></span>
@@ -52,12 +65,25 @@
                     <span class="input-group-text"id="eye" style ="--icon: url(../img/eye-fill.svg);"></span>
                     
                 </div>
+<script type="text/javascript">
+        document.getElementById("txt_1").value = getSavedValue("txt_1");   
+        function saveValue(e){
+            var id = e.id;  
+            localStorage.setItem(id);}
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+                
                 <!--USER INPUT END-->
                 <!-------BUTTON-------->
                 <div class = "container ">
                 <div class="row d-flex justify-content-center">
                 <div class="col-sm">
-                <a href="../../user/view/option.html"type="submit" name="add" class="button">
+                <a href="../../user/view/table.php"type="submit" name="add" class="button">
                             Back
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </a>
