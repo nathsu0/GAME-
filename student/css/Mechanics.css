@@ -43,6 +43,7 @@ h1{
     .blocks{
         height: auto;
         background-image: url('../img/clear\ board.png'); 
+        background-size: 100% 100%;
     }
     .button{
         margin-bottom: 15vh;

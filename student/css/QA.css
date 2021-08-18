@@ -58,14 +58,14 @@ svg{
     position: absolute;
     height: auto;
     background-image: url('../img/evalaution.png');
-    background-size: 150% 100%;
+    background-size: 130% 100%;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 30%;
     height: auto;
 }
 .button{
-  margin: 5vh 5vw 30% 0;
+  margin: 5vh 20% 30% 0;
   line-height: 65px;
 }
 /*MEDIA
@@ -84,6 +84,6 @@ svg{
       }
       .blocks{
           height: auto;
-          background-image: url('../img/clear.png');
+          background-image: url('../img/evalaution.png');
       }
     }
