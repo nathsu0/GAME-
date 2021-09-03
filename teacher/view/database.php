@@ -1,5 +1,6 @@
 <?php
-    $conn1 = new mysqli('localhost','root','');
+    
+    include 'conn.php';
 
     $sql = "CREATE DATABASE IF NOT EXISTS GAME"; 
     if ($conn1->query($sql) === TRUE) {
@@ -10,7 +11,6 @@
     'console.log("Error creating database");</script>'. $conn1->error;
     }
 
-    include 'conn.php';
 
     $user = "CREATE TABLE IF NOT EXISTS user(
         ID INT AUTO_INCREMENT, 
