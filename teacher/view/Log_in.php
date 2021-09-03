@@ -82,18 +82,12 @@
                 <div class = "container ">
                 <div class="row d-flex justify-content-center">
                 <div class="col-sm">
-                <a href="../../user/view/table.php"type="submit" name="add" class="button">
-                            Back
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </a>
-                </div>
-                <div class="col-sm">
+                
                 <button type="submit" name="submit" class="button">
                             Log in
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </button>
-                        </div>
-                       
+                        </div>     
                 </div>
             </div>
         </form>
